@@ -1,0 +1,1194 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Colegio Francisco Miranda</title>
+        <!-- Bootstrap 5 CSS (CDN) -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap Icons (CDN) -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/estilos.css">
+        <style>
+            /* Uniform docente image sizing */
+            #docentes .card img {
+                width: 100%;
+                height: 280px;
+                object-fit: contain;
+                object-position: center center;
+                border-radius: 12px;
+                background-color: #f8f9fa;
+                padding: 4px;
+            }
+            html {
+                scroll-behavior: smooth;
+                scroll-padding-top: 90px;
+            }
+            body {
+                background-color: #E1C435;
+                padding-top: 70px;
+            }
+            header.hero {
+                position: relative;
+                min-height: calc(100vh - 70px);
+                background-image: url("img/ITFM.jpeg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 100px 0;
+            }
+            header.hero .overlay {
+                position: absolute;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.45);
+                z-index: 1;
+            }
+            header.hero .hero-content {
+                position: relative;
+                z-index: 2;
+                max-width: 860px;
+                margin: 0 auto;
+            }
+            header.hero .hero-content h1,
+            header.hero .hero-content p,
+            header.hero .hero-content .btn {
+                color: #ffffff;
+            }
+            header.hero .btn-gold {
+                background-color: #7A0F0F;
+                border-color: #7A0F0F;
+            }
+            #mainNav,
+            #mainNav .navbar-brand,
+            #mainNav .navbar-brand strong,
+            #mainNav .nav-link {
+                color: #ffffff !important;
+                font-weight: 700;
+            }
+            #mainNav .navbar-brand {
+                font-size: 1rem;
+            }
+            #mainNav .nav-link {
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+            }
+            .mission-vision-card .card-body {
+                background-color: #7A0F0F;
+                color: #ffffff;
+                border-radius: 18px;
+            }
+            .mission-vision-card .bi {
+                color: #ffffff !important;
+            }
+            .maestros-search-bar {
+                background-color: #7A0F0F;
+                border: 1px solid rgba(255, 255, 255, 0.25);
+                color: #ffffff;
+            }
+            .maestros-search-bar .form-control,
+            .maestros-search-bar .form-select {
+                min-width: 220px;
+            }
+            .maestros-search-bar .form-control::placeholder {
+                color: rgba(255, 255, 255, 0.8);
+            }
+            .maestros-search-bar .form-control,
+            .maestros-search-bar .form-select {
+                background-color: #ffffff;
+                color: #212529;
+            }
+            .mission-vision-card {
+                min-height: 320px;
+                display: flex;
+                flex-direction: column;
+            }
+            .mission-vision-card .card-body {
+                flex: 1;
+                display: flex;
+                align-items: flex-start;
+            }
+            .card {
+                border: 2px solid #a8a8a8;
+                border-radius: 18px;
+                background: linear-gradient(145deg, #f2f2f2 0%, #d4d4d4 45%, #ffffff 100%);
+                box-shadow: 0 16px 28px rgba(80, 80, 80, 0.16), inset 0 0 0 1px rgba(255, 255, 255, 0.38);
+                background-clip: padding-box;
+                transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            }
+            .card:hover {
+                transform: translateY(-6px);
+                border-color: #999999;
+                box-shadow: 0 22px 38px rgba(80, 80, 80, 0.24), inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+            }
+            #instalaciones {
+                border-top: 1px solid rgba(255,255,255,0.35);
+            }
+            #instalaciones .carousel-item img {
+                width: 1300px !important;
+                height: 450px !important;
+                object-fit: cover;
+                object-position: center;
+            }
+        </style>
+        <meta name="description" content="Instituto Gubernamental Técnico Francisco Miranda - Zambrano">
+    </head>
+    <body>
+        <!-- Barra de navegación fija superior -->
+        <nav id="mainNav" class="navbar navbar-expand-lg fixed-top navbar-light shadow-sm" style="background-color:#7A0F0F;">
+            <div class="container">
+                <!-- Marca / Logo -->
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="img/images.jpg" alt="Logo Instituto Francisco Miranda" class="me-2" style="width:52px; height:52px; object-fit:cover; border-radius:12px; background-color:#ffffff; display:block;">
+                    <div>
+                        <strong>Instituto Técnico Francisco Miranda</strong>
+                        <div class="small text-muted">Zambrano, Francisco Morazán</div>
+                    </div>
+                </a>
+
+                <!-- Toggler -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Contenido del navbar: buscador y enlaces -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <!-- Buscador interno del sitio (pequeño) -->
+                    <div class="d-flex align-items-center ms-auto me-3">
+                        <input id="siteSearch" class="form-control form-control-sm" placeholder="Buscar en el sitio">
+                    </div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#historia">Historia</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#mision">Misión</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#valores">Valores</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#docentes">Docentes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#maestros">Maestros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#noticias">Noticias</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero / Portada con efecto parallax (background) -->
+        <header id="inicio" class="hero bg-image d-flex align-items-center text-white">
+            <div class="overlay"></div>
+            <div class="container text-center hero-content" data-parallax="true">
+                <h1 class="display-4 fw-bold">INSTITUTO "FRANCISCO MIRANDA"</h1>
+                <p class="lead">Formando jóvenes con excelencia académica y valores.</p>
+                <a href="#historia" class="btn btn-gold btn-lg">Conocer más <i class="bi bi-arrow-down ms-2"></i></a>
+            </div>
+        </header>
+
+        <!-- Contenido principal -->
+        <main class="mt-5">
+            <!-- Historia: imagen izquierda, texto derecha -->
+            <section id="Historia" class="container py-5 reveal">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Historia</h2>
+                        <p>El Colegio Francisco Miranda fue fundado con la visión de brindar educación de calidad en la comunidad de Zambrano. A lo largo de los años se ha consolidado como un centro educativo referente por su compromiso con la formación integral y los valores.</p>
+                        <p>Contamos con docentes capacitados, instalaciones modernas y programas académicos orientados a formar estudiantes líderes y responsables.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Misión y Visión en tarjetas -->
+            <section id="mision" class="container py-4 reveal">
+                <div class="row align-items-stretch">
+                    <div class="col-md-6 mb-3">
+                        <div class="card shadow-sm h-100 mission-vision-card">
+                            <div class="card-body d-flex align-items-start">
+                                <i class="bi bi-eye display-6 text-white me-3"></i>
+                                <div>
+                                    <h5 class="card-title">Visión</h5>
+                                    <p class="card-text">La visión del Instituto Técnico Francisco Miranda es mantenerse como una institución educativa de prestigio, comprometida con la formación integral de los jóvenes, brindando una educación técnica y científica de calidad que les permita enfrentar los nuevos retos de la sociedad y del mundo laboral.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="vision" class="col-md-6">
+                        <div class="card shadow-sm h-100 mission-vision-card">
+                            <div class="card-body d-flex align-items-start">
+                                <i class="bi bi-bullseye display-6 text-white me-3"></i>
+                                <div>
+                                    <h5 class="card-title">Misión</h5>
+                                    <p class="card-text">Ser una institución líder en la formación de ciudadanos críticos, creativos y comprometidos con el bienestar de la comunidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Valores: tarjetas con íconos -->
+            <section id="valores" class="container py-4 reveal">
+                <h3 class="mb-4">Valores</h3>
+                <div class="row g-3">
+                    <!-- Seis valores principales -->
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="card text-center p-3 shadow-sm h-100">
+                            <i class="bi bi-people-fill display-6 text-primary mb-2"></i>
+                            <h6>Respeto</h6>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="card text-center p-3 shadow-sm h-100">
+                            <i class="bi bi-shield-lock-fill display-6 text-primary mb-2"></i>
+                            <h6>Honestidad</h6>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="card text-center p-3 shadow-sm h-100">
+                            <i class="bi bi-clipboard-check-fill display-6 text-primary mb-2"></i>
+                            <h6>Responsabilidad</h6>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="card text-center p-3 shadow-sm h-100">
+                            <i class="bi bi-heart-fill display-6 text-primary mb-2"></i>
+                            <h6>Solidaridad</h6>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="card text-center p-3 shadow-sm h-100">
+                            <i class="bi bi-flag-fill display-6 text-primary mb-2"></i>
+                            <h6>Disciplina</h6>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="card text-center p-3 shadow-sm h-100">
+                            <i class="bi bi-mortarboard-fill display-6 text-primary mb-2"></i>
+                            <h6>Excelencia</h6>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Director -->
+            <section id="director" class="container py-5 reveal">
+                <div class="row align-items-center gy-4">
+                    <div class="col-lg-5 text-center">
+                        <img src="img/Juan Carlos Herrera.jpeg" alt="Juan Carlos Herrera Espinoza" class="img-fluid rounded-circle director-photo shadow-sm">
+                    </div>
+                    <div class="col-lg-7">
+                        <h2>Juan Carlos Herrera Espinoza</h2>
+                        <p class="text-muted mb-2">Director de la Institución</p>
+                        <p class="mb-0">Nació el 12 de enero de 1977. Inició labores en la institución en 2007, aportando más de una década y media de servicio continuo y compromiso con la educación. Es Maestro en Educación Primaria y Licenciado en Ciencias con Orientación en Matemática, títulos obtenidos en la Universidad Pedagógica Nacional. Actualmente se encuentra finalizando la tesis para obtener la Maestría en Matemática Educativa, demostrando su interés permanente por la formación continua y la mejora de su práctica profesional.</p>
+                        <p class="mb-0">A lo largo de su carrera en la institución, ha impulsado cambios significativos en la organización pedagógica y en la cultura escolar. Considera que uno de sus mayores logros es la transformación del Instituto Francisco Miranda, resultado de su dedicación, constancia y compromiso con la educación desde muy joven. Esta transformación abarca la renovación de metodologías de enseñanza, la implementación de proyectos didácticos orientados al aprendizaje activo y la mejora del clima institucional para favorecer el desarrollo integral del estudiantado.</p>
+                        <p class="mb-0">Su enfoque docente se centra en la enseñanza significativa de las matemáticas: promueve el razonamiento lógico, la resolución de problemas reales y la articulación entre la teoría y la práctica. Ha trabajado en el diseño de unidades didácticas contextualizadas, evaluación formativa y uso de recursos manipulativos y tecnológicos para facilitar la comprensión matemática. Además, fomenta la inclusión educativa mediante estrategias adaptadas a diferentes ritmos y estilos de aprendizaje.</p>
+                        <p class="mb-0">En la institución ha asumido responsabilidades de liderazgo pedagógico y colaboración profesional: coordinación de áreas, tutorías, capacitación docente interna y organización de talleres para colegas y padres. Participa en redes institucionales y en actividades comunitarias orientadas a fortalecer el vínculo escuela-familia y promover la continuidad escolar.</p>
+                        <p class="mb-0">En su formación continua, además de la maestría en curso, se ha interesado por cursos y seminarios en evaluación educativa, didáctica de la matemática y tecnologías educativas. Está finalizando su tesis de maestría, la cual se centra en mejorar la enseñanza-aprendizaje de conceptos matemáticos clave (puede especificar tema y metodología si lo desea).</p>
+                        <p class="mb-0">Como educador, valora la ética profesional, la perseverancia y la colaboración entre docentes. Sus metas a mediano plazo incluyen consolidar programas de formación docente en la institución, publicar materiales didácticos o artículos sobre experiencias pedagógicas y expandir proyectos que vinculen a los estudiantes con la comunidad mediante aplicaciones prácticas de las matemáticas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Maestros: 43 tarjetas generadas dinámicamente -->
+            <section id="maestros" class="container py-5 reveal">
+                <div class="mb-3">
+                    <div class="maestros-search-bar d-flex flex-column flex-md-row align-items-center gap-2 p-3 rounded text-white">
+                        <i class="bi bi-search fs-4"></i>
+                        <input id="searchMaestro" class="form-control" placeholder="Buscar maestro por nombre">
+                        <select id="filterAsignatura" class="form-select">
+                            <option value="">Todas las asignaturas</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="maestrosGrid" class="row g-3">
+                    <!-- Maestro cards inyectadas por JS -->
+                </div>
+            </section>
+
+            <!-- Docentes: tarjetas con información detallada del maestro -->
+            <section id="docentes" class="container py-5 reveal">
+                <h3 class="mb-4">Docentes</h3>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center" style="min-height: 320px; display: flex; align-items: center; justify-content: center;">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Ana Gabriela Simons Zelaya" style="max-height: 280px; width: 100%; object-fit: contain; object-position: center center; background-color: #f8f9fa; padding: 4px;">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">ANA GABRIELA SIMONS ZELAYA</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente1" aria-expanded="false" aria-controls="docente1">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente1">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Licenciada en Matemáticas, egresada de la Universidad Pedagógica Nacional Francisco Morazán (UPNFM). Profesora de Matemáticas, con una trayectoria de 12 años de experiencia docente en Tegucigalpa, Francisco Miranda. Clases impartidas: Matemáticas, Física y Dibujo Técnico.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Preparación y tutoría de estudiantes para competencia de alto rendimiento en las Olimpiadas de Matemáticas. Participación como jurado calificador en las Olimpiadas Matemáticas a nivel nacional.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Ana Gabriela Simons Zelaya, nacida el 31 de julio de 1990 en Tegucigalpa, Francisco Morazán, es una destacada educadora de 35 años y Licenciada en Matemáticas por la UPNFM. Actualmente se desempeña como docente en el Instituto Técnico Francisco Miranda, donde aporta sus 12 años de sólida experiencia (2014-2026) impartiendo asignaturas clave como Matemáticas, Física y Dibujo Técnico. A lo largo de su carrera, se ha distinguido no solo por su labor en el aula, sino también por su compromiso con el talento académico juvenil.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="img/avatar.png" class="img-fluid rounded" alt="Ana Liliam Soto Aguilera" style="max-height:280px; width:100%; object-fit:contain; object-position:center center; background-color:#f8f9fa; padding:4px; border-radius:12px;">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">ANA LILIAM SOTO AGUILERA</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente2" aria-expanded="false" aria-controls="docente2">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente2">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Licenciada en Ciencias Naturales.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Información no proporcionada.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Dato no proporcionado.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="img/avatar.png" class="img-fluid rounded" alt="Ada Lizeth Ordoñez Martinez" style="max-height:280px; width:100%; object-fit:contain; object-position:center center; background-color:#f8f9fa; padding:4px; border-radius:12px;">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">ADA LIZETH ORDOÑEZ MARTÍNEZ</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente3" aria-expanded="false" aria-controls="docente3">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente3">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Licenciada en la Enseñanza del Español.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Información no proporcionada.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Información no proporcionada.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Celeste María Machuca Tejeda">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">CELESTE MARÍA MACHUCA TEJEDA</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente4" aria-expanded="false" aria-controls="docente4">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente4">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Profesora y Licenciada en Ciencias Naturales con orientación en Química, Física y Biología. Especialista en Tecnologías y Alimentos.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Asistencia y coordinación de prácticas en el laboratorio de Ciencias Naturales; orientación en actividades experimentales y de investigación científica; organización y desarrollo de proyectos para la feria científica; promoción del aprendizaje práctico y uso adecuado de los recursos del laboratorio.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Profesional de la educación con 9 años de experiencia en la enseñanza de las Ciencias Naturales. Licenciada en Ciencias Naturales con orientación en Química y Biología y especialista en Tecnología y Alimentos. Originaria de La Paz, se ha destacado por su compromiso con la formación científica de los estudiantes, fomentando la investigación, el trabajo experimental y la participación en proyectos de feria científica.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Christian Obed Medina Alvarado">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">CHRISTIAN OBED MEDINA ALVARADO</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente5" aria-expanded="false" aria-controls="docente5">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente5">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Profesorado en Educación Tecnológica Industrial con orientación en Electricidad en el grado de Licenciatura.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Proyectos de formación técnica en electricidad, desarrollo de prácticas de taller y acompañamiento en proyectos tecnológicos para la formación profesional de los estudiantes del Instituto Técnico Francisco Miranda.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Nació en San Pedro Sula el 18 de marzo de 1994. Cursó el bachillerato técnico industrial con orientación en mecánica automotriz en el Instituto Técnico Luis Bográn y creció en la Aldea Monte Redondo, km 27 de la carretera a Olancho. Durante su formación universitaria fue vicepresidente de la carrera de Educación Tecnológica en la UPFM. Ha ejercido como contratista independiente y se destaca por su liderazgo, compromiso y vocación de servicio en el ámbito educativo y técnico.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Closvin Fabricio Yanez Santos">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">CLOSVIN FABRICIO YANEZ SANTOS</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente6" aria-expanded="false" aria-controls="docente6">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente6">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Docente del taller de Estructuras Metálicas.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Maestro de Educación Primaria; profesor en Educación Tecnológica con orientación en Mecánica Industrial; diplomado de formación pedagógica en educación superior; maestría en formulación, gestión y evaluación de proyectos.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Maestro de Educación Primaria con amplia formación pedagógica y técnica. Combina experiencia en el área metalmecánica con competencias en educación superior y gestión de proyectos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Edwin Geovanny Raudales Lanza">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">EDWIN GEOVANNY RAUDALES LANZA</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente7" aria-expanded="false" aria-controls="docente7">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente7">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Docente de Taller de Madera.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Desarrolla proyectos prácticos en el taller de madera para fortalecer el aprendizaje técnico.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Nacido en Tegucigalpa el 22 de julio de 1983, especialista en carpintería y ebanistería. Se caracteriza por su compromiso, responsabilidad y dedicación en la enseñanza práctica, promoviendo la seguridad y el desarrollo de habilidades técnicas en sus estudiantes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Enedas Alfonso Berrios Alvarado">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">ENEDAS ALFONSO BERRIOS ALVARADO</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente8" aria-expanded="false" aria-controls="docente8">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente8">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Docente del Taller de Madera.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Lleva 16 años laborando en la institución y cuenta con amplia experiencia institucional.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Bachiller en Educación, licenciado en Educación Básica y en Educación Técnica Industrial. Con 31 años en la institución, aporta experiencia y continuidad en la formación técnica.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Fatima Yaneth Rodríguez">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">FÁTIMA YANETH RODRÍGUEZ</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente9" aria-expanded="false" aria-controls="docente9">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente9">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Docente de Administración General, Gestión Empresarial, Economía y Legislación. Coordinadora de TES y consejería estudiantil (HRAS).</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Coordinación del programa TES; actividades de consejería estudiantil; impartición de administración general, gestión empresarial, economía y legislación.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Profesora con 56 años y 18 años de servicio en el instituto. Fuerte compromiso, responsabilidad y gran capacidad profesional en la formación de sus estudiantes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Francis Elizabeth Moncada Silva">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">FRANCIS ELIZABETH MONCADA SILVA</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente10" aria-expanded="false" aria-controls="docente10">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente10">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Licenciada en Taller de Hogar en el área de Belleza, Cosmetología, Corte, Nutrición y Alimentos.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Cursos prácticos de barbería, maquillaje, uñas acrílicas y cuidado facial; manualidades, piñatas y jabones artesanales; talleres de nutrición y gastronomía, elaboración de boquitas y salud.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Nacida el 8 de abril de 1970, con 21 años de servicio. Destacada educadora en talleres de nutrición, corte y confección, y belleza, promoviendo emprendimiento e innovación práctica.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Fredis Armando Domínguez Medina">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">FREDIS ARMANDO DOMÍNGUEZ MEDINA</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente11" aria-expanded="false" aria-controls="docente11">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente11">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Licenciado en Matemática y en Economía. Docente en Matemática con cargo administrativo.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Información no proporcionada.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Profesional con 19 años en la institución. Combina formación matemática y económica con experiencia docente y administrativa.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Gabriela Arely Beltrán Rodríguez">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">GABRIELA ARELY BELTRÁN RODRÍGUEZ</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente12" aria-expanded="false" aria-controls="docente12">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente12">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Docente de Educación Artística y Artes Musicales.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Participación en festivales, proyectos de identidad nacional, promoción de lectura y actividades motivacionales de trabajo en equipo.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Nacida el 5 de diciembre de 1992. Cuenta con 14 años de trayectoria docente, 13 en sector privado y 3 en sector público, destacándose por su ética profesional y valores.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Jenny Roseli Sosa Chávez">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">JENNY ROSELI SOSA CHÁVEZ</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente14" aria-expanded="false" aria-controls="docente14">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente14">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Licenciada en la Enseñanza del Inglés; Perito Mercantil y Contador Público.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Proyectos de identidad nacional, festivales culturales, promoción de lectura y actividades motivacionales para estudiantes.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Más de 17 años de experiencia docente desde marzo de 2009. Su enfoque transmite responsabilidad, trabajo colaborativo y metas de vida a sus alumnos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Jose Manuel Pineda Gamez">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">JOSÉ MANUEL PINEDA GÁMEZ</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente15" aria-expanded="false" aria-controls="docente15">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente15">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Licenciado en Educación Artística. Director Artístico de la Banda Latina Francisco Miranda.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Creación de grupos artísticos desde cero, gestión autogestionaria de proyectos culturales y liderazgo en agrupaciones artísticas de la institución.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Profesor con trayectoria desde 2013 en educación musical. Reconocido por fundar proyectos artísticos sin apoyo económico externo y construir un legado cultural sostenible.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Juan Andres Izaguirre Gonzalez">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">JUAN ANDRÉS IZAGUIRRE GONZÁLEZ</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente16" aria-expanded="false" aria-controls="docente16">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente16">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Subdirector del Instituto desde el 1 de septiembre de 2020.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Liderazgo institucional y apoyo pedagógico en la dirección técnica del centro educativo.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Licenciado en Pedagogía y Ciencias de la Educación, con Maestría en Educación Primaria y pasante de Derecho. Aporta experiencia directiva y pedagógica al instituto.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="img/junir.jpeg" class="img-fluid rounded" alt="Junior Josue Lopez Montes" style="max-height:280px; width:100%; object-fit:contain; object-position:center center; background-color:#f8f9fa; padding:4px; border-radius:12px;">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">JUNIOR JOSUÉ LÓPEZ MONTES</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente18" aria-expanded="false" aria-controls="docente18">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente18">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Docente en formación con estudios superiores en curso.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Continuidad de estudios superiores y formación profesional constante.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> En constante crecimiento académico y profesional, enfocándose en seguir fortaleciendo su carrera docente.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Karen Leticia Sanchez Bautista">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">KAREN LETICIA SÁNCHEZ BAUTISTA</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente19" aria-expanded="false" aria-controls="docente19">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente19">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Licenciada en Ciencias Sociales. Docente del área de Ciencias Sociales.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> No ha participado en ningún proyecto registrado.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Maestra de educación primaria con 27 años de experiencia, egresada de la Escuela Normal Mixta Pedro Nufio y la UPNFM. Ha servido 25 años en el Instituto Francisco Miranda.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Katia Patricia Osorto Galo">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">KATIA PATRICIA OSORTO GALO</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente20" aria-expanded="false" aria-controls="docente20">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente20">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Licenciada en Educación Media. Asistente de Secretaría y docente de Inglés.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Gestión y modernización administrativa; innovación en la enseñanza bilingüe; formación integral en educación básica.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Educadora con más de tres décadas en educación, combinando docencia primaria, bilingüe y funciones administrativas con vocación y compromiso institucional.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Lesby Elieth Medina Agurcia">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">LESBY ELIETH MEDINA AGURCIA</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente21" aria-expanded="false" aria-controls="docente21">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente21">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Licenciada en Pedagogía con orientación en Planeamiento y Administración de la Educación. Secretaria General del instituto desde abril de 2003.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Gestión de seguridad social, ampliación de secciones, apertura de nuevas aulas, innovación curricular y coordinación académica.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Profesional con más de 20 años de trayectoria en administración y gestión educativa, destacada por su ética, liderazgo y contribución al crecimiento institucional.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Luis Eduardo Salgado Benitez">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">LUIS EDUARDO SALGADO BENITEZ</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente22" aria-expanded="false" aria-controls="docente22">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente22">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Ingeniero Agrónomo y Bachiller en Ciencias y Letras. Docente del área de Agroindustria.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Información no proporcionada.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Graduado en agronomía y con más de dos años de experiencia en el instituto, aporta conocimientos en producción agrícola y agroindustrial.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="María de la Paz Álvarez Yanes">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">MARÍA DE LA PAZ ÁLVAREZ YANES</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente23" aria-expanded="false" aria-controls="docente23">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente23">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Maestra de Educación Media en Comercio. Coordinadora de práctica del instituto.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Coordinación de prácticas académicas y servicio estricto en el instituto.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Originaria de Alianza, Valle. Estudió en la UPNFM y desde entonces se ha dedicado a fortalecer la formación práctica de los estudiantes del instituto.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Mario Leonel Ávila Maradiaga">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">MARIO LEONEL ÁVILA MARADIAGA</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente24" aria-expanded="false" aria-controls="docente24">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente24">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Licenciado en Educación Tecnológica Industrial con orientación en Electricidad. Docente del área de Electricidad.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Mantenimiento eléctrico del colegio, tableros de práctica, apoyo a talleres y conocimientos en prevención.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Pedagogo comprometido con la formación integral y el desarrollo académico de los jóvenes, enfocado en procesos educativos innovadores y humanos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Marisabel Rosales">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">MARISABEL ROSALES</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente25" aria-expanded="false" aria-controls="docente25">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente25">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Licenciada en Pedagogía y Ciencias de la Educación. Asistente de Orientación.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Talleres para padres, gobierno estudiantil, cine benefactor, seguimiento psicopedagógico y campañas de prevención.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Pedagoga comprometida con la formación integral y el bienestar emocional de estudiantes y familias, que promueve ambientes inclusivos y de diálogo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Marlon Noel Izaguirre Velásquez">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">MARLON NOEL IZAGUIRRE VELÁSQUEZ</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente26" aria-expanded="false" aria-controls="docente26">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente26">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Profesor de Educación Comercial en el grado de Licenciatura. Consejero 1 de estudiantes en jornada matutina.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Coordinación TES, proyectos comunitarios y ambientales, infraestructura institucional como kiosco, cafetería y muros de contención.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Consejero y docente con trayectoria desde 2009. Se caracteriza por su compromiso con el crecimiento comunitario y académico del instituto.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Mayra Alejandra Martinez Aguilar">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">MAYRA ALEJANDRA MARTÍNEZ AGUILAR</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente27" aria-expanded="false" aria-controls="docente27">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente27">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Licenciada en la Enseñanza del Español. Docente en el área de Español.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Desarrollo y fortalecimiento de competencias en oratoria y expresión oral, con énfasis en comunicación efectiva.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Licenciada en Letras y Lenguas Españolas por la UPNFM. Tiene una sólida formación en enseñanza de la lengua y literatura, y actualmente reside en Comayagua.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Miriam Janeth Ortez Novoa">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">MIRIAM JANETH ORTEZ NOVOA</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente28" aria-expanded="false" aria-controls="docente28">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente28">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Licenciada en Industrialización Agrícola, Industrialización Pecuaria, Tecnología en Alimentos y diseño de plantas agroindustriales. Docente en Ciencias Naturales.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Proyectos de sostenibilidad agroindustrial, aprendizaje práctico, mentoría en liderazgo ético y transferencia tecnológica a pequeños productores.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Ingeniera con perfil interdisciplinario que combina ingeniería industrial con ciencias naturales. Enfatiza la sostenibilidad y el desarrollo de capacidades agroindustriales en sus estudiantes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Rodyn Javier Figueroa Osorto">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">RODYN JAVIER FIGUEROA OSORTO</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente29" aria-expanded="false" aria-controls="docente29">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente29">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Docente en Carpintería y Ebanistería con formación en electricidad, ingeniería industrial, metalmecánica, cerámica y metalurgia.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Enseñanza técnica en diseño y elaboración de trabajos en madera, y emprendimiento agrícola con la marca Habaneros del Valle de Tamara.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Profesional con formación amplia y certificado por INFOP, respaldado por una larga trayectoria docente y emprendimiento en el sector agrícola.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Santiago Humberto Funez Zuniga">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">SANTIAGO HUMBERTO FÚNEZ ZÚÑIGA</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente30" aria-expanded="false" aria-controls="docente30">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente30">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Docente de Educación Física en el nivel de educación media.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Dirección de justas deportivas, planificación de maratón atlética institucional y gestión de campeonatos de fútbol.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Docente con nueve años en la institución, reconocido por su disciplina, arraigo y aporte al desarrollo integral de los estudiantes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Suyapa Janeth Pineda López">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">SUYAPA JANETH PINEDA LÓPEZ</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente31" aria-expanded="false" aria-controls="docente31">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente31">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Docente de Legislación Mercantil, Aduanas, Contaduría de Costos e Informática Contable.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Formación técnica y profesional en áreas jurídica, administrativa, contable y tecnológica.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Con tres años de servicio en la institución, se destaca por su compromiso, responsabilidad y dedicación al fortalecimiento académico.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Valeska Yamileth Mejia">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">VALESKA YAMILETH MEJÍA</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente32" aria-expanded="false" aria-controls="docente32">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente32">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Profesora de Educación Media en Educación Técnica Industrial con orientación en Madera.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Equipamiento del taller de carpintería, coordinación académica, consejería estudiantil y liderazgo en talleres técnicos.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Profesional con amplia trayectoria desde 1998, destacada por su aportación al desarrollo del taller de carpintería y por su espíritu emprendedor con la marca Kakawa Chocolates.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Vanessa Lizeth Galindo Velásquez">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">VANESSA LIZETH GALINDO VELÁSQUEZ</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente33" aria-expanded="false" aria-controls="docente33">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente33">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Licenciada en Educación Técnica Industrial con orientación en Metal Mecánica. Docente de Taller de Estructuras Metálicas y Dibujo Técnico.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Producción de bancas recicladas para el colegio; convivencia técnica en metalmecánica y diseño de procesos industriales.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Profesora con experiencia técnica y compromiso social. Ha combinado la formación técnica con proyectos personales de mejora de vida y comunidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Wendy Patricia Andino Amador">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">WENDY PATRICIA ANDINO AMADOR</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente34" aria-expanded="false" aria-controls="docente34">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente34">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Licenciada en Educación Primaria y Ciencias Sociales, con Maestría en Administración de Proyectos. Docente en Ciencias Sociales.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Participación en Movimiento Juventud, promoción del instituto, y proyecto '¡Viva la Juventud!'.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Con una extensa trayectoria en la educación y la gestión educativa, ha sido directora, secretaria y docente universitaria. Su perfil se caracteriza por vocación de servicio y liderazgo en proyectos educativos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Wilmer Javier Aguilar Dominguez">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">WILMER JAVIER AGUILAR DOMÍNGUEZ</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente35" aria-expanded="false" aria-controls="docente35">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente35">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Técnico Universitario en Informática, Licenciado en Informática Educativa y Especialista en Robótica. Docente encargado de Informática.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Gestión de bienes nacionales, creación del laboratorio de robótica, participación en ferias de ciencias y avances hacia etapas distritales.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Formado en la Universidad Pedagógica, con compromiso en tecnologías educativas y desarrollo de soluciones innovadoras para el instituto.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Wilmer Alexis Guevara Cardenas">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">WILMER ALEXIS GUEVARA CÁRDENAS</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente36" aria-expanded="false" aria-controls="docente36">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente36">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Licenciado en Ciencias Naturales con especialidad en Biología y Química. Docente de Ciencias Naturales, Biología, Química y Física.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Laboratorio Vivo de Ciencias y Feria Ambiental y Científica para estudiantes de décimo grado.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Biólogo con 18 años de experiencia. Motiva a los estudiantes a experimentar, investigar y cuidar el entorno con un enfoque práctico y crítico.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="img/Carlos Fernando Medina.jpeg" class="img-fluid rounded" alt="Carlos Fernando Medina" style="width:100%;height:280px;object-fit:contain;object-position:center center;border-radius:12px;background-color:#f8f9fa;padding:4px;">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">CARLOS FERNANDO MEDINA</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente38" aria-expanded="false" aria-controls="docente38">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente38">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Licenciado en Orientación Educativa / Docente / Jefe de Orientación.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Todo lo que tenga que ver con el departamento de orientación: rendimiento académico, trabajo, beneficios sociales, beneficios para los chicos, etc.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Maestro de educación primaria, graduado en 2009. Licenciado en Orientación Educativa desde 2016. Magíster en Transformación Digital de Gestores Públicos de la Universidad de España, Madrid. Master en Formato de Negocios. Ha trabajado como director y maestro de un centro educativo de educación básica. Actualmente, su puesto de trabajo es como coordinador académico del Instituto Jesús Aguilar Paz. Ha trabajado 9 o 10 años en la Dirección Distrital Número 12.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Danilo José Banegas Figueroa" style="width:100%;height:280px;object-fit:contain;object-position:center center;border-radius:12px;background-color:#f8f9fa;padding:4px;">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">DANILO JOSÉ BANEGAS FIGUEROA</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente37" aria-expanded="false" aria-controls="docente37">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente37">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Licenciado en Educación Técnica Industrial y estudiante de Derecho. Docente de Taller de Madera y Estructuras Metálicas.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Coordinación de talleres, consejería estudiantil y docencia en áreas técnicas y profesionales.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Docente comprometido con la formación técnica y el desarrollo integral de la comunidad educativa mediante la enseñanza práctica y el acompañamiento profesional.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center" style="min-height:320px; display:flex; align-items:center; justify-content:center;">
+                                <img src="img/irma.jpeg" class="img-fluid rounded" alt="Irma Yolanda Erazo Lagos" style="max-height:280px; width:100%; object-fit:contain; object-position:center center; background-color:#f8f9fa; padding:4px; border-radius:12px;">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">IRMA YOLANDA ERAZO LAGOS</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente39" aria-expanded="false" aria-controls="docente39">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente39">
+                                    <p class="mb-2"><strong>Formación:</strong> Licenciada en Pedagogía y Ciencias de la Educación (2019), UNAH, Tegucigalpa Francisco Morazán.</p>
+                                    <p class="mb-2"><strong>Especialización adicional:</strong> Perito Mercantil y Contador Público; Curso de Cristianismo Tecnológico Juan Pablo, Tegucigalpa Francisco Morazán.</p>
+                                    <p class="mb-2"><strong>Experiencia:</strong> Sub-coordinadora del Colectivo Divina Providencia (internas) (2021); Territorio 25, militante de Libre desde 2017; Mesas Electorales (2017 - 2021); Práctica profesional universitaria (2019), Centro de Estudios y Solidaridad con América Latina (CESAL); Práctica profesional secundaria (2007), CDHI.</p>
+                                    <p class="mb-0"><strong>Rol actual:</strong> Desde marzo de 2023 integra el equipo docente e institucional como Consejera Estudiantil. Brinda acompañamiento integral a la comunidad estudiantil, promoviendo disciplina, convivencia escolar, seguimiento académico y control de asistencia y puntualidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center" style="min-height:320px; display:flex; align-items:center; justify-content:center;">
+                                <img src="img/irma.jpeg" class="img-fluid rounded" alt="Consejería Estudiantil" style="max-height:280px; width:100%; object-fit:contain; object-position:center center; background-color:#f8f9fa; padding:4px; border-radius:12px;">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">CONSEJERÍA ESTUDIANTIL</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente40" aria-expanded="false" aria-controls="docente40">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente40">
+                                    <p class="mb-2"><strong>Responsabilidad:</strong> Acompañamiento escolar y bienestar estudiantil.</p>
+                                    <p class="mb-2"><strong>Áreas de acción:</strong> Fortalecimiento de la disciplina y convivencia escolar, seguimiento al rendimiento académico, control y fomento de la asistencia y puntualidad.</p>
+                                    <p class="mb-0"><strong>Perfil:</strong> La Licenciada Irma Yolanda Erazo Lagos aporta una formación sólida en pedagogía y una visión comprometida con el desarrollo académico y personal de los estudiantes, promoviendo estrategias formativas para una comunidad escolar más segura, ordenada y responsable.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Instalaciones con lightbox simple -->
+            <section id="instalaciones" class="container py-5 reveal">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3 class="mb-0">Instalaciones</h3>
+                    <small class="text-muted"></small>
+                </div>
+                <div id="instalacionesCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner rounded shadow-sm overflow-hidden" style="border: 1px solid rgba(160,160,160,0.3); background:#fff;">
+                    <div class="carousel-item active">
+                        <img src="img/cancha.jpeg" class="d-block" alt="Cancha">
+                        <div class="carousel-caption d-none d-md-block text-start">
+                            <h5></h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/agro.jpeg" class="d-block" alt="Agro">
+                        <div class="carousel-caption d-none d-md-block text-start">
+                            <h5></h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/aulas.jpeg" class="d-block" alt="Aulas">
+                        <div class="carousel-caption d-none d-md-block text-start">
+                            <h5></h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/c.jpeg" class="d-block" alt="Cancha secundaria">
+                        <div class="carousel-caption d-none d-md-block text-start">
+                            <h5></h5>
+                        </div>
+                    </div>
+                </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#instalacionesCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#instalacionesCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Noticias -->
+            <section id="noticias" class="container py-5 reveal">
+                <h3 class="mb-4">Noticias</h3>
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <div class="card shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="Noticia 1">
+                            <div class="card-body">
+                                <small class="text-muted">01 Jul 2026</small>
+                                <h5 class="card-title">Inicia el ciclo escolar</h5>
+                                <p class="card-text">Comenzamos el nuevo año lectivo con entusiasmo y renovadas energías.</p>
+                                <a href="#" class="btn btn-sm btn-primary">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1519543541607-9fbdc7a6d9b6?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="Noticia 2">
+                            <div class="card-body">
+                                <small class="text-muted">15 Jun 2026</small>
+                                <h5 class="card-title">Semana cultural</h5>
+                                <p class="card-text">Actividades culturales y deportivas para toda la comunidad educativa.</p>
+                                <a href="#" class="btn btn-sm btn-primary">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="Noticia 3">
+                            <div class="card-body">
+                                <small class="text-muted">05 May 2026</small>
+                                <h5 class="card-title">Nuevas aulas equipadas</h5>
+                                <p class="card-text">Se han incorporado laboratorios y aulas con tecnología para aprendizaje activo.</p>
+                                <a href="#" class="btn btn-sm btn-primary">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Calendario escolar -->
+            <section id="calendario" class="container py-5 reveal">
+                <h3 class="mb-3">Calendario Escolar</h3>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead><tr><th>Evento</th><th>Fecha</th></tr></thead>
+                        <tbody>
+                            <tr><td>Inicio de clases</td><td>01/07/2026</td></tr>
+                            <tr><td>Exámenes parciales</td><td>15/09/2026</td></tr>
+                            <tr><td>Vacaciones de invierno</td><td>20/12/2026 - 05/01/2027</td></tr>
+                            <tr><td>Clausura</td><td>15/06/2027</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Estadísticas con contadores animados -->
+            <section id="estadisticas" class="container py-5 reveal">
+                <h3 class="mb-4">Estadísticas</h3>
+                <div class="row text-center">
+                    <div class="col-6 col-md-3 mb-3">
+                        <h4 class="counter" data-target="43">39</h4>
+                        <p>Maestros</p>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3">
+                        <h4 class="counter" data-target="800">0</h4>
+                        <p>Estudiantes</p>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3">
+                        <h4 class="counter" data-target="25">0</h4>
+                        <p>Aulas</p>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3">
+                        <h4 class="counter" data-target="20">38</h4>
+                        <p>Años</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contacto y mapa -->
+            <section id="contacto" class="container py-5 reveal">
+                <h3 class="mb-3">Contacto</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <form id="contactForm" novalidate>
+                            <div class="mb-3"><label class="form-label">Nombre</label><input id="c_nombre" class="form-control" required></div>
+                            <div class="mb-3"><label class="form-label">Correo</label><input id="c_correo" type="email" class="form-control" required></div>
+                            <div class="mb-3"><label class="form-label">Teléfono</label><input id="c_telefono" class="form-control" required></div>
+                            <div class="mb-3"><label class="form-label">Mensaje</label><textarea id="c_mensaje" class="form-control" rows="4" required></textarea></div>
+                            <button class="btn btn-primary" type="submit">Enviar</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Ubicación</h5>
+                        <div class="ratio ratio-4x3 mb-3">
+                            <iframe src="https://www.google.com/maps?q=Zambrano%2C%20Francisco%20Moraz%C3%A1n%2C%20Honduras&output=embed"></iframe>
+                        </div>
+                        <h5>Redes sociales</h5>
+                        <div class="d-flex gap-2 mb-3">
+                            <a class="btn btn-outline-primary" href="#"><i class="bi bi-facebook"></i> Facebook</a>
+                            <a class="btn btn-outline-danger" href="#"><i class="bi bi-instagram"></i> Instagram</a>
+                            <a class="btn btn-outline-success" href="#"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+                            <a class="btn btn-outline-danger" href="#"><i class="bi bi-youtube"></i> YouTube</a>
+                        </div>
+                        <div>
+                            <p><strong>Tel:</strong> +504 0000-0000<br><strong>Correo:</strong> info@colegiofm.edu.hn</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Botones y utilidades flotantes -->
+        <button id="backToTop" class="btn btn-primary btn-lg back-to-top"><i class="bi bi-arrow-up"></i></button>
+        <a id="waFloat" href="#" class="btn btn-success wa-float shadow-lg"><i class="bi bi-whatsapp"></i></a>
+
+        <!-- Footer con reloj, fecha, clima y visitas -->
+        <footer class="bg-dark text-white py-4 mt-5">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div>
+                    <!-- Footer logo (inline) -->
+                    <svg width="48" height="48" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:8px;">
+                        <rect width="100" height="100" rx="12" fill="#0b5ed7"></rect>
+                        <text x="50" y="58" font-size="36" text-anchor="middle" fill="#fff" font-family="Arial">FM</text>
+                    </svg>
+                    <div>Dirección: Zambrano, Francisco Morazán</div>
+                    <div>Tel: +504 0000-0000 | info@colegiofm.edu.hn</div>
+                    <!-- Contador de visitas simulado -->
+                    <div id="visitas" class="small mt-1 text-warning"></div>
+                </div>
+                <div class="text-end">
+                    <!-- Reloj y fecha -->
+                    <div id="reloj" class="fs-5"></div>
+                    <div id="fecha" class="small"></div>
+                    <!-- Clima simulado -->
+                    <div id="clima" class="small mt-1">Clima: 24°C, Parcialmente nublado</div>
+                    <div class="small mt-2">&copy; <span id="anio"></span> Colegio Francisco Miranda. Todos los derechos reservados.</div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap JS (bundle includes Popper) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const fotoMap = {
+                    'ana gabriela simons zelaya': 'Ana Simons.jpeg',
+                    'ana liliam soto aguilera': null,
+                    'ada lizeth ordonez martinez': null,
+                    'celeste maria machuca tejeda': 'Celeste Machuca.jpeg',
+                    'christian obed medina alvarado': 'Chirstian Medina.jpeg',
+                    'closvin fabricio yanez santos': 'Fabricio Yanez.jpeg',
+                    'edwin geovanny raudales lanza': 'Edwin Geovani Raudales Lanza.jpeg',
+                    'enedas alfonso berrios alvarado': 'Enedas Berrios.jpeg',
+                    'fatima yaneth rodriguez': 'Fátima Rodriguez.jpeg',
+                    'francis elizabeth moncada silva': 'Profe Francis.jpeg',
+                    'fredis armando dominguez medina': 'Fredy Dominguez.jpeg',
+                    'gabriela arely beltran rodriguez': 'Gabriela Rodriguez.jpeg',
+                    'jenny roseli sosa chavez': 'Jenny Sosa.jpeg',
+                    'jose manuel pineda gamez': 'Jose Manuel Pineda.jpeg',
+                    'juan andres izaguirre gonzalez': 'Juan Izaguirre.jpeg',
+                    'juan carlos herrera espinoza': null,
+                    'junior josue lopez montes': null,
+                    'karen leticia sanchez bautista': 'Karen Sanchez.jpeg',
+                    'katia patricia osorto galo': 'Katia Patricia Osorto Galo.jpeg',
+                    'lesby elieth medina agurcia': 'Elieth Medina.jpeg',
+                    'luis eduardo salgado benitez': 'Luis Salgado.jpeg',
+                    'maria de la paz alvarez yanes': 'Maria de la paz Álvarez.jpeg',
+                    'mario leonel avila maradiaga': 'Mario leonel avila maradiaga.png',
+                    'marisabel rosales': 'Marisabel Rosales.jpeg',
+                    'marlon noel izaguirre velasquez': 'Marlon Izaguirre.jpeg',
+                    'mayra alejandra martinez aguilar': 'Mayra Alejandra Martines Aguilar.jpeg',
+                    'miriam janeth ortez novoa': 'Miriam Janeth Ortez Novoa.jpeg',
+                    'rodyn javier figueroa osorto': 'Rodyn Javier Figueroa Osorto.jpeg',
+                    'santiago humberto funez zuniga': 'Santiago Funez.jpeg',
+                    'suyapa janeth pineda lopez': 'Suyapa Janeth Pineda Lopez.jpeg',
+                    'valeska yamileth mejia': 'Valeska Yamileth Mejia.jpeg',
+                    'vanessa lizeth galindo velasquez': 'Vanessa Lizeth galindo Velasquez.jpeg',
+                    'wendy patricia andino amador': 'wendy Patricia Andino Amador.jpeg',
+                    'wilmer javier aguilar dominguez': 'Wilmer Javier Aguilar Dominguez.jpeg.jpeg',
+                    'wilmer alexis guevara cardenas': 'wilmer Alexis Guebara Cardenas.jpeg',
+                    'danilo jose banegas figueroa': 'Danilo Jose Banegas Figueroa.jpeg'
+                };
+
+                const normalize = value => value
+                    .toLowerCase()
+                    .normalize('NFD')
+                    .replace(/[\u0300-\u036f]/g, '')
+                    .replace(/[^a-z0-9]+/g, ' ')
+                    .trim();
+
+                document.querySelectorAll('#docentes .card img').forEach(img => {
+                    const alt = normalize(img.getAttribute('alt') || '');
+                    const fileName = fotoMap[alt];
+
+                    if (fileName) {
+                        img.src = `img/${fileName}`;
+                        img.loading = 'lazy';
+                        img.classList.add('docente-foto');
+                        img.style.objectFit = 'contain';
+                        img.style.objectPosition = 'center center';
+                        img.style.height = '280px';
+                        img.style.width = '100%';
+                        img.style.borderRadius = '12px';
+                        img.style.backgroundColor = '#f8f9fa';
+                        img.style.padding = '4px';
+                    }
+                });
+
+                const searchInput = document.getElementById('searchMaestro');
+                if (searchInput) {
+                    searchInput.addEventListener('input', () => {
+                        const query = normalize(searchInput.value);
+                        document.querySelectorAll('#docentes .card').forEach(card => {
+                            const title = card.querySelector('.card-title');
+                            const name = normalize(title?.textContent || '');
+                            card.style.display = name.includes(query) ? '' : 'none';
+                        });
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
