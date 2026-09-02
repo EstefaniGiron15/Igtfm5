@@ -76,14 +76,6 @@
                 text-transform: uppercase;
                 letter-spacing: 0.04em;
             }
-            .mission-vision-card .card-body {
-                background-color: #7A0F0F;
-                color: #ffffff;
-                border-radius: 18px;
-            }
-            .mission-vision-card .bi {
-                color: #ffffff !important;
-            }
             .maestros-search-bar {
                 background-color: #7A0F0F;
                 border: 1px solid rgba(255, 255, 255, 0.25);
@@ -105,11 +97,89 @@
                 min-height: 320px;
                 display: flex;
                 flex-direction: column;
+                border: none;
+                background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+                border-radius: 18px;
+                overflow: hidden;
+                position: relative;
+                transition: all 0.3s ease;
+                box-shadow: 0 8px 25px rgba(122, 15, 15, 0.15), 0 0 0 1px rgba(225, 196, 53, 0.3);
+            }
+            .mission-vision-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 6px;
+                background: linear-gradient(90deg, #7A0F0F 0%, #E1C435 50%, #7A0F0F 100%);
+            }
+            .mission-vision-card::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: #E1C435;
+            }
+            .mission-vision-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 40px rgba(122, 15, 15, 0.25), 0 0 0 2px #E1C435;
             }
             .mission-vision-card .card-body {
+                background: linear-gradient(135deg, #7A0F0F 0%, #5c0a0a 100%);
+                color: #ffffff;
+                border-radius: 0;
                 flex: 1;
                 display: flex;
                 align-items: flex-start;
+                padding: 2rem;
+                position: relative;
+                overflow: hidden;
+            }
+            .mission-vision-card .card-body::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                right: -50%;
+                width: 300px;
+                height: 300px;
+                background: radial-gradient(circle, rgba(225, 196, 53, 0.1) 0%, transparent 70%);
+                border-radius: 50%;
+                pointer-events: none;
+            }
+            .mission-vision-card .bi {
+                color: #E1C435 !important;
+                font-size: 3rem;
+                flex-shrink: 0;
+                margin-right: 1.5rem;
+                filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+            }
+            .mission-vision-card h5 {
+                color: #E1C435;
+                font-weight: 900;
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                letter-spacing: 1px;
+            }
+            .mission-vision-card .card-text {
+                color: #ffffff;
+                line-height: 1.8;
+                font-size: 1rem;
+                margin: 0;
+                position: relative;
+                z-index: 1;
+            }
+            @media (max-width: 768px) {
+                .mission-vision-card {
+                    min-height: 280px;
+                }
+                .mission-vision-card .bi {
+                    font-size: 2.5rem;
+                    margin-right: 1rem;
+                }
             }
             .card {
                 border: 2px solid #a8a8a8;
@@ -137,6 +207,106 @@
             @media (max-width: 768px) {
                 #instalaciones .carousel-item img {
                     height: 300px;
+                }
+            }
+            /* Estilos mejorados para la sección de Historia */
+            .history-story {
+                background: linear-gradient(135deg, #7A0F0F 0%, #5c0a0a 50%, #7A0F0F 100%);
+                border-radius: 20px;
+                border: 4px solid #E1C435;
+                box-shadow: 0 10px 30px rgba(122, 15, 15, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.08);
+                position: relative;
+            }
+            .history-story::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 6px;
+                background: linear-gradient(90deg, #E1C435 0%, #ffffff 50%, #E1C435 100%);
+                border-radius: 20px 20px 0 0;
+            }
+            .history-story .card {
+                border: 4px solid #7A0F0F;
+                border-radius: 18px;
+                box-shadow: 0 8px 20px rgba(122, 15, 15, 0.2);
+                overflow: hidden;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                background: #ffffff;
+            }
+            .history-story .card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 35px rgba(225, 196, 53, 0.4), 0 0 15px rgba(225, 196, 53, 0.3);
+            }
+            .history-story .card img {
+                border-bottom: 4px solid #7A0F0F;
+                filter: brightness(1.05) contrast(1.1);
+            }
+            .history-story .col-lg-8 {
+                padding-left: 2.5rem;
+            }
+            .history-story .history-badge {
+                display: inline-block;
+                background: linear-gradient(135deg, #E1C435 0%, #f5e6a8 100%);
+                color: #7A0F0F;
+                padding: 10px 24px;
+                border-radius: 25px;
+                font-weight: bold;
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+                box-shadow: 0 6px 15px rgba(225, 196, 53, 0.5);
+                letter-spacing: 1px;
+                border: 2px solid #ffffff;
+            }
+            .history-story h2 {
+                color: #E1C435;
+                font-weight: 900;
+                font-size: 2rem;
+                text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+                margin-bottom: 1.5rem;
+                border-left: 6px solid #E1C435;
+                padding-left: 1.5rem;
+                letter-spacing: 0.5px;
+            }
+            .history-story p {
+                color: #ffffff;
+                line-height: 1.8;
+                font-size: 1.05rem;
+                margin-bottom: 1rem;
+                padding: 1rem;
+                background-color: rgba(0, 0, 0, 0.3);
+                border-left: 5px solid #E1C435;
+                border-radius: 8px;
+                border-right: 2px solid #ffffff;
+            }
+            .history-story p strong {
+                color: #E1C435;
+                font-weight: bold;
+            }
+            .history-story .btn-light {
+                background: linear-gradient(135deg, #E1C435 0%, #f5e6a8 100%);
+                border: 2px solid #ffffff;
+                color: #7A0F0F !important;
+                font-weight: bold;
+                padding: 12px 30px;
+                border-radius: 25px;
+                transition: all 0.3s ease;
+                box-shadow: 0 6px 15px rgba(225, 196, 53, 0.5);
+            }
+            .history-story .btn-light:hover {
+                background: linear-gradient(135deg, #ffffff 0%, #e8e8e8 100%);
+                color: #7A0F0F !important;
+                transform: translateY(-3px);
+                box-shadow: 0 10px 25px rgba(225, 196, 53, 0.6);
+            }
+            @media (max-width: 992px) {
+                .history-story .col-lg-8 {
+                    padding-left: 0;
+                    margin-top: 1.5rem;
+                }
+                .history-story h2 {
+                    font-size: 1.5rem;
                 }
             }
             /* Career items (replace cards) */
@@ -513,29 +683,63 @@
 
         <!-- Contenido principal -->
         <main class="mt-5">
-            <!-- Historia: imagen izquierda, texto derecha -->
-            <section id="Historia" class="container py-5 reveal">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="mb-0 text-center w-100">HISTORIA</h2>
-                        <div class="heading-decor"><svg width="160" height="20" viewBox="0 0 160 20" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#7A0F0F"/><stop offset="1" stop-color="#E1C435"/></linearGradient></defs><rect x="10" y="9" width="140" height="2" rx="1" fill="url(#g)"/><circle cx="80" cy="10" r="5" fill="#7A0F0F"/></svg></div>
-                        <div class="carousel-ribbon small" aria-hidden="true">DESTACADO</div>
-                        <p>El Colegio Francisco Miranda fue fundado con la visión de brindar educación de calidad en la comunidad de Zambrano. A lo largo de los años se ha consolidado como un centro educativo referente por su compromiso con la formación integral y los valores.</p>
-                        <p>Contamos con docentes capacitados, instalaciones modernas y programas académicos orientados a formar estudiantes líderes y responsables.</p>
+            <!-- Historia: imagen a un lado y texto al otro -->
+            <section id="historia" class="container py-5 reveal">
+                <div class="history-story p-4 p-lg-5">
+                    <div class="row g-5 align-items-center">
+                        <div class="col-lg-4">
+                            <div class="card shadow-sm overflow-hidden h-100">
+                                <img src="img/instituto.jpeg" alt="Foto del colegio Francisco Miranda" class="img-fluid w-100" style="height: 320px; object-fit: cover; object-position: center;">
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <span class="history-badge">📖 Nuestra historia</span>
+                            <h2 class="mb-4">Una historia que comenzó con un sueño</h2>
+
+                            <p><strong>El Instituto Francisco Miranda</strong> nació gracias a una comunidad convencida de que la educación era una oportunidad para transformar el futuro.</p>
+                            <p>En <strong>1988</strong>, el profesor Carlos Solís asumió la dirección de una institución privada que enfrentaba importantes desafíos. En sus primeros días, los estudiantes recibían clases incluso en los pasillos de la Escuela Marcos Carias Reyes. Sin embargo, el esfuerzo y la colaboración de la comunidad marcaron el inicio de una nueva etapa.</p>
+                            <p>El <strong>1 de octubre de 1988</strong>, el Instituto se trasladó al edificio donde actualmente funciona, gracias al apoyo del patronato de la comunidad. Con trabajo, donaciones y empeño, se repararon pupitres y se mejoraron las condiciones para ofrecer a los estudiantes un espacio digno para aprender.</p>
+
+                            <div class="mt-4">
+                                <button id="toggleHistoria" type="button" class="btn btn-light fw-bold px-4">Conocer más de la historia</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Detalles de carreras movidos al área de 'carreras' -->
-
             </section>
 
+            <section id="historia-completa" class="container py-5 reveal" style="display: none;">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="card shadow-sm border-0 p-4 p-md-5" style="border-left: 6px solid #E1C435; background: linear-gradient(135deg, #7A0F0F 0%, #5c0a0a 100%); border-radius: 18px; border-top: 4px solid #E1C435; border-right: 4px solid #E1C435; border-bottom: 4px solid #E1C435; box-shadow: 0 10px 30px rgba(122, 15, 15, 0.5);">
+                            <h3 class="mb-4 text-center" style="color: #E1C435; font-weight: 900; border-bottom: 3px solid #E1C435; padding-bottom: 1.5rem; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);">📖 Historia Completa</h3>
+
+                            <h5 class="fw-bold mt-4" style="color: #E1C435; border-left: 4px solid #E1C435; padding-left: 1rem; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);">✨ Un paso que cambió la historia</h5>
+                            <p style="background-color: rgba(0, 0, 0, 0.3); padding: 1rem; border-left: 4px solid #E1C435; border-radius: 8px; margin-left: 0; color: #ffffff; border-right: 2px solid #ffffff;"><strong style="color: #E1C435;">El 15 de febrero de 1989</strong>, el Instituto pasó de ser privado a semioficial. Este cambio permitió obtener una subvención anual y reducir significativamente la mensualidad de los estudiantes.</p>
+                            <p style="background-color: rgba(0, 0, 0, 0.3); padding: 1rem; border-left: 4px solid #E1C435; border-radius: 8px; color: #ffffff; border-right: 2px solid #ffffff;">A partir de entonces, comenzaron <strong style="color: #E1C435;">nuevas mejoras</strong> en la infraestructura, la biblioteca, el mobiliario, la seguridad y la organización académica.</p>
+
+                            <h5 class="fw-bold mt-4" style="color: #E1C435; border-left: 4px solid #E1C435; padding-left: 1rem; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);">🏫 Más que un edificio, una comunidad</h5>
+                            <p style="background-color: rgba(0, 0, 0, 0.3); padding: 1rem; border-left: 4px solid #E1C435; border-radius: 8px; margin-left: 0; color: #ffffff; border-right: 2px solid #ffffff;">Durante los años siguientes, continuaron las gestiones para fortalecer la institución, mejorar la calidad de la enseñanza y avanzar hacia su <strong style="color: #E1C435;">oficialización</strong>.</p>
+                            <p style="background-color: rgba(0, 0, 0, 0.3); padding: 1rem; border-left: 4px solid #E1C435; border-radius: 8px; color: #ffffff; border-right: 2px solid #ffffff;">Cada logro fue posible gracias al <strong style="color: #E1C435;">trabajo conjunto</strong> de estudiantes, docentes, padres de familia y miembros de la comunidad.</p>
+
+                            <h5 class="fw-bold mt-4" style="color: #E1C435; border-left: 4px solid #E1C435; padding-left: 1rem; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);">❓ ¿Cómo era realmente el Instituto durante sus primeros años?</h5>
+                            <p style="background-color: rgba(0, 0, 0, 0.3); padding: 1rem; border-left: 4px solid #E1C435; border-radius: 8px; margin-left: 0; color: #ffffff; border-right: 2px solid #ffffff;">Pero ¿cómo era realmente el Instituto durante sus primeros años? ¿Qué dificultades enfrentaron sus primeros estudiantes y docentes? ¿Cuáles fueron los logros que marcaron su transformación?</p>
+                            <p style="background-color: rgba(0, 0, 0, 0.3); padding: 1rem; border-left: 4px solid #E1C435; border-radius: 8px; font-weight: 500; color: #ffffff; border-right: 2px solid #ffffff;">Esta es solo una parte de una historia construida con <strong style="color: #E1C435;">esfuerzo, compromiso y perseverancia</strong>. Cada acontecimiento contribuyó a formar la institución que conocemos hoy.</p>
+                        </div>
+            
+
             <!-- Misión y Visión en tarjetas -->
-            <section id="mision" class="container py-4 reveal">
-                <div class="row align-items-stretch">
-                    <div class="col-md-6 mb-6">
-                        <div class="card shadow-sm h-100 mission-vision-card">
-                            <div class="card-body d-flex align-items-start">
-                                <i class="bi bi-eye display-6 text-white me-3"></i>
+            <section id="mision" class="container py-5 reveal">
+                <div class="text-center mb-5">
+                    <h2 style="color: #7A0F0F; font-weight: 900; font-size: 2.5rem; margin-bottom: 1rem;">Misión y Visión</h2>
+                    <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Los pilares fundamentales que guían nuestro compromiso con la educación de excelencia</p>
+                    <div style="width: 60px; height: 4px; background: linear-gradient(90deg, #7A0F0F 0%, #E1C435 50%, #7A0F0F 100%); margin: 1.5rem auto;"></div>
+                </div>
+                <div class="row align-items-stretch g-4">
+                    <div class="col-md-6">
+                        <div class="card mission-vision-card">
+                            <div class="card-body">
+                                <i class="bi bi-telescope"></i>
                                 <div>
                                     <h5 class="card-title">Visión</h5>
                                     <p class="card-text">La visión del Instituto Técnico Francisco Miranda es mantenerse como una institución educativa de prestigio, comprometida con la formación integral de los jóvenes, brindando una educación técnica y científica de calidad que les permita enfrentar los nuevos retos de la sociedad y del mundo laboral.</p>
@@ -543,10 +747,10 @@
                             </div>
                         </div>
                     </div>
-                    <div id="vision" class="col-md-6">
-                        <div class="card shadow-sm h-100 mission-vision-card">
-                            <div class="card-body d-flex align-items-start">
-                                <i class="bi bi-bullseye display-6 text-white me-3"></i>
+                    <div class="col-md-6">
+                        <div class="card mission-vision-card">
+                            <div class="card-body">
+                                <i class="bi bi-crosshair"></i>
                                 <div>
                                     <h5 class="card-title">Misión</h5>
                                     <p class="card-text">Ser una institución líder en la formación de ciudadanos críticos, creativos y comprometidos con el bienestar de la comunidad.</p>
@@ -613,11 +817,14 @@
                         <h2>Juan Carlos Herrera Espinoza</h2>
                         <p class="text-muted mb-2">Director de la Institución</p>
                         <p class="mb-0">Nació el 12 de enero de 1977. Inició labores en la institución en 2007, aportando más de una década y media de servicio continuo y compromiso con la educación. Es Maestro en Educación Primaria y Licenciado en Ciencias con Orientación en Matemática, títulos obtenidos en la Universidad Pedagógica Nacional. Actualmente se encuentra finalizando la tesis para obtener la Maestría en Matemática Educativa, demostrando su interés permanente por la formación continua y la mejora de su práctica profesional.</p>
-                        <p class="mb-0">A lo largo de su carrera en la institución, ha impulsado cambios significativos en la organización pedagógica y en la cultura escolar. Considera que uno de sus mayores logros es la transformación del Instituto Francisco Miranda, resultado de su dedicación, constancia y compromiso con la educación desde muy joven. Esta transformación abarca la renovación de metodologías de enseñanza, la implementación de proyectos didácticos orientados al aprendizaje activo y la mejora del clima institucional para favorecer el desarrollo integral del estudiantado.</p>
-                        <p class="mb-0">Su enfoque docente se centra en la enseñanza significativa de las matemáticas: promueve el razonamiento lógico, la resolución de problemas reales y la articulación entre la teoría y la práctica. Ha trabajado en el diseño de unidades didácticas contextualizadas, evaluación formativa y uso de recursos manipulativos y tecnológicos para facilitar la comprensión matemática. Además, fomenta la inclusión educativa mediante estrategias adaptadas a diferentes ritmos y estilos de aprendizaje.</p>
-                        <p class="mb-0">En la institución ha asumido responsabilidades de liderazgo pedagógico y colaboración profesional: coordinación de áreas, tutorías, capacitación docente interna y organización de talleres para colegas y padres. Participa en redes institucionales y en actividades comunitarias orientadas a fortalecer el vínculo escuela-familia y promover la continuidad escolar.</p>
-                        <p class="mb-0">En su formación continua, además de la maestría en curso, se ha interesado por cursos y seminarios en evaluación educativa, didáctica de la matemática y tecnologías educativas. Está finalizando su tesis de maestría, la cual se centra en mejorar la enseñanza-aprendizaje de conceptos matemáticos clave (puede especificar tema y metodología si lo desea).</p>
-                        <p class="mb-0">Como educador, valora la ética profesional, la perseverancia y la colaboración entre docentes. Sus metas a mediano plazo incluyen consolidar programas de formación docente en la institución, publicar materiales didácticos o artículos sobre experiencias pedagógicas y expandir proyectos que vinculen a los estudiantes con la comunidad mediante aplicaciones prácticas de las matemáticas.</p>
+                        <button class="btn btn-outline-secondary btn-sm mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#directorMore" aria-expanded="false" aria-controls="directorMore">Leer más</button>
+                        <div class="collapse mt-3" id="directorMore">
+                            <p class="mb-0">A lo largo de su carrera en la institución, ha impulsado cambios significativos en la organización pedagógica y en la cultura escolar. Considera que uno de sus mayores logros es la transformación del Instituto Francisco Miranda, resultado de su dedicación, constancia y compromiso con la educación desde muy joven. Esta transformación abarca la renovación de metodologías de enseñanza, la implementación de proyectos didácticos orientados al aprendizaje activo y la mejora del clima institucional para favorecer el desarrollo integral del estudiantado.</p>
+                            <p class="mb-0">Su enfoque docente se centra en la enseñanza significativa de las matemáticas: promueve el razonamiento lógico, la resolución de problemas reales y la articulación entre la teoría y la práctica. Ha trabajado en el diseño de unidades didácticas contextualizadas, evaluación formativa y uso de recursos manipulativos y tecnológicos para facilitar la comprensión matemática. Además, fomenta la inclusión educativa mediante estrategias adaptadas a diferentes ritmos y estilos de aprendizaje.</p>
+                            <p class="mb-0">En la institución ha asumido responsabilidades de liderazgo pedagógico y colaboración profesional: coordinación de áreas, tutorías, capacitación docente interna y organización de talleres para colegas y padres. Participa en redes institucionales y en actividades comunitarias orientadas a fortalecer el vínculo escuela-familia y promover la continuidad escolar.</p>
+                            <p class="mb-0">En su formación continua, además de la maestría en curso, se ha interesado por cursos y seminarios en evaluación educativa, didáctica de la matemática y tecnologías educativas. Está finalizando su tesis de maestría, la cual se centra en mejorar la enseñanza-aprendizaje de conceptos matemáticos clave (puede especificar tema y metodología si lo desea).</p>
+                            <p class="mb-0">Como educador, valora la ética profesional, la perseverancia y la colaboración entre docentes. Sus metas a mediano plazo incluyen consolidar programas de formación docente en la institución, publicar materiales didácticos o artículos sobre experiencias pedagógicas y expandir proyectos que vinculen a los estudiantes con la comunidad mediante aplicaciones prácticas de las matemáticas.</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -952,6 +1159,22 @@
                     <div class="col-md-4">
                         <div class="card shadow-sm h-100">
                             <div class="bg-light p-3 text-center">
+                                <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Katia Patricia Osorto Galo">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">KATIA PATRICIA OSORTO GALO</h5>
+                                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente20" aria-expanded="false" aria-controls="docente20">Ver más</button>
+                                <div class="collapse mt-3 text-start" id="docente20">
+                                    <p class="mb-2"><strong>Profesión / Cargo:</strong> Licenciada en Educación Media. Asistente de Secretaría y docente de Inglés.</p>
+                                    <p class="mb-2"><strong>Proyectos Destacados:</strong> Gestión y modernización administrativa; innovación en la enseñanza bilingüe; formación integral en educación básica.</p>
+                                    <p class="mb-0"><strong>Reseña del docente:</strong> Educadora con más de tres décadas en educación, combinando docencia primaria, bilingüe y funciones administrativas con vocación y compromiso institucional.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="bg-light p-3 text-center">
                                 <img src="https://via.placeholder.com/400x300?text=Foto+del+Docente" class="img-fluid rounded" alt="Luis Eduardo Salgado Benitez">
                             </div>
                             <div class="card-body text-center">
@@ -1190,7 +1413,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card shadow-sm h-100">
+                                               <div class="card shadow-sm h-100">
                             <div class="bg-light p-3 text-center">
                                 <img src="img/Carlos Fernando Medina.jpeg" class="img-fluid rounded" alt="Carlos Fernando Medina" style="width:100%;height:280px;object-fit:contain;object-position:center center;border-radius:12px;background-color:#f8f9fa;padding:4px;">
                             </div>
@@ -1246,7 +1469,8 @@
                                 <img src="img/roy.jpeg" class="img-fluid rounded" alt="Roy" style="max-height:280px; width:100%; object-fit:contain; object-position:center center; background-color:transparent; padding:4px; border-radius:12px;">
                             </div>
                             <div class="card-body text-center">
-                                <h5 class="card-title">ROY</h5>
+                                <h5 class="card-title">ROY ALEJANDRO CHAVEZ
+                                </h5>
                                 <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente40" aria-expanded="false" aria-controls="docente40">Ver más</button>
                                 <div class="collapse mt-3 text-start" id="docente40">
                                     <p class="mb-2"><strong>Profesión / Cargo:</strong> Pasante universitario de la carrera de Ingeniería en Sistemas. Consejero de la Jornada vespertina.</p>
@@ -1707,6 +1931,28 @@
 
         <!-- Bootstrap JS (bundle includes Popper) -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const toggle = document.getElementById('toggleHistoria');
+                const section = document.getElementById('historia-completa');
+                if (!toggle || !section) return;
+
+                toggle.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const isHidden = window.getComputedStyle(section).display === 'none';
+
+                    if (isHidden) {
+                        section.style.display = 'block';
+                        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        toggle.textContent = 'OCULTAR HISTORIA COMPLETA ↑';
+                    } else {
+                        section.style.display = 'none';
+                        toggle.textContent = 'CONOCE NUESTRA HISTORIA COMPLETA →';
+                        document.getElementById('historia')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        </script>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const fotoMap = {
