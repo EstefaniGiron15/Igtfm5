@@ -26,7 +26,7 @@
                 scroll-padding-top: 90px;
             }
             body {
-                background-color: #dfc43c;
+                background-color: #E1C435;
                 padding-top: 70px;
             }
             header.hero {
@@ -133,21 +133,229 @@
                 object-fit: cover;
                 object-position: center;
             }
-
-            /* Noticias y calendario institucional */
-            .noticias-calendario-wrap {
-                background: transparent;
-                padding: 72px 0;
+            /* Estilos mejorados para la sección de Historia */
+            .history-story {
+                background: linear-gradient(135deg, #7A0F0F 0%, #5c0a0a 50%, #7A0F0F 100%);
+                border-radius: 20px;
+                border: 4px solid #E1C435;
+                box-shadow: 0 10px 30px rgba(122, 15, 15, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.08);
+                position: relative;
             }
-
-            .noticias-calendario-wrap .section-heading {
-                margin-bottom: 26px;
-                font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-                font-weight: 800;
-                font-size: clamp(2rem, 2.7vw, 3rem);
-                letter-spacing: -0.03em;
+            .history-story::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 6px;
+                background: linear-gradient(90deg, #E1C435 0%, #ffffff 50%, #E1C435 100%);
+                border-radius: 20px 20px 0 0;
+            }
+            .history-story .card {
+                border: 4px solid #7A0F0F;
+                border-radius: 18px;
+                box-shadow: 0 8px 20px rgba(122, 15, 15, 0.2);
+                overflow: hidden;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                background: #ffffff;
+            }
+            .history-story .card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 35px rgba(225, 196, 53, 0.4), 0 0 15px rgba(225, 196, 53, 0.3);
+            }
+            .history-story .card img {
+                border-bottom: 4px solid #7A0F0F;
+                filter: brightness(1.05) contrast(1.1);
+            }
+            .history-story .col-lg-8 {
+                padding-left: 2.5rem;
+            }
+            .history-story .history-badge {
+                display: inline-block;
+                background: linear-gradient(135deg, #E1C435 0%, #f5e6a8 100%);
                 color: #7A0F0F;
-                line-height: 1.15;
+                padding: 10px 24px;
+                border-radius: 25px;
+                font-weight: bold;
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+                box-shadow: 0 6px 15px rgba(225, 196, 53, 0.5);
+                letter-spacing: 1px;
+                border: 2px solid #ffffff;
+            }
+            .history-story h2 {
+                color: #E1C435;
+                font-weight: 900;
+                font-size: 2rem;
+                text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+                margin-bottom: 1.5rem;
+                border-left: 6px solid #E1C435;
+                padding-left: 1.5rem;
+                letter-spacing: 0.5px;
+            }
+            .history-story p {
+                color: #ffffff;
+                line-height: 1.8;
+                font-size: 1.05rem;
+                margin-bottom: 1rem;
+                padding: 1rem;
+                background-color: rgba(0, 0, 0, 0.3);
+                border-left: 5px solid #E1C435;
+                border-radius: 8px;
+                border-right: 2px solid #ffffff;
+            }
+            .history-story p strong {
+                color: #E1C435;
+                font-weight: bold;
+            }
+            .history-story .btn-light {
+                background: linear-gradient(135deg, #E1C435 0%, #f5e6a8 100%);
+                border: 2px solid #ffffff;
+                color: #7A0F0F !important;
+                font-weight: bold;
+                padding: 12px 30px;
+                border-radius: 25px;
+                transition: all 0.3s ease;
+                box-shadow: 0 6px 15px rgba(225, 196, 53, 0.5);
+            }
+            .history-story .btn-light:hover {
+                background: linear-gradient(135deg, #ffffff 0%, #e8e8e8 100%);
+                color: #7A0F0F !important;
+                transform: translateY(-3px);
+                box-shadow: 0 10px 25px rgba(225, 196, 53, 0.6);
+            }
+            @media (max-width: 992px) {
+                .history-story .col-lg-8 {
+                    padding-left: 0;
+                    margin-top: 1.5rem;
+                }
+                .history-story h2 {
+                    font-size: 1.5rem;
+                }
+            }
+            /* Career items (replace cards) */
+            .career-item {
+                border: none;
+                border-radius: 12px;
+                padding: 1.1rem 1rem 1.2rem;
+                background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.96));
+                min-height: 560px;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: .75rem;
+                position: relative;
+                overflow: hidden;
+                text-align: center;
+            }
+            /* Remove card-like shadows globally for career items */
+            .career-item, .career-item * { box-shadow: none !important; }
+            .career-item p {
+                text-align: center;
+                margin-bottom: 0;
+            }
+            .career-item .workshop-carousel {
+                width: 100%;
+                margin-top: 0.2rem;
+                margin-bottom: 0.2rem;
+            }
+            .career-item .carousel-images {
+                width: 100%;
+                height: 200px;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            .career-item .carousel-controls {
+                margin-top: 0.35rem;
+            }
+            .career-item .btn {
+                align-self: center;
+                min-width: 120px;
+                margin-top: auto;
+            }
+            .career-item .collapse-scroll {
+                margin-top: 0.25rem;
+            }
+            #docentes .btn-primary,
+            #docentes .btn-outline-primary,
+            #noticias .btn-primary,
+            #noticias .btn-outline-primary {
+                background: linear-gradient(90deg,#7A0F0F,#E1C435);
+                border: 1px solid #7A0F0F;
+                color: #fff;
+                border-radius: 999px;
+                font-weight: 700;
+                letter-spacing: 0.03em;
+                box-shadow: 0 8px 18px rgba(122,15,15,0.18);
+                transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+            }
+            #docentes .btn-primary:hover,
+            #docentes .btn-outline-primary:hover,
+            #noticias .btn-primary:hover,
+            #noticias .btn-outline-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 22px rgba(122,15,15,0.22);
+                filter: brightness(1.02);
+                color: #fff;
+                background: linear-gradient(90deg,#7A0F0F,#E1C435);
+            }
+            /* Number the career blocks inside the noticias section (circular badge) */
+            #noticias .row { counter-reset: careers; }
+            #noticias .career-item::before {
+                counter-increment: careers;
+                content: counter(careers);
+                font-weight: 800;
+                font-size: 0.95rem;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width:40px; height:40px; border-radius:50%;
+                background: linear-gradient(90deg,#7A0F0F,#E1C435);
+                position: absolute; left: 16px; top: 16px; z-index: 3; box-shadow: 0 10px 20px rgba(122,15,15,0.12);
+            }
+            /* Small decorative corner ribbon */
+            #noticias .career-item::after {
+                content: '';
+                position: absolute; right: -36px; top: 12px; width: 80px; height: 28px; transform: rotate(20deg);
+                background: linear-gradient(90deg, rgba(122,15,15,0.95), rgba(225,196,53,0.95)); z-index:2; opacity:0.9; border-radius:4px; box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+                filter: saturate(1.02);
+            }
+            .career-item h5 { margin: 0 0 0 56px; }
+            .career-item .career-excerpt { color: #333; margin-left: 56px; }
+            .career-item .career-more { margin-top: auto; margin-left: 56px; }
+            /* Limitar altura de los colapsables y mostrar barra de desplazamiento */
+            .collapse-scroll {
+                max-height: 200px;
+                overflow-y: auto;
+                padding-right: 0.4rem;
+            }
+            /* Estilo de scrollbar para navegadores WebKit */
+            .collapse-scroll::-webkit-scrollbar { width: 8px; }
+            .collapse-scroll::-webkit-scrollbar-thumb { background: rgba(122,15,15,0.6); border-radius: 8px; }
+            .collapse-scroll::-webkit-scrollbar-track { background: rgba(0,0,0,0.03); border-radius: 8px; }
+            /* Heading decoration */
+            .heading-decor { display:block; text-align:center; margin-top:0.15rem; margin-bottom:0.25rem; }
+            .heading-decor svg { display:block; margin:0 auto; }
+            #noticias h3 { margin-bottom: 0.1rem; text-transform:uppercase; letter-spacing:0.06em; }
+            /* subtle underline/gold bar under section title */
+            #noticias h3::after { content: ''; display:block; width:120px; height:6px; margin:8px auto 0; background: linear-gradient(90deg,#7A0F0F,#E1C435); border-radius:4px; box-shadow: 0 8px 20px rgba(122,15,15,0.06); }
+            .career-icon { background:transparent; color:#7A0F0F; width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; font-size:1.05rem; margin-right:8px; border:2px solid rgba(122,15,15,0.08); }
+            .career-title-inline {
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                gap:.5rem;
+                text-align:center;
+                padding-left: 52px;
+                padding-right: 8px;
+                position: relative;
+                z-index: 1;
+            }
+            /* Add subtle vertical separators between columns on large screens */
+            @media (min-width: 992px) {
+                #noticias .col:not(:last-child) { border-right: 1px dashed rgba(0,0,0,0.04); padding-right: 18px; }
+                #noticias .col:not(:first-child) { padding-left: 18px; }
             }
 
             .noticias-calendario-wrap .news-grid {
@@ -155,26 +363,159 @@
                 grid-template-columns: repeat(2, minmax(0, 1fr));
                 gap: 20px;
             }
-
-            .noticias-calendario-wrap .news-card {
-                background: #ffffff;
-                border: 1px solid rgba(122, 15, 15, 0.08);
-                border-radius: 8px;
+            
+            /* Workshop/Talleres styles */
+            .workshop-item {
+                border: none;
+                border-radius: 12px;
+                padding: 1.1rem 1rem 1.2rem;
+                background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.96));
+                display: flex;
+                flex-direction: column;
+                gap: .75rem;
+                position: relative;
                 overflow: hidden;
-                box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-                transition: transform 0.25s ease, box-shadow 0.25s ease;
+                height: 100%;
+                min-height: 520px;
+                box-shadow: none !important;
+                text-align: center;
+                justify-content: flex-start;
             }
-
-            .noticias-calendario-wrap .news-card:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 14px 30px rgba(15, 23, 42, 0.1);
+            /* Limit workshop card height and allow inner content to scroll */
+            .card-scroll { max-height: 560px; }
+            .card-scroll .workshop-history { max-height: 220px; overflow-y: auto; }
+            .workshop-item, .workshop-item * { box-shadow: none !important; }
+            #talleres .row { counter-reset: workshops; }
+            #talleres .workshop-item::before {
+                counter-increment: workshops;
+                content: counter(workshops);
+                font-weight: 800;
+                font-size: 0.95rem;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width:40px; height:40px; border-radius:50%;
+                background: linear-gradient(90deg,#7A0F0F,#E1C435);
+                position: absolute; left: 16px; top: 16px; z-index: 3; box-shadow: 0 10px 20px rgba(122,15,15,0.12);
+            }
+            #talleres .workshop-item::after {
+                content: '';
+                position: absolute; right: -36px; top: 12px; width: 80px; height: 28px; transform: rotate(20deg);
+                background: linear-gradient(90deg, rgba(122,15,15,0.95), rgba(225,196,53,0.95)); z-index:2; opacity:0.9; border-radius:4px; box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+                filter: saturate(1.02);
+            }
+            .workshop-item h5 {
+                margin: 0;
+                padding-left: 18px;
+                padding-right: 8px;
+                color: #111;
+                font-weight: 700;
+                line-height: 1.3;
+                text-align: left;
+                width: calc(100% - 18px);
+                margin-left: 18px;
+                display: block;
+                letter-spacing: 0.01em;
+            }
+            .workshop-item .workshop-excerpt { color: #333; margin-left: 56px; }
+            .workshop-item .workshop-more { margin-top: auto; margin-left: 56px; }
+            .workshop-history {
+                position: relative;
+                overflow: hidden;
+                display: none;
+                color: #2e2e2e;
+                line-height: 1.5;
+                font-size: 0.92rem;
+                margin-left: 56px;
+                padding-right: 0.4rem;
+                text-align: left;
+            }
+            .workshop-history p {
+                margin-bottom: 0.7rem;
+            }
+            .workshop-history strong {
+                color: #7A0F0F;
+            }
+            .workshop-history.expanded {
+                display: block;
+                max-height: 220px;
+                overflow-y: auto;
+            }
+            .workshop-history.expanded::-webkit-scrollbar { width: 8px; }
+            .workshop-history.expanded::-webkit-scrollbar-thumb { background: rgba(122,15,15,0.6); border-radius: 8px; }
+            .workshop-history.expanded::-webkit-scrollbar-track { background: rgba(0,0,0,0.03); border-radius: 8px; }
+            .btn-expand {
+                background: linear-gradient(90deg,#7A0F0F,#E1C435);
+                color: white;
+                border: none;
+                padding: 0.6rem 1rem;
+                border-radius: 999px;
+                cursor: pointer;
+                font-size: 0.82rem;
+                font-weight: 700;
+                letter-spacing: 0.03em;
+                transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+                width: calc(100% - 82px);
+                margin-left: 4px;
+                margin-top: auto;
+                align-self: flex-start;
+                box-shadow: 0 8px 18px rgba(122,15,15,0.18);
+            }
+            #talleres .col:first-child .btn-expand {
+                margin-top: 1rem;
+                margin-left: 2px;
+            }
+            .btn-expand:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 22px rgba(122,15,15,0.22);
+                filter: brightness(1.02);
+            }
+            .btn-expand:active {
+                transform: translateY(0);
+            }
+            .btn-expand:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(122,15,15,0.2);
+            }
+            .btn-expand:active {
+                transform: translateY(0);
+            }
+            .workshop-gallery {
+                width: 100%;
+                display: flex;
+                gap: 0.5rem;
+                margin-bottom: 0.6rem;
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+                position: relative;
+            }
+            .workshop-carousel {
+                width: 100%;
+                position: relative;
+                margin-bottom: 0.6rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .carousel-images {
+                display: flex;
+                overflow: hidden;
+                border-radius: 8px;
+                height: 320px;
+                width: 100%;
+                background: linear-gradient(180deg, rgba(122,15,15,0.04), rgba(225,196,53,0.06));
             }
 
             .noticias-calendario-wrap .news-card img {
                 width: 100%;
-                height: 200px;
-                object-fit: cover;
-                display: block;
+                height: 100%;
+                object-fit: contain;
+                object-position: center;
+                flex-shrink: 0;
+                transition: opacity 0.3s ease;
+                background-color: #f6f3ee;
+                padding: 0.4rem;
             }
 
             .noticias-calendario-wrap .news-card-body {
@@ -202,12 +543,11 @@
                 margin-bottom: 10px;
                 line-height: 1.4;
             }
-
-            .noticias-calendario-wrap .news-card p {
-                margin: 0 0 16px;
-                font-size: 0.96rem;
-                line-height: 1.65;
-                color: #212529;
+            .carousel-controls {
+                display: flex;
+                justify-content: space-between;
+                padding: 0 0.5rem;
+                width: 100%;
             }
 
             .noticias-calendario-wrap .news-btn {
@@ -219,15 +559,71 @@
                 border-radius: 6px;
                 text-decoration: none;
                 font-size: 0.8rem;
-                font-weight: 700;
-                letter-spacing: 0.02em;
-                transition: background 0.2s ease, transform 0.2s ease;
+                transition: transform 0.2s ease;
             }
-
-            .noticias-calendario-wrap .news-btn:hover {
-                background: #5e0b0b;
-                transform: translateY(-1px);
-                color: #ffffff !important;
+            .carousel-btn:hover {
+                transform: scale(1.1);
+            }
+            .workshop-history {
+                position: relative;
+                overflow: hidden;
+                display: none;
+            }
+            .workshop-history.expanded {
+                display: block;
+            }
+            .workshop-collapsed {
+                display: none;
+            }
+            .workshop-history.expanded .workshop-collapsed {
+                display: block;
+            }
+            .btn-expand {
+                background: linear-gradient(90deg,#7A0F0F,#E1C435);
+                color: white;
+                border: none;
+                padding: 0.4rem 1rem;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 0.85rem;
+                font-weight: 500;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+                width: 100%;
+                margin-top: 0.5rem;
+            }
+            .btn-expand:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(122,15,15,0.2);
+            }
+            .btn-expand:active {
+                transform: translateY(0);
+            }
+            .workshop-preview {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 8px;
+                margin-bottom: 0.6rem;
+            }
+            #talleres h3 { margin-bottom: 0.1rem; text-transform:uppercase; letter-spacing:0.06em; }
+            #talleres h3::after { content: ''; display:block; width:120px; height:6px; margin:8px auto 0; background: linear-gradient(90deg,#7A0F0F,#E1C435); border-radius:4px; box-shadow: 0 8px 20px rgba(122,15,15,0.06); }
+            .workshop-icon { background:transparent; color:#7A0F0F; width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; font-size:1.05rem; margin-right:8px; border:2px solid rgba(122,15,15,0.08); }
+            .workshop-title-inline { display:flex; align-items:center; gap:.5rem; }
+            @media (min-width: 992px) {
+                #talleres .row.g-3 { --bs-gutter-x: 1.25rem; }
+                #talleres .col:not(:last-child) { border-right: 1px dashed rgba(0,0,0,0.04); padding-right: 18px; }
+                #talleres .col:not(:first-child) { padding-left: 18px; }
+            }
+            @media (min-width: 1200px) {
+                #talleres .col-lg-3 {
+                    flex: 0 0 25%;
+                    max-width: 25%;
+                }
+            }
+            @media (max-width: 767px) {
+                #talleres .workshop-item::before { width:32px; height:32px; left:12px; top:12px; font-size:0.8rem; }
+                .workshop-item h5, .workshop-item .workshop-excerpt, .workshop-item .workshop-more { margin-left: 48px; }
+                #talleres .workshop-item::after { display:none; }
             }
 
             .noticias-calendario-wrap .calendar-panel {
@@ -272,6 +668,214 @@
                 font-weight: 600;
                 color: #4a4a4a;
             }
+            #docentes .card:hover img { transform: scale(1.03); filter: saturate(1.05) contrast(1.02); }
+            #docentes .card:hover { transform: translateY(-8px); box-shadow: 0 20px 42px rgba(26,26,26,0.18); }
+            #docentes .card-body { padding: 1.15rem; }
+            #docentes .card-title { font-size: 1rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+            #docentes .card .btn { border-radius: 24px; padding: 6px 14px; font-size: 0.85rem; }
+            #docentes .card .btn-primary { background: linear-gradient(90deg,#7A0F0F,#E1C435); border: none; box-shadow: 0 8px 20px rgba(122,15,15,0.12); }
+            #docentes .card .collapse { max-height: 220px; overflow: auto; }
+
+            /* Barra principal: mejor lectura del texto del menú */
+            #mainNav {
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+            }
+            #mainNav .container {
+                align-items: center;
+            }
+            #mainNav .navbar-brand {
+                max-width: 100%;
+                margin-right: 1rem;
+            }
+            #mainNav .navbar-brand strong,
+            #mainNav .navbar-brand .small {
+                white-space: nowrap;
+                line-height: 1.2;
+            }
+            #mainNav .navbar-brand {
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+            #mainNav .navbar-nav {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                gap: 0.1rem 0.35rem;
+                white-space: nowrap;
+            }
+            #mainNav .nav-item {
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+            #mainNav .nav-link {
+                font-size: 0.68rem;
+                padding: 0.2rem 0.35rem;
+                white-space: nowrap;
+                line-height: 1.2;
+            }
+            @media (max-width: 991.98px) {
+                #mainNav {
+                    padding-top: 0.45rem;
+                    padding-bottom: 0.45rem;
+                }
+                #mainNav .navbar-brand {
+                    max-width: 75%;
+                    white-space: nowrap;
+                }
+                #mainNav .navbar-nav {
+                    margin-top: 0.5rem;
+                    justify-content: flex-start;
+                    flex-wrap: nowrap;
+                    gap: 0.1rem 0.25rem;
+                }
+                #mainNav .nav-link {
+                    font-size: 0.62rem;
+                    padding: 0.15rem 0.25rem;
+                }
+            }
+
+            /* Director: embellecimiento para Juan Carlos (solo estilos) */
+            #director { background: rgba(255,255,255,0.03); border-radius: 12px; padding: 14px; }
+            #director .col-lg-5 { position: relative; display:flex; align-items:center; justify-content:center; }
+            #director .col-lg-5::before {
+                content: '';
+                position: absolute;
+                width: 240px; height: 240px;
+                border-radius: 50%;
+                background: radial-gradient(circle at 30% 30%, rgba(225,196,53,0.18), rgba(122,15,15,0.06) 40%, transparent 60%);
+                top: 50%; left: 50%; transform: translate(-50%,-50%);
+                z-index: 0; filter: blur(6px);
+            }
+            .director-photo { position: relative; z-index: 2; max-width: 100%; height: auto; object-fit: cover; object-position: center; border-radius:50%; border:6px solid #fff; box-shadow: 0 18px 40px rgba(26,26,26,0.18); transition: transform .35s ease, box-shadow .35s ease; }
+            /* Removed the rotated 'DIRECTOR' badge as requested. */
+            #director .col-lg-7 { position: relative; padding-left: 1.2rem; }
+            #director .col-lg-7::before { content: ''; position: absolute; left: 0; top: 8px; width: 6px; height: 56px; background: linear-gradient(180deg,#7A0F0F,#E1C435); border-radius:4px; box-shadow:0 6px 18px rgba(122,15,15,0.08); }
+            #director h2 { font-weight:900; letter-spacing:0.02em; margin-bottom:0.35rem; position:relative; z-index:2; }
+            #director h2::after { content: ''; display:block; width:96px; height:6px; background: linear-gradient(90deg,#7A0F0F,#E1C435); border-radius:4px; margin-top:8px; box-shadow: 0 6px 18px rgba(122,15,15,0.06); }
+            #director .text-muted { color: rgba(0,0,0,0.6); font-weight:700; text-transform:uppercase; letter-spacing:0.04em; }
+            #director .col-lg-7 p { color:#2b2b2b; line-height:1.6; margin-bottom:0.6rem; text-align:justify; }
+            #director .col-lg-5 .director-photo:hover { transform: scale(1.035); box-shadow: 0 26px 54px rgba(26,26,26,0.22); }
+
+            #deportes {
+                position: relative;
+                overflow: hidden;
+            }
+            #deportes::before {
+                content: "";
+                position: absolute;
+                width: 220px;
+                height: 220px;
+                left: -40px;
+                top: 30px;
+                background: radial-gradient(circle, rgba(225,196,53,0.18), rgba(122,15,15,0.05) 42%, transparent 72%);
+                border-radius: 50%;
+                pointer-events: none;
+            }
+            #deportes::after {
+                content: "";
+                position: absolute;
+                width: 250px;
+                height: 250px;
+                right: -60px;
+                bottom: 20px;
+                background: radial-gradient(circle, rgba(122,15,15,0.10), rgba(225,196,53,0.04) 45%, transparent 72%);
+                border-radius: 50%;
+                pointer-events: none;
+            }
+            #deportes .heading-decor {
+                margin-bottom: 1rem;
+                position: relative;
+                z-index: 1;
+            }
+            #deportes .card,
+            #deportes .rounded-4 {
+                position: relative;
+                z-index: 1;
+                box-shadow: 0 14px 35px rgba(21, 21, 21, 0.08) !important;
+            }
+            #deportes .card::before,
+            #deportes .rounded-4::before {
+                content: "";
+                position: absolute;
+                inset: 0 auto auto 0;
+                width: 100%;
+                height: 5px;
+                background: linear-gradient(90deg, #7A0F0F 0%, #E1C435 55%, rgba(225,196,53,0.15) 100%);
+                border-radius: 1.5rem 1.5rem 0 0;
+            }
+            #deportes .rounded-4 {
+                overflow: hidden;
+            }
+            #deportes .table thead th {
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                font-size: 0.72rem;
+            }
+            #deportes blockquote {
+                position: relative;
+                overflow: hidden;
+            }
+            #deportes blockquote::before {
+                content: "“";
+                position: absolute;
+                top: -18px;
+                right: 18px;
+                font-size: 5rem;
+                line-height: 1;
+                color: rgba(122,15,15,0.10);
+                font-weight: 800;
+            }
+            #deportes .badge {
+                box-shadow: 0 8px 18px rgba(122,15,15,0.18);
+            }
+            #deportes .card::after,
+            #deportes .rounded-4::after {
+                content: "";
+                position: absolute;
+                width: 140px;
+                height: 140px;
+                right: -30px;
+                bottom: -30px;
+                background: radial-gradient(circle, rgba(225,196,53,0.22), rgba(122,15,15,0.06) 40%, transparent 72%);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 0;
+            }
+            #deportes .card > *,
+            #deportes .rounded-4 > * {
+                position: relative;
+                z-index: 1;
+            }
+            #deportes .table {
+                background: rgba(255,255,255,0.62);
+                backdrop-filter: blur(2px);
+            }
+            #deportes .table td,
+            #deportes .table th {
+                vertical-align: middle;
+                padding-top: 0.9rem;
+                padding-bottom: 0.9rem;
+            }
+            #deportes h3 {
+                position: relative;
+                display: inline-block;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 0.35rem 1.15rem;
+                border: 1px solid rgba(122,15,15,0.12);
+                border-radius: 999px;
+                background: rgba(255,255,255,0.55);
+                backdrop-filter: blur(2px);
+                box-shadow: 0 8px 18px rgba(122,15,15,0.06);
+            }
+            #deportes h3,
+            #deportes h4,
+            #deportes h5 {
+                position: relative;
+                z-index: 1;
+            }
 
             @media (max-width: 991.98px) {
                 .noticias-calendario-wrap .news-grid {
@@ -312,8 +916,10 @@
                         <li class="nav-item"><a class="nav-link" href="#valores">Valores</a></li>
                         <li class="nav-item"><a class="nav-link" href="#docentes">Docentes</a></li>
                         <li class="nav-item"><a class="nav-link" href="#maestros">Maestros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#noticias">Noticias</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#instalaciones">Instalaciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#noticias">carreras</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#talleres">Talleres</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#deportes">Deportes</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
@@ -1053,10 +1659,11 @@
                     <div class="col-md-4">
                         <div class="card shadow-sm h-100">
                             <div class="bg-light p-3 text-center" style="min-height:320px; display:flex; align-items:center; justify-content:center;">
-                                <img src="img/roy.jpeg" class="img-fluid rounded" alt="Roy" style="max-height:280px; width:100%; object-fit:contain; object-position:center center; background-color:transparent; padding:4px; border-radius:12px;">
+                                <img src="img/Roy Rodriguez.jpeg" class="img-fluid rounded" alt="Roy" style="max-height:280px; width:100%; object-fit:contain; object-position:center center; background-color:transparent; padding:4px; border-radius:12px;">
                             </div>
                             <div class="card-body text-center">
-                                <h5 class="card-title">ROY</h5>
+                                <h5 class="card-title">ROY ALEJANDRO RODRIGUEZ PAVON
+                                </h5>
                                 <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#docente40" aria-expanded="false" aria-controls="docente40">Ver más</button>
                                 <div class="collapse mt-3 text-start" id="docente40">
                                     <p class="mb-2"><strong>Profesión / Cargo:</strong> Pasante universitario de la carrera de Ingeniería en Sistemas. Consejero de la Jornada vespertina.</p>
@@ -1114,156 +1721,441 @@
                 </div>
             </section>
 
-            
-
-            <section class="py-5 reveal" style="background-color: #f3f4f6;">
-                <div class="container text-center">
-                    <h3 class="mb-3" style="font-weight: 700; color: #1f2937;">Banda Latina Francisco Miranda</h3>
-                    <p class="mx-auto mb-4" style="max-width: 700px; color: #293048; line-height: 1.7;">
-                        La música es una de las mayores expresiones de pasión y comunidad en nuestro colegio, donde cada nota fortalece la identidad, el trabajo en equipo y el entusiasmo por seguir creciendo.
-                    </p>
-                    <a href="banda-info.html" class="btn btn-primary btn-lg px-4 py-3 rounded-pill shadow-sm border-0" style="background: linear-gradient(135deg, #7A0F0F, #a85b20); font-weight: 600; letter-spacing: 0.02em; transition: transform 0.2s ease, box-shadow 0.2s ease;">
-                        Ver más
-                    </a>
-                </div>
-            </section>
-
-            <section class="noticias-calendario-wrap reveal">
-                <div class="container">
-                    <div class="row g-4 align-items-start">
-                        <div class="col-lg-8">
-                            <h3 class="section-heading mb-4">Noticias</h3>
-                            <div class="news-grid">
-                                <article class="news-card">
-                                    <img src="img/1r dia.jpg" alt="Noticia 1">
-                                    <div class="news-card-body">
-                                        <span class="news-date">01 febrero 2026</span>
-                                        <h5>Inicia el ciclo escolar</h5>
-                                        <p>Comenzamos el nuevo año lectivo con entusiasmo, organización y energía para fortalecer la comunidad educativa.</p>
-                                        <a href="#" class="news-btn">Leer más</a>
-                                    </div>
-                                </article>
-
-                                <article class="news-card">
-                                    <img src="img/2d dia.jpg" alt="Noticia 2">
-                                    <div class="news-card-body">
-                                        <span class="news-date"> 14 Marzo 2026</span>
-                                        <h5>Semana cultural</h5>
-                                        <p>Actividades culturales y deportivas reunieron a estudiantes, docentes y familias en una jornada inspiradora.</p>
-                                        <a href="#" class="news-btn">Leer más</a>
-                                    </div>
-                                </article>
-
-                                 <article class="news-card">
-                                    <img src="img/4t dia.jpg" alt="Noticia 3">
-                                    <div class="news-card-body">
-                                        <span class="news-date">5 Agost 2026</span>
-                                        <h5>Competencia de Canto</h5>
-                                        <p>Representando nuestra institucion la Lic. Arely Beltrand y la alumna Debora Vargas, Ganando el primer lugar del distrito educativo #12</p>
-                                        <a href="#" class="news-btn">Leer más</a>
-                                    </div>
-                                </article>
-
-                                <article class="news-card">
-                                    <img src="img/3r dia.jpg" alt="Noticia 4">
-                                    <div class="news-card-body">
-                                        <span class="news-date">1 Sept 2026</span>
-                                        <h5>Iniciando Fiestas Patrias</h5>
-                                        <p>se inician las celebraciones patrias con actividades culturales y educativas.</p>
-                                        <a href="#" class="news-btn">Leer más</a>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4">
-                            <h3 class="section-heading mb-4">Calendario Escolar</h3>
-                            <div class="calendar-panel">
-                                <div class="table-responsive">
-                                    <table class="table align-middle">
-                                        <thead>
-                                            <tr>
-                                                <th>Evento</th>
-                                                <th>Fecha</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Inicio de clases</td>
-                                                <td>01/02/2026</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Exámenes parciales</td>
-                                                <td>15/09/2026</td>
-                                            </tr>
-                                            
-                                            <tr>
-                                                <td>Clausura</td>
-                                                <td>30/11/2026</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+            <!-- Noticias -->
+            <section id="noticias" class="container py-5 reveal">
+                <h3 class="mb-0 text-center w-100">CARRERAS</h3>
+                <div class="heading-decor"><svg width="160" height="20" viewBox="0 0 160 20" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#7A0F0F"/><stop offset="1" stop-color="#E1C435"/></linearGradient></defs><rect x="10" y="9" width="140" height="2" rx="1" fill="url(#g)"/><circle cx="80" cy="10" r="5" fill="#7A0F0F"/></svg></div>
+                <div class="row g-3">
+                    <div class="col-4">
+                        <div class="career-item p-3">
+                            <h4 class="career-title-inline"><i class="bi bi-cpu career-icon"></i>Informática</h4>
+                            <div class="workshop-carousel agro-carousel">
+                                <div class="carousel-images" id="carousel6">
+                                    <img src="img/Informática (2).jpeg" alt="Informática 2" class="carousel-image">
+                                    <img src="img/Informática (3).jpeg" alt="Informática 3" class="carousel-image">
+                                    <img src="img/Informática (4).jpeg" alt="Informática 4" class="carousel-image">
+                                    <img src="img/Informática (5).jpeg" alt="Informática 5" class="carousel-image">
+                                    <img src="img/Informática (6).jpeg" alt="Informática 6" class="carousel-image">
+                                    <img src="img/Informática (7).jpeg" alt="Informática 7" class="carousel-image">
+                                    <img src="img/Informática (8).jpeg" alt="Informática 8" class="carousel-image">
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn" onclick="carouselPrev(6)">❮</button>
+                                    <button class="carousel-btn" onclick="carouselNext(6)">❯</button>
                                 </div>
                             </div>
+                            <p><strong>HISTORIA DE LA CARRERA DE INFORMÁTICA</strong></p>
+                            <button class="btn btn-sm btn-outline-primary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#career1More" aria-expanded="false" aria-controls="career1More">Ver más</button>
+                            <div class="collapse mt-3 collapse-scroll" id="career1More">
+                            <ol>
+                                <li><strong>2009 (Fundación):</strong> Se crea la carrera bajo el nombre de Bachillerato Técnico en Computación. Los egresados obtenían doble titulación. Docentes fundadores: Fátima Rodríguez, Marlon Izaguirre, Jenny Sosa y Fredy Domínguez.</li>
+                                <li><strong>2010–2012:</strong> Se integra el profesor Wilmer Aguilar; modalidad de crecimiento vegetativo.</li>
+                                <li><strong>2011:</strong> Egresa la primera promoción (~27 alumnos).</li>
+                                <li><strong>2016 (Aprox.):</strong> Evolución a BTP Semestral y luego BTP en Informática; asignaturas como Desarrollo Web.</li>
+                                <li><strong>2024:</strong> Proyecto de robótica, ferias y convenio con Universidad de Defensa Hondureña (Impresión 3D).</li>
+                                <li><strong>2026 (Actualidad):</strong> Convenio con Cisco NetAcad (CCNA 1 y 2 gratuitos); logros en ferias y liderazgo del profesor Wilmer Aguilar.</li>
+                            </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="career-item p-3">
+                            <h4 class="career-title-inline" style="justify-content:flex-start; padding-left: 42px; padding-right: 0;"><i class="bi bi-bank career-icon"></i>Contaduría y Finanzas</h4>
+                            <div class="workshop-carousel agro-carousel">
+                                <div class="carousel-images" id="carousel7">
+                                    <img src="img/Suyapa Janeth Pineda Lopez.jpeg" alt="Suyapa Janeth Pineda López" class="carousel-image">
+                                    <img src="img/Maria de la paz Álvarez.jpeg" alt="María de la Paz Álvarez" class="carousel-image">
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn" onclick="carouselPrev(7)">❮</button>
+                                    <button class="carousel-btn" onclick="carouselNext(7)">❯</button>
+                                </div>
+                            </div>
+                            <p><strong>HISTORIA DEL BTP EN CONTADURÍA Y FINANZAS</strong></p>
+                            <button class="btn btn-sm btn-outline-primary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#career2More" aria-expanded="false" aria-controls="career2More">Ver más</button>
+                            <div class="collapse mt-3 collapse-scroll" id="career2More">
+                            <p><em>Una carrera que evolucionó con el tiempo</em></p>
+                            <p>En la Comunidad de Zambrano, Francisco Morazán, el Instituto Gubernamental Técnico Francisco Miranda ha construido una historia marcada por la transformación y el compromiso con la formación de sus estudiantes.</p>
+                            <ol>
+                                <li>1995: Apertura de la carrera de <strong>Mercadotecnia</strong>, egresando dos promociones.</li>
+                                <li>1997-1998: La carrera entró en desgaste y la segunda promoción culminó en 1998.</li>
+                                <li>1999: Nace la carrera de <strong>Educación Comercial</strong> (Peritos Mercantiles y Contadores Públicos).</li>
+                                <li>2014: La carrera nuevamente en desgaste.</li>
+                                <li>2016: Primera promoción del <strong>Bachillerato Técnico Profesional en Contaduría y Finanzas</strong> (12 alumnos).</li>
+                            </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="career-item p-3">
+                            <h4 class="career-title-inline"><i class="bi bi-flower1 career-icon"></i>Agroindustria</h4>
+                            <div class="workshop-carousel agro-carousel">
+                                <div class="carousel-images" id="carousel5">
+                                    <img src="img/AGRO1.jpg" alt="Agro 1" class="carousel-image">
+                                    <img src="img/AGRO2.jpg" alt="Agro 2" class="carousel-image">
+                                    <img src="img/AGRO3.jpg" alt="Agro 3" class="carousel-image">
+                                    <img src="img/AGRO4.jpg" alt="Agro 4" class="carousel-image">
+                                    <img src="img/AGRO5.jpg" alt="Agro 5" class="carousel-image">
+                                    <img src="img/AGRO6.jpg" alt="Agro 6" class="carousel-image">
+                                    <img src="img/AGRO7.jpg" alt="Agro 7" class="carousel-image">
+                                    <img src="img/AGRO8.jpg" alt="Agro 8" class="carousel-image">
+                                    <img src="img/AGRO9.jpg" alt="Agro 9" class="carousel-image">
+                                    <img src="img/AGRO10.jpg" alt="Agro 10" class="carousel-image">
+                                    <img src="img/AGRO11.jpg" alt="Agro 11" class="carousel-image">
+                                    <img src="img/AGRO12.jpg" alt="Agro 12" class="carousel-image">
+                                    <img src="img/AGRO13.jpg" alt="Agro 13" class="carousel-image">
+                                    <img src="img/AGRO14.jpg" alt="Agro 14" class="carousel-image">
+                                    <img src="img/AGRO15.jpg" alt="Agro 15" class="carousel-image">
+                                    <img src="img/AGRO16.jpg" alt="Agro 16" class="carousel-image">
+                                    <img src="img/AGRO17.jpg" alt="Agro 17" class="carousel-image">
+                                    <img src="img/AGRO18.jpg" alt="Agro 18" class="carousel-image">
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn" onclick="carouselPrev(5)">❮</button>
+                                    <button class="carousel-btn" onclick="carouselNext(5)">❯</button>
+                                </div>
+                            </div>
+                            <p><strong>HISTORIA DE LA CARRERA DE AGROINDUSTRIA</strong></p>
+                            <button class="btn btn-sm btn-outline-primary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#career3More" aria-expanded="false" aria-controls="career3More">Ver más</button>
+                            <div class="collapse mt-3 collapse-scroll" id="career3More">
+                            <p><strong>Origen:</strong> Creada entre 2014 y 2015 en el Instituto Francisco Miranda por la alta vocación agrícola de la zona de Zambrano.
+
+<strong>Objetivo:</strong> Profesionalizar el conocimiento empírico del campo para que los jóvenes aprendan a procesar, comercializar o emprender su propia empresa agroindustrial (lácteos, cárnicos, cultivos).
+
+<strong>Estudio previo:</strong> Se validó el campo laboral mediante visitas a empresas como Honduras Chips , Finca El Carmen y Lácteos Primavera .
+
+<strong>Perfil requerido:</strong> Estudiantes con alta vocación , compromiso ambiental y espíritu emprendedor.
+
+<strong>Mayor Respuesta</strong> La falta de financiamiento y equipo técnico , siendo prioritaria la adquisición de una planta procesadora de lácteos para dinamizar la economía local.
+
+<strong>Solución a limitantes:</strong>Se realizan giras y alianzas con la UNAG para suplir la falta de equipo y materia prima en el colegio.
+</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Estadísticas con contadores animados -->
-            <section id="estadisticas" class="container py-5 reveal">
-                <h3 class="mb-4">Estadísticas</h3>
-                <div class="row text-center">
-                    <div class="col-6 col-md-3 mb-3">
-                        <h4 class="counter" data-target="43">39</h4>
-                        <p>Maestros</p>
+            <!-- Talleres -->
+            <section id="talleres" class="container py-5 reveal">
+                <h3 class="mb-0 text-center w-100">TALLERES</h3>
+                <div class="heading-decor"><svg width="160" height="20" viewBox="0 0 160 20" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#7A0F0F"/><stop offset="1" stop-color="#E1C435"/></linearGradient></defs><rect x="10" y="9" width="140" height="2" rx="1" fill="url(#g)"/><circle cx="80" cy="10" r="5" fill="#7A0F0F"/></svg></div>
+                <div class="row g-3">
+                    <div class="col-12 col-md-6 col-lg-3" style="padding-left: 0.75rem; padding-right: 0.75rem; min-width: 0;">
+                        <div class="workshop-item p-3 card-scroll" style="min-width: 0;">
+                            <div class="workshop-carousel">
+                                <div class="carousel-images" id="carousel1">
+                                    <img src="img/Mario leonel avila maradiaga.png" alt="Electricidad 1" class="carousel-image">
+                                    <img src="img/Electricidad (1).jpeg" alt="Electricidad 2" class="carousel-image">
+                                    <img src="img/Electricidad (2).jpeg" alt="Electricidad 3" class="carousel-image">
+                                    <img src="img/Electricidad (3).jpeg" alt="Electricidad 4" class="carousel-image">
+                                    <img src="img/Electricidad (4).jpeg" alt="Electricidad 5" class="carousel-image">
+                                    <img src="img/Electricidad (5).jpeg" alt="Electricidad 6" class="carousel-image">
+                                    <img src="img/Electricidad (6).jpeg" alt="Electricidad 7" class="carousel-image">
+                                    <img src="img/Electricidad (7).jpeg" alt="Electricidad 8" class="carousel-image">
+                                    <img src="img/Electricidad (8).jpeg" alt="Electricidad 9" class="carousel-image">
+                                    <img src="img/Electricidad (9).jpeg" alt="Electricidad 10" class="carousel-image">
+                                    <img src="img/Electricidad (10).jpeg" alt="Electricidad 11" class="carousel-image">
+                                    <img src="img/Electricidad (11).jpeg" alt="Electricidad 12" class="carousel-image">
+                                    <img src="img/Electricidad (12).jpeg" alt="Electricidad 13" class="carousel-image">
+                                    <img src="img/Electricidad (13).jpeg" alt="Electricidad 14" class="carousel-image">
+                                    <img src="img/Electricidad (14).jpeg" alt="Electricidad 15" class="carousel-image">
+                                    <img src="img/Electricidad (15).jpeg" alt="Electricidad 16" class="carousel-image">
+                                    <img src="img/Electricidad (16).jpeg" alt="Electricidad 17" class="carousel-image">
+                                    <img src="img/Electricidad (17).jpeg" alt="Electricidad 18" class="carousel-image">
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn" onclick="carouselPrev(1)">❮</button>
+                                    <button class="carousel-btn" onclick="carouselNext(1)">❯</button>
+                                </div>
+                            </div>
+                            <h5 class="workshop-title-inline"><i class="bi bi-lightning-fill workshop-icon"></i>Taller de Electricidad</h5>
+                            <div class="workshop-history" id="history1">
+                                <p><strong>HISTORIA Y EVOLUCIÓN DEL TALLER DE ELECTRICIDAD</strong></p>
+                                <p><strong>Origen del Taller:</strong> El Taller de Electricidad nació a partir de la necesidad del instituto de contar con un espacio especializado para atender el mantenimiento de las instalaciones eléctricas y, al mismo tiempo, brindar a los estudiantes una formación práctica en el área. En sus inicios, el taller comenzó con una disponibilidad aproximada de 12 horas bajo la responsabilidad del profesor Mario Ávila, quien fue uno de sus primeros impulsores.</p>
+                                <p><strong>Primeras Herramientas:</strong> Al comenzar, los recursos eran muy limitados. Las primeras herramientas utilizadas fueron principalmente las que el propio profesor llevaba consigo: tenaza, destornillador y una navaja. Esta etapa demuestra que el desarrollo de un taller no depende únicamente de contar con muchos equipos, sino de la disposición para trabajar, enseñar y aprender.</p>
+                                <p><strong>Primeros Aprendizajes:</strong> El taller funcionó en el espacio que anteriormente correspondía al aula de Dibujo Técnico. La enseñanza comenzó con los fundamentos de la electricidad: reconocimiento y uso correcto de herramientas, identificación de materiales eléctricos, medidas de seguridad, tipos de empalmes y circuitos básicos (serie y paralelo).</p>
+                                <p class="workshop-collapsed"><strong>Evolución Tecnológica:</strong> Uno de los cambios más importantes ha sido la incorporación de tecnología. Actualmente, el taller busca integrar la electricidad con herramientas tecnológicas de programación, como placas programables Micro:bit, que permiten desarrollar proyectos sencillos, controlar circuitos y estimular la creatividad de los alumnos.</p>
+                                <p class="workshop-collapsed"><strong>Ampliación del Espacio:</strong> La construcción del edificio propio fue posible gracias a la gestión de la dirección y al valioso apoyo de la directiva de padres de familia. El espacio fue diseñado estratégicamente con posibilidades de ampliación, permitiendo contar con instalaciones modernas.</p>
+                                <p class="workshop-collapsed"><strong>Proyectos Destacados:</strong> Los estudiantes participan activamente en instalación de tableros, elaboración de lámparas decorativas utilizando tubería PVC pulida, construcción de calentadores de agua eléctricos, y el mantenimiento de la red e instalaciones eléctricas de la institución.</p>
+                            </div>
+                            <button class="btn-expand" onclick="toggleHistory(1, this)">Ver más</button>
+                        </div>
                     </div>
-                    <div class="col-6 col-md-3 mb-3">
-                        <h4 class="counter" data-target="800">0</h4>
-                        <p>Estudiantes</p>
+                    <div class="col-12 col-md-6 col-lg-3" style="padding-left: 0.75rem; padding-right: 0.75rem; min-width: 0;">
+                        <div class="workshop-item p-3 card-scroll" style="min-width: 0;">
+                            <div class="workshop-carousel">
+                                <div class="carousel-images" id="carousel2">
+                                    <img src="img/Profe Francis.jpeg" alt="Belleza 1" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 5.59.46 PM.jpeg" alt="Belleza 2" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 5.59.52 PM.jpeg" alt="Belleza 3" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 5.59.59 PM.jpeg" alt="Belleza 4" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.00 PM (1).jpeg" alt="Belleza 5" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.00 PM (2).jpeg" alt="Belleza 6" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.00 PM (3).jpeg" alt="Belleza 7" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.00 PM.jpeg" alt="Belleza 8" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.01 PM (1).jpeg" alt="Belleza 9" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.01 PM.jpeg" alt="Belleza 10" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.02 PM (1).jpeg" alt="Belleza 11" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.02 PM (2).jpeg" alt="Belleza 12" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.02 PM (3).jpeg" alt="Belleza 13" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.02 PM.jpeg" alt="Belleza 14" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.03 PM (1).jpeg" alt="Belleza 15" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.03 PM.jpeg" alt="Belleza 16" class="carousel-image">
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn" onclick="carouselPrev(2)">❮</button>
+                                    <button class="carousel-btn" onclick="carouselNext(2)">❯</button>
+                                </div>
+                            </div>
+                            <h5 class="workshop-title-inline"><i class="bi bi-scissors workshop-icon"></i>Taller de Belleza y Metodología</h5>
+                            <div class="workshop-history" id="history2">
+                                <p><strong>HISTORIA DEL TALLER DE BELLEZA Y COSMETOLOGÍA</strong></p>
+                                <p><strong>Origen del Taller:</strong> La historia del Taller surge a partir de una circunstancia laboral que llevó a la docente responsable a asumir el desafío de impartir clases de belleza y cosmetología. Después de trabajar un año y medio bajo modalidad de crecimiento vegetativo, se le asignaron horas para impartir clases de belleza.</p>
+                                <p><strong>Primeros Pasos:</strong> La docente reconoce que no tenía conocimientos especializados en el área. Sin embargo, asumió la responsabilidad y se capacitó mediante cursos impartidos por INFOP relacionados con belleza y cosmetología. En sus primeros momentos, el taller prácticamente no contaba con herramientas ni equipo especializado.</p>
+                                <p><strong>Recursos Limitados:</strong> La docente tuvo que buscar alternativas para obtener recursos necesarios. Realizó venta de confites, empanadas, donas y panqueques. Con los fondos obtenidos comenzó poco a poco a adquirir los primeros equipos. Uno de los primeros instrumentos adquiridos fue una plancha para el cabello de color rosado que aún conserva y continúa funcionando.</p>
+                                <p class="workshop-collapsed"><strong>Crecimiento del Taller:</strong> Con el paso del tiempo, el taller fue adquiriendo herramientas como planchas, secadoras, herramientas para rizos, muñecas para prácticas de peinado, espejos, mesas y sillas para masajes. Se incorporaron diferentes áreas: planchado y secado del cabello, manicure, pedicure, tratamientos faciales, maquillaje, uñas acrílicas y laminado de cejas.</p>
+                                <p class="workshop-collapsed"><strong>Cualidades del Estudiante:</strong> Una de las principales cualidades que debe tener un estudiante es la disposición para atender correctamente a las personas. El trabajo de belleza consiste no solo en aplicar técnicas, sino también en brindar buena atención con entusiasmo, dedicación y disposición para ofrecer un buen servicio.</p>
+                            </div>
+                            <button class="btn-expand" onclick="toggleHistory(2, this)">Ver más</button>
+                        </div>
                     </div>
-                    <div class="col-6 col-md-3 mb-3">
-                        <h4 class="counter" data-target="15">15</h4>
-                        <p>Aulas</p>
+                    <div class="col-12 col-md-6 col-lg-3" style="padding-left: 0.75rem; padding-right: 0.75rem; min-width: 0;">
+                        <div class="workshop-item p-3 card-scroll" style="min-width: 0;">
+                            <div class="workshop-carousel">
+                                <div class="carousel-images" id="carousel3">
+                                    <img src="img/Rodyn Javier Figueroa Osorto.jpeg" alt="Carpintería 1" class="carousel-image">
+                                    <img src="img/Carpinteria (1).jpeg" alt="Carpintería 2" class="carousel-image">
+                                    <img src="img/Carpinteria (2).jpeg" alt="Carpintería 3" class="carousel-image">
+                                    <img src="img/Carpinteria (3).jpeg" alt="Carpintería 4" class="carousel-image">
+                                    <img src="img/Carpinteria (4).jpeg" alt="Carpintería 5" class="carousel-image">
+                                    <img src="img/Carpinteria (5).jpeg" alt="Carpintería 6" class="carousel-image">
+                                    <img src="img/Carpinteria (6).jpeg" alt="Carpintería 7" class="carousel-image">
+                                    <img src="img/Carpinteria (7).jpeg" alt="Carpintería 8" class="carousel-image">
+                                    <img src="img/Carpinteria (8).jpeg" alt="Carpintería 9" class="carousel-image">
+                                    <img src="img/Carpinteria (9).jpeg" alt="Carpintería 10" class="carousel-image">
+                                    <img src="img/Carpinteria (10).jpeg" alt="Carpintería 11" class="carousel-image">
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn" onclick="carouselPrev(3)">❮</button>
+                                    <button class="carousel-btn" onclick="carouselNext(3)">❯</button>
+                                </div>
+                            </div>
+                            <h5 class="workshop-title-inline"><i class="bi bi-hammer workshop-icon"></i>Taller de Carpintería y Ebanistería</h5>
+                            <div class="workshop-history" id="history3">
+                                <p><strong>HISTORIA Y EVOLUCIÓN DEL TALLER DE HOGAR</strong></p>
+                                <p><strong>Origen:</strong> El Taller de Hogar surgió con el proceso de transformación educativa cuando el establecimiento evolucionó hacia un modelo de colegio técnico y posteriormente politécnico, incorporando actividades prácticas y áreas de formación especializada. La iniciativa estuvo relacionada con profesores que impulsaron este espacio destinado al desarrollo de habilidades útiles.</p>
+                                <p><strong>Docentes Pioneros:</strong> Entre las maestras pioneras se encuentran las profesoras Griseldy Gómez y Silvia Lis López, quienes estuvieron al frente del taller durante sus primeras etapas. Su trabajo fue fundamental para establecer las bases de las actividades prácticas y transmitir conocimientos relacionados con diferentes áreas.</p>
+                                <p><strong>Propósito Principal:</strong> El objetivo del Taller es proporcionar a los estudiantes conocimientos prácticos y habilidades técnicas que puedan utilizar en situaciones reales. Los estudiantes participan directamente en diferentes actividades, utilizan herramientas y materiales, elaboran productos y desarrollan proyectos que les permiten aprender mediante la experiencia.</p>
+                                <p class="workshop-collapsed"><strong>Orientación Vocacional:</strong> Las diferentes actividades permiten que los estudiantes conozcan varias áreas prácticas y descubran cuáles despiertan mayor interés. Esto ayuda a los jóvenes a tomar decisiones relacionadas con su futuro académico y profesional, permitiendo que los conocimientos prácticos se conviertan en una fuente de ingresos.</p>
+                                <p class="workshop-collapsed"><strong>Evolución de Áreas:</strong> El taller ha evolucionado desde actividades iniciales principalmente en corte y confección, incorporando posteriormente actividades en nutrición, cocina, y áreas modernas como belleza y cosmetología, permitiendo formación más variada y acorde con oportunidades laborales.</p>
+                                <p class="workshop-collapsed"><strong>Proyectos Prácticos:</strong> Los proyectos son fundamentales en el aprendizaje. La elaboración de proyectos completos desde inicio hasta final permite que el estudiante desarrolle autonomía y se prepare para enfrentar actividades similares fuera del entorno escolar. Ejemplo: elaboración de pantalones de uniforme y otras prendas.</p>
+                            </div>
+                            <button class="btn-expand" onclick="toggleHistory(3, this)">Ver más</button>
+                        </div>
                     </div>
-                    <div class="col-6 col-md-3 mb-3">
-                        <h4 class="counter" data-target="20">38</h4>
-                        <p>Años</p>
+                    <div class="col-12 col-md-6 col-lg-3" style="padding-left: 0.75rem; padding-right: 0.75rem; min-width: 0;">
+                        <div class="workshop-item p-3 card-scroll" style="min-width: 0;">
+                            <div class="workshop-carousel">
+                                <div class="carousel-images" id="carousel4">
+                                    <img src="img/Vanessa Lizeth galindo Velasquez.jpeg" alt="Estructuras 1" class="carousel-image">
+                                    <img src="img/Estructruras (1).jpeg" alt="Estructuras 2" class="carousel-image">
+                                    <img src="img/Estructruras (2).jpeg" alt="Estructuras 3" class="carousel-image">
+                                    <img src="img/Estructruras (3).jpeg" alt="Estructuras 4" class="carousel-image">
+                                    <img src="img/Estructruras (4).jpeg" alt="Estructuras 5" class="carousel-image">
+                                    <img src="img/Estructuras(5).jpeg" alt="Estructuras 6" class="carousel-image">
+                                    <img src="img/Estructuras(6).jpeg" alt="Estructuras 7" class="carousel-image">
+                                    <img src="img/Estructuras(7).jpeg" alt="Estructuras 8" class="carousel-image">
+                                    <img src="img/Estructuras(8).jpeg" alt="Estructuras 9" class="carousel-image">
+                                    <img src="img/Estructuras(9).jpeg" alt="Estructuras 10" class="carousel-image">
+                                    <img src="img/Estructuras(10).jpeg" alt="Estructuras 11" class="carousel-image">
+                                    <img src="img/Estructuras(11).jpeg" alt="Estructuras 12" class="carousel-image">
+                                    <img src="img/Estructuras(12).jpeg" alt="Estructuras 13" class="carousel-image">
+                                    <img src="img/Estructuras(13).jpeg" alt="Estructuras 14" class="carousel-image">
+                                    <img src="img/Estructuras(14).jpeg" alt="Estructuras 15" class="carousel-image">
+                                    <img src="img/Estructuras(15).jpeg" alt="Estructuras 16" class="carousel-image">
+                                    <img src="img/Estructuras(16).jpeg" alt="Estructuras 17" class="carousel-image">
+                                    <img src="img/Estructuras(17).jpeg" alt="Estructuras 18" class="carousel-image">
+                                    <img src="img/Estructuras(18).jpeg" alt="Estructuras 19" class="carousel-image">
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn" onclick="carouselPrev(4)">❮</button>
+                                    <button class="carousel-btn" onclick="carouselNext(4)">❯</button>
+                                </div>
+                            </div>
+                            <h5 class="workshop-title-inline"><i class="bi bi-gear workshop-icon"></i>Taller de Estructuras Metálicas</h5>
+                            <div class="workshop-history" id="history4">
+                                <p><strong>HISTORIA DEL TALLER DE ESTRUCTURAS METÁLICAS</strong></p>
+                                <p><strong>Fundación:</strong> El Taller de Estructuras Metálicas también se fundó cuando el colegio pasó de ser colegio normal a un colegio técnico. En aquel tiempo, el taller funcionaba con tres maestros. Quien fundó en el colegio el taller de estructuras metálicas fue el profesor Dino Merino, y con el transcurso del tiempo se ha ido mejorando.</p>
+                                <p><strong>Proyecto Significativo:</strong> Uno de los proyectos al que se ha dedicado más tiempo, esfuerzo y dedicación fue mejorar las instalaciones. Cuando se inició, el taller no tenía piso. Se logró tirar el piso con ayuda de una fundación que es una ONG de Zambrano. Posteriormente se vio la necesidad de mejorar el techado de los talleres.</p>
+                                <p><strong>Evolución de Instalaciones:</strong> Ha mejorado mucho porque actualmente el taller de estructuras solo cuenta con personal docente egresado de la universidad. No se tienen personas que estén estudiando actualmente; todos los maestros ya son egresados de la universidad. Esto se considera un logro muy grande para el instituto y para el taller, porque ahí también hay calidad.</p>
+                                <p class="workshop-collapsed"><strong>Participación en Ferias y Proyectos:</strong> El taller siempre ha participado en lo que era una expo venta. Aunque actualmente debido a la crisis económica no se expulsa, se han visitado escuelas, se ha ayudado y colaborado con gente de la comunidad en hacerle balcones a las casas y muchos docentes han hecho trabajos permanentemente en el área de estructura.</p>
+                                <p class="workshop-collapsed"><strong>Retos Actuales:</strong> El reto principal es conseguir soldadoras TIG MIG (soldadoras TIG que no utilizan electrodo). Aunque el alto costo de tecnología impera, se trata de dar lo mejor con los recursos disponibles. Otro reto es dejar una carrera técnica en el área de estructuras metálicas en el colegio y gestionar la adquisición de soldadoras TIG.</p>
+                                <p class="workshop-collapsed"><strong>Significado del Taller:</strong> Formar parte del taller de estructuras metálicas representa una experiencia muy bonita. El objetivo es ser un compañero más que busca el beneficio del taller de estructuras metálicas, trabajando para el bienestar de todos los estudiantes.</p>
+                            </div>
+                            <button class="btn-expand" onclick="toggleHistory(4, this)">Ver más</button>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Contacto y mapa -->
-            <section id="contacto" class="container py-5 reveal">
-                <h3 class="mb-3">Contacto</h3>
-                <div class="row">                    <div class="col-md-6">
-                        <form id="contactForm" novalidate>
-                            <div class="mb-3"><label class="form-label">Nombre</label><input id="c_nombre" class="form-control" required></div>
-                            <div class="mb-3"><label class="form-label">Correo</label><input id="c_correo" type="email" class="form-control" required></div>
-                            <div class="mb-3"><label class="form-label">Teléfono</label><input id="c_telefono" class="form-control" required></div>
-                            <div class="mb-3"><label class="form-label">Mensaje</label><textarea id="c_mensaje" class="form-control" rows="4" required></textarea></div>
-                            <button class="btn btn-primary" type="submit">Enviar</button>
-                        </form>
-                    </div>
-                    <div class="col-md-6">
-                        <h5>Ubicación</h5>
-                        <div class="ratio ratio-4x3 mb-3">
-                            <iframe src="https://www.google.com/maps?q=Zambrano%2C%20Francisco%20Moraz%C3%A1n%2C%20Honduras&output=embed"></iframe>
+            <!-- Deportes -->
+            <section id="deportes" class="container py-5 reveal">
+                <h3 class="mb-0 text-center w-100">DEPORTES</h3>
+                <div class="heading-decor"><svg width="160" height="20" viewBox="0 0 160 20" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="gDep" x1="0" x2="1"><stop offset="0" stop-color="#7A0F0F"/><stop offset="1" stop-color="#E1C435"/></linearGradient></defs><rect x="10" y="9" width="140" height="2" rx="1" fill="url(#gDep)"/><circle cx="80" cy="10" r="5" fill="#7A0F0F"/></svg></div>
+
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden mt-4" style="background: linear-gradient(180deg, #f9f4ec, #f4efe7);">
+                    <div class="row g-0 align-items-stretch">
+                        <div class="col-lg-5">
+                            <div class="h-100 p-4 d-flex flex-column justify-content-center" style="background: linear-gradient(135deg, rgba(122,15,15,0.06), rgba(225,196,53,0.12));">
+                                <span class="badge rounded-pill px-3 py-2 mb-3" style="background: linear-gradient(90deg,#7A0F0F,#E1C435); color: white; letter-spacing: .08em; font-size: 0.72rem; width: fit-content;">Fútbol Femenino</span>
+                                <h4 class="mb-3" style="color: #7A0F0F; font-weight: 800;">Una historia de esfuerzo, inclusión y superación</h4>
+                                <p class="mb-0" style="line-height:1.7; color:#2e2e2e;">El fútbol femenino ha ganado un espacio importante dentro del instituto al demostrar que el talento, la disciplina y la dedicación no dependen del género.</p>
+                            </div>
                         </div>
-                        <h5>Redes sociales</h5>
-                        <div class="d-flex gap-2 mb-3">
-                            <a class="btn btn-outline-primary" href="#"><i class="bi bi-facebook"></i> Facebook</a>
-                            <a class="btn btn-outline-danger" href="#"><i class="bi bi-instagram"></i> Instagram</a>
-                            <a class="btn btn-outline-success" href="#"><i class="bi bi-whatsapp"></i> WhatsApp</a>
-                            <a class="btn btn-outline-danger" href="#"><i class="bi bi-youtube"></i> YouTube</a>
-                        </div>
-                        <div>
-                            <p><strong>Tel:</strong> +504 0000-0000<br><strong>Correo:</strong> info@colegiofm.edu.hn</p>
+                        <div class="col-lg-7">
+                            <div class="p-4">
+                                <p class="mb-1"><strong>INSTITUTO TÉCNICO GENERAL FRANCISCO MIRANDA</strong></p>
+                                <p class="mb-2">Aldea Zambrano, Honduras</p>
+                                <p class="mb-2"><strong>Área de Deportes</strong></p>
+                                <h5 class="mb-3" style="color:#7A0F0F; font-weight:800;">Fútbol Femenino</h5>
+                                <p class="mb-0" style="line-height:1.7; color:#2e2e2e;">El proyecto nació en 2024 con el interés de un grupo de estudiantes por practicar fútbol y representar al instituto en competencias oficiales. Con el paso del tiempo, el equipo se consolidó como una iniciativa importante dentro de la comunidad educativa.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="mt-4 mb-4">
+                    <div class="workshop-carousel" style="max-width: 980px; margin: 0 auto;">
+                        <div class="carousel-images" id="carouselDeportes" style="height: 420px;">
+                            <img src="img/Deportes (1).jpeg" alt="Deportes 1" class="carousel-image">
+                            <img src="img/Deportes (2).jpeg" alt="Deportes 2" class="carousel-image">
+                            <img src="img/Deportes (3).jpeg" alt="Deportes 3" class="carousel-image">
+                            <img src="img/Deportes (4).jpeg" alt="Deportes 4" class="carousel-image">
+                            <img src="img/Deportes (5).jpeg" alt="Deportes 5" class="carousel-image">
+                            <img src="img/Deportes (6).jpeg" alt="Deportes 6" class="carousel-image">
+                            <img src="img/Deportes (7).jpeg" alt="Deportes 7" class="carousel-image">
+                            <img src="img/Deportes (8).jpeg" alt="Deportes 8" class="carousel-image">
+                            <img src="img/Deportes (9).jpeg" alt="Deportes 9" class="carousel-image">
+                            <img src="img/Deportes (10).jpeg" alt="Deportes 10" class="carousel-image">
+                            <img src="img/Deportes (11).jpeg" alt="Deportes 11" class="carousel-image">
+                            <img src="img/Deportes (12).jpeg" alt="Deportes 12" class="carousel-image">
+                        </div>
+                        <div class="carousel-controls">
+                            <button class="carousel-btn" onclick="carouselPrev('Deportes')">❮</button>
+                            <button class="carousel-btn" onclick="carouselNext('Deportes')">❯</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4 mt-1">
+                    <div class="col-lg-6">
+                        <div class="p-4 rounded-4 h-100" style="background: linear-gradient(180deg, rgba(122,15,15,0.04), rgba(225,196,53,0.06)); border:1px solid rgba(122,15,15,0.08);">
+                            <p class="mb-3"><strong>1. Introducción y contexto</strong></p>
+                            <p>El fútbol femenino se ha consolidado como una de las iniciativas más importantes del área deportiva del instituto. Su historia demuestra que el talento, la disciplina y la dedicación no dependen del género, y que las estudiantes pueden representar a la institución con el mismo nivel de compromiso que cualquier otro equipo.</p>
+                            <p>El proyecto nació en 2024, a partir del interés de un grupo de estudiantes que quería practicar fútbol y representar al instituto en competencias oficiales. Desde entonces se ha mantenido en constante formación, y hoy reúne a alumnas de distintos grados y especialidades.</p>
+                            <p class="mb-0">Para conocer más a fondo el proceso, se conversó con la encargada del equipo, quien ha acompañado el proyecto desde sus inicios, hace aproximadamente dos años y medio.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-4 rounded-4 h-100" style="background: linear-gradient(180deg, rgba(225,196,53,0.06), rgba(122,15,15,0.04)); border:1px solid rgba(122,15,15,0.08);">
+                            <p class="mb-3"><strong>2. Desarrollo del equipo de fútbol femenino</strong></p>
+                            <p><strong>2.1 Origen y trayectoria:</strong> El equipo femenino existe desde 2024 y actualmente cuenta con cerca de dos años y medio de trayectoria. Todo comenzó con un grupo de estudiantes interesadas en participar en actividades y competencias de fútbol femenino.</p>
+                            <p><strong>2.2 Integrantes y categorías:</strong> Está formado por estudiantes de distintos grados académicos y especialidades, incluyendo alumnas de educación básica y media. Actualmente, la participación se concentra en las categorías U15 y U17.</p>
+                            <p class="mb-0"><strong>2.3 Logros y participación en torneos:</strong> Uno de los principales logros ha sido mantener vivo el equipo dentro de la institución, a pesar de contar con recursos y espacios limitados. En una competencia de CODICADER, llegaron a cuartos de final.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 p-4 rounded-4" style="background: #f7f2ea; border:1px solid rgba(122,15,15,0.08);">
+                    <p class="mb-3"><strong>2.4 Instalaciones y recursos</strong></p>
+                    <p>El instituto cuenta con una cancha que no tiene las dimensiones reglamentarias para la práctica de fútbol sala, ya que originalmente fue construida para apoyar las clases de Educación Física y otras actividades deportivas. Este espacio se comparte entre los distintos equipos, tanto femeninos como masculinos.</p>
+                    <p>Aun con estas limitaciones, la adaptación y el uso compartido de los espacios han permitido que las estudiantes sigan desarrollando sus actividades deportivas con normalidad.</p>
+
+                    <p class="mt-4 mb-2"><strong>2.5 Próximas actividades</strong></p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered align-middle mb-0" style="border-color: rgba(122,15,15,0.15);">
+                            <thead style="background: linear-gradient(90deg,#7A0F0F,#E1C435); color: white;">
+                                <tr>
+                                    <th>Actividad</th>
+                                    <th>Rival / detalle</th>
+                                    <th>Categoría</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Competencia CODICADER</td>
+                                    <td>Secretaría de Educación — el equipo llegó a cuartos de final</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td>Encuentro programado</td>
+                                    <td>Faita Academy</td>
+                                    <td>U15</td>
+                                </tr>
+                                <tr>
+                                    <td>Encuentro programado</td>
+                                    <td>IER</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td>Copa Amistad de Fútbol Femenino (3ª edición)</td>
+                                    <td>Torneo organizado por la institución, a mediados de octubre</td>
+                                    <td>U16</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="mt-4 mb-2"><strong>2.6 Mensaje e inclusión</strong></p>
+                    <blockquote class="mb-0 p-3 rounded-3" style="background: rgba(225,196,53,0.12); border-left: 4px solid #E1C435; color:#2e2e2e;">
+                        “Ser mujer no debe representar una limitación para participar en el deporte.”
+                        <br><small class="text-muted">— Encargada del equipo de Fútbol Femenino</small>
+                    </blockquote>
+                </div>
+
+                <div class="mt-4 p-4 rounded-4" style="background: linear-gradient(180deg, #f8f1e6 0%, #f0e7db 100%); border:1px solid rgba(122,15,15,0.12); box-shadow: inset 0 2px 0 rgba(255,255,255,0.9), inset 0 -2px 0 rgba(122,15,15,0.04), 0 10px 22px rgba(122,15,15,0.06);">
+                    <p class="mb-3"><strong>3. Aspectos clave</strong></p>
+                    <ul class="mb-0 ps-3">
+                        <li>Inicio del proyecto: 2024, con cerca de dos años y medio de trayectoria.</li>
+                        <li>Disciplina: fútbol femenino.</li>
+                        <li>Categorías de participación: U15 y U17, con actividades adicionales en U16.</li>
+                        <li>Participación destacada: cuartos de final en CODICADER.</li>
+                        <li>Evento propio: Copa Amistad de Fútbol Femenino, tercera edición.</li>
+                        <li>Próximos encuentros: Faita Academy (U15) e IER.</li>
+                        <li>Instalaciones: cancha compartida y sin dimensiones reglamentarias para fútbol sala.</li>
+                        <li>Inclusión deportiva: el género no debe limitar la participación.</li>
+                        <li>Formación integral: disciplina, compromiso, trabajo en equipo y confianza.</li>
+                    </ul>
+                </div>
+
+                <div class="mt-4 p-4 rounded-4" style="background: #f7f2ea; border:1px solid rgba(122,15,15,0.08);">
+                    <p class="mb-3"><strong>4. Cierre y conclusiones</strong></p>
+                    <p>El fútbol femenino representa mucho más que una actividad deportiva dentro de la institución. Su sola existencia refleja el compromiso de las estudiantes y de la encargada del equipo por construir espacios de participación, inclusión y desarrollo dentro del instituto.</p>
+                    <p>En apenas dos años y medio, el equipo ha sabido superar limitaciones de tiempo, espacio y recursos, y aun así ha logrado resultados que hablan por sí solos, como el avance hasta cuartos de final en CODICADER o la consolidación de un torneo propio como la Copa Amistad de Fútbol Femenino.</p>
+                    <p class="mb-0">La visión del área es seguir fortaleciendo el proyecto, incentivar la participación de nuevas estudiantes y brindarles la oportunidad de desarrollar sus capacidades deportivas y personales.</p>
+                </div>
             </section>
+
         </main>
+
+        <!-- Ubicación -->
+        <section id="contacto" class="container py-5 reveal">
+            <div class="text-center mb-4">
+                <h2 style="color: #7A0F0F; font-weight: 900; font-size: 2.3rem; margin-bottom: 0.75rem;">Ubicación</h2>
+                <div style="width: 90px; height: 4px; background: linear-gradient(90deg, #7A0F0F 0%, #E1C435 50%, #7A0F0F 100%); margin: 0 auto 1.5rem; border-radius: 999px;"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="ratio ratio-16x9 shadow-sm rounded-4 overflow-hidden border" style="border-color: rgba(122,15,15,0.15);">
+                        <iframe src="https://www.google.com/maps?q=Zambrano%2C%20Francisco%20Moraz%C3%A1n%2C%20Honduras&output=embed" style="border:0; width:100%; height:100%;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <p class="text-center mt-3 mb-0" style="color: #5a5a5a; font-size: 1.05rem;">
+                        <strong style="color: #7A0F0F;">Dirección:</strong> Zambrano, Francisco Morazán, Honduras
+                    </p>
+                </div>
+            </div>
+        </section>
 
         <!-- Botones y utilidades flotantes -->
         <button id="backToTop" class="btn btn-primary btn-lg back-to-top"><i class="bi bi-arrow-up"></i></button>
@@ -1363,15 +2255,149 @@
                 });
 
                 const searchInput = document.getElementById('searchMaestro');
-                if (searchInput) {
-                    searchInput.addEventListener('input', () => {
-                        const query = normalize(searchInput.value);
-                        document.querySelectorAll('#docentes .card').forEach(card => {
-                            const title = card.querySelector('.card-title');
-                            const name = normalize(title?.textContent || '');
-                            card.style.display = name.includes(query) ? '' : 'none';
-                        });
+                const filterSelect = document.getElementById('filterAsignatura');
+
+                // Populate subject filter from any 'Tema: X' occurrences in cards
+                if (filterSelect) {
+                    const subjects = new Set();
+                    document.querySelectorAll('#docentes .card, #maestrosGrid .card').forEach(card => {
+                        const small = card.querySelector('small.text-muted')?.textContent || '';
+                        const m = small.match(/Tema:\s*(.+)/i);
+                        if (m && m[1]) subjects.add(m[1].trim());
                     });
+                    subjects.forEach(s => {
+                        const opt = document.createElement('option');
+                        opt.value = s;
+                        opt.textContent = s;
+                        filterSelect.appendChild(opt);
+                    });
+                }
+
+                function filterMaestros() {
+                    const query = normalize(searchInput?.value || '');
+                    const subj = normalize(filterSelect?.value || '');
+                    document.querySelectorAll('#docentes .card, #maestrosGrid .card').forEach(card => {
+                        const title = card.querySelector('.card-title');
+                        const name = normalize(title?.textContent || '');
+                        const text = normalize(card.textContent || '');
+                        const matchesQuery = !query || name.includes(query) || text.includes(query);
+                        const matchesSubj = !subj || text.includes(subj);
+                        card.style.display = (matchesQuery && matchesSubj) ? '' : 'none';
+                    });
+                }
+
+                if (searchInput) searchInput.addEventListener('input', filterMaestros);
+                if (filterSelect) filterSelect.addEventListener('change', filterMaestros);
+
+                // Carousel thumbnails sync
+                try {
+                    const carouselEl = document.getElementById('instalacionesCarousel');
+                    const thumbEls = Array.from(document.querySelectorAll('.carousel-thumbs img.thumb'));
+                    if (carouselEl && thumbEls.length) {
+                        // Click thumbnails to navigate
+                        thumbEls.forEach((t, idx) => {
+                            t.dataset.bsSlideTo = idx;
+                            t.addEventListener('click', () => {
+                                const car = bootstrap.Carousel.getOrCreateInstance(carouselEl);
+                                car.to(idx);
+                                thumbEls.forEach(x => x.classList.remove('active'));
+                                t.classList.add('active');
+                            });
+                        });
+
+                        carouselEl.addEventListener('slid.bs.carousel', (e) => {
+                            const current = e.to;
+                            thumbEls.forEach(x => x.classList.remove('active'));
+                            if (thumbEls[current]) thumbEls[current].classList.add('active');
+                        });
+                    }
+                } catch (err) {
+                    console.warn('Carousel thumbs init failed', err);
+                }
+                // animate ribbon on slide change
+                try {
+                    const ribbon = document.querySelector('.carousel-ribbon');
+                    const carouselEl = document.getElementById('instalacionesCarousel');
+                    if (ribbon && carouselEl) {
+                        carouselEl.addEventListener('slide.bs.carousel', () => {
+                            ribbon.classList.remove('ribbon-animate');
+                            void ribbon.offsetWidth;
+                            ribbon.classList.add('ribbon-animate');
+                        });
+                    }
+                } catch (err) {
+                    console.warn('Ribbon init failed', err);
+                }
+
+                // Carousel state management for workshops
+                const carouselState = {
+                    1: { current: 0, total: 2 },
+                    2: { current: 0, total: 16 },
+                    3: { current: 0, total: 11 },
+                    4: { current: 0, total: 2 },
+                    5: { current: 0, total: 18 },
+                    6: { current: 0, total: 7 },
+                    7: { current: 0, total: 2 },
+                    Deportes: { current: 0, total: 12 }
+                };
+
+                // Navigate carousel to next image
+                window.carouselNext = function(workshopNumber) {
+                    const state = carouselState[workshopNumber];
+                    if (state) {
+                        state.current = (state.current + 1) % state.total;
+                        updateCarousel(workshopNumber);
+                    }
+                };
+
+                // Navigate carousel to previous image
+                window.carouselPrev = function(workshopNumber) {
+                    const state = carouselState[workshopNumber];
+                    if (state) {
+                        state.current = (state.current - 1 + state.total) % state.total;
+                        updateCarousel(workshopNumber);
+                    }
+                };
+
+                // Update carousel display
+                function updateCarousel(workshopNumber) {
+                    const carousel = document.getElementById(`carousel${workshopNumber}`);
+                    if (carousel) {
+                        const images = carousel.querySelectorAll('.carousel-image');
+                        const state = carouselState[workshopNumber];
+                        images.forEach((img, idx) => {
+                            img.classList.toggle('hidden', idx !== state.current);
+                        });
+                    }
+                }
+
+                // Toggle workshop history visibility
+                window.toggleHistory = function(workshopNumber, btn) {
+                    const historyDiv = document.getElementById(`history${workshopNumber}`);
+                    const trigger = btn || document.querySelector(`button[onclick*="toggleHistory(${workshopNumber}"]`);
+                    if (historyDiv) {
+                        historyDiv.classList.toggle('expanded');
+                        if (trigger) {
+                            trigger.textContent = historyDiv.classList.contains('expanded') ? 'Ver menos' : 'Ver más';
+                        }
+                    }
+                };
+
+                // Initialize carousel totals based on available images
+                for (let i = 1; i <= 7; i++) {
+                    const carousel = document.getElementById(`carousel${i}`);
+                    if (carousel) {
+                        const images = carousel.querySelectorAll('.carousel-image');
+                        carouselState[i].total = Math.max(images.length, 1);
+                        updateCarousel(i);
+                    }
+                }
+
+                const deportesCarousel = document.getElementById('carouselDeportes');
+                if (deportesCarousel) {
+                    const deportesImages = deportesCarousel.querySelectorAll('.carousel-image');
+                    carouselState.Deportes.total = Math.max(deportesImages.length, 1);
+                    updateCarousel('Deportes');
                 }
             });
         </script>
