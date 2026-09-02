@@ -352,6 +352,29 @@
             .career-item .collapse-scroll {
                 margin-top: 0.25rem;
             }
+            #docentes .btn-primary,
+            #docentes .btn-outline-primary,
+            #noticias .btn-primary,
+            #noticias .btn-outline-primary {
+                background: linear-gradient(90deg,#7A0F0F,#E1C435);
+                border: 1px solid #7A0F0F;
+                color: #fff;
+                border-radius: 999px;
+                font-weight: 700;
+                letter-spacing: 0.03em;
+                box-shadow: 0 8px 18px rgba(122,15,15,0.18);
+                transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+            }
+            #docentes .btn-primary:hover,
+            #docentes .btn-outline-primary:hover,
+            #noticias .btn-primary:hover,
+            #noticias .btn-outline-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 22px rgba(122,15,15,0.22);
+                filter: brightness(1.02);
+                color: #fff;
+                background: linear-gradient(90deg,#7A0F0F,#E1C435);
+            }
             /* Number the career blocks inside the noticias section (circular badge) */
             #noticias .row { counter-reset: careers; }
             #noticias .career-item::before {
@@ -655,8 +678,15 @@
             .workshop-icon { background:transparent; color:#7A0F0F; width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; font-size:1.05rem; margin-right:8px; border:2px solid rgba(122,15,15,0.08); }
             .workshop-title-inline { display:flex; align-items:center; gap:.5rem; }
             @media (min-width: 992px) {
+                #talleres .row.g-3 { --bs-gutter-x: 1.25rem; }
                 #talleres .col:not(:last-child) { border-right: 1px dashed rgba(0,0,0,0.04); padding-right: 18px; }
                 #talleres .col:not(:first-child) { padding-left: 18px; }
+            }
+            @media (min-width: 1200px) {
+                #talleres .col-lg-3 {
+                    flex: 0 0 25%;
+                    max-width: 25%;
+                }
             }
             @media (max-width: 767px) {
                 #talleres .workshop-item::before { width:32px; height:32px; left:12px; top:12px; font-size:0.8rem; }
@@ -1923,8 +1953,8 @@
                 <h3 class="mb-0 text-center w-100">TALLERES</h3>
                 <div class="heading-decor"><svg width="160" height="20" viewBox="0 0 160 20" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#7A0F0F"/><stop offset="1" stop-color="#E1C435"/></linearGradient></defs><rect x="10" y="9" width="140" height="2" rx="1" fill="url(#g)"/><circle cx="80" cy="10" r="5" fill="#7A0F0F"/></svg></div>
                 <div class="row g-3">
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="workshop-item p-3 card-scroll">
+                    <div class="col-12 col-md-6 col-lg-3" style="padding-left: 0.75rem; padding-right: 0.75rem; min-width: 0;">
+                        <div class="workshop-item p-3 card-scroll" style="min-width: 0;">
                             <div class="workshop-carousel">
                                 <div class="carousel-images" id="carousel1">
                                     <img src="img/Mario leonel avila maradiaga.png" alt="Electricidad 1" class="carousel-image">
@@ -1964,8 +1994,8 @@
                             <button class="btn-expand" onclick="toggleHistory(1, this)">Ver más</button>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="workshop-item p-3 card-scroll">
+                    <div class="col-12 col-md-6 col-lg-3" style="padding-left: 0.75rem; padding-right: 0.75rem; min-width: 0;">
+                        <div class="workshop-item p-3 card-scroll" style="min-width: 0;">
                             <div class="workshop-carousel">
                                 <div class="carousel-images" id="carousel2">
                                     <img src="img/Profe Francis.jpeg" alt="Belleza 1" class="carousel-image">
@@ -2002,8 +2032,8 @@
                             <button class="btn-expand" onclick="toggleHistory(2, this)">Ver más</button>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="workshop-item p-3 card-scroll">
+                    <div class="col-12 col-md-6 col-lg-3" style="padding-left: 0.75rem; padding-right: 0.75rem; min-width: 0;">
+                        <div class="workshop-item p-3 card-scroll" style="min-width: 0;">
                             <div class="workshop-carousel">
                                 <div class="carousel-images" id="carousel3">
                                     <img src="img/Rodyn Javier Figueroa Osorto.jpeg" alt="Carpintería 1" class="carousel-image">
@@ -2036,8 +2066,8 @@
                             <button class="btn-expand" onclick="toggleHistory(3, this)">Ver más</button>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="workshop-item p-3 card-scroll">
+                    <div class="col-12 col-md-6 col-lg-3" style="padding-left: 0.75rem; padding-right: 0.75rem; min-width: 0;">
+                        <div class="workshop-item p-3 card-scroll" style="min-width: 0;">
                             <div class="workshop-carousel">
                                 <div class="carousel-images" id="carousel4">
                                     <img src="img/Vanessa Lizeth galindo Velasquez.jpeg" alt="Estructuras 1" class="carousel-image">
