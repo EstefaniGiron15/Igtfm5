@@ -853,6 +853,125 @@
             #director .col-lg-7 p { color:#2b2b2b; line-height:1.6; margin-bottom:0.6rem; text-align:justify; }
             #director .col-lg-5 .director-photo:hover { transform: scale(1.035); box-shadow: 0 26px 54px rgba(26,26,26,0.22); }
 
+            #deportes {
+                position: relative;
+                overflow: hidden;
+            }
+            #deportes::before {
+                content: "";
+                position: absolute;
+                width: 220px;
+                height: 220px;
+                left: -40px;
+                top: 30px;
+                background: radial-gradient(circle, rgba(225,196,53,0.18), rgba(122,15,15,0.05) 42%, transparent 72%);
+                border-radius: 50%;
+                pointer-events: none;
+            }
+            #deportes::after {
+                content: "";
+                position: absolute;
+                width: 250px;
+                height: 250px;
+                right: -60px;
+                bottom: 20px;
+                background: radial-gradient(circle, rgba(122,15,15,0.10), rgba(225,196,53,0.04) 45%, transparent 72%);
+                border-radius: 50%;
+                pointer-events: none;
+            }
+            #deportes .heading-decor {
+                margin-bottom: 1rem;
+                position: relative;
+                z-index: 1;
+            }
+            #deportes .card,
+            #deportes .rounded-4 {
+                position: relative;
+                z-index: 1;
+                box-shadow: 0 14px 35px rgba(21, 21, 21, 0.08) !important;
+            }
+            #deportes .card::before,
+            #deportes .rounded-4::before {
+                content: "";
+                position: absolute;
+                inset: 0 auto auto 0;
+                width: 100%;
+                height: 5px;
+                background: linear-gradient(90deg, #7A0F0F 0%, #E1C435 55%, rgba(225,196,53,0.15) 100%);
+                border-radius: 1.5rem 1.5rem 0 0;
+            }
+            #deportes .rounded-4 {
+                overflow: hidden;
+            }
+            #deportes .table thead th {
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                font-size: 0.72rem;
+            }
+            #deportes blockquote {
+                position: relative;
+                overflow: hidden;
+            }
+            #deportes blockquote::before {
+                content: "“";
+                position: absolute;
+                top: -18px;
+                right: 18px;
+                font-size: 5rem;
+                line-height: 1;
+                color: rgba(122,15,15,0.10);
+                font-weight: 800;
+            }
+            #deportes .badge {
+                box-shadow: 0 8px 18px rgba(122,15,15,0.18);
+            }
+            #deportes .card::after,
+            #deportes .rounded-4::after {
+                content: "";
+                position: absolute;
+                width: 140px;
+                height: 140px;
+                right: -30px;
+                bottom: -30px;
+                background: radial-gradient(circle, rgba(225,196,53,0.22), rgba(122,15,15,0.06) 40%, transparent 72%);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 0;
+            }
+            #deportes .card > *,
+            #deportes .rounded-4 > * {
+                position: relative;
+                z-index: 1;
+            }
+            #deportes .table {
+                background: rgba(255,255,255,0.62);
+                backdrop-filter: blur(2px);
+            }
+            #deportes .table td,
+            #deportes .table th {
+                vertical-align: middle;
+                padding-top: 0.9rem;
+                padding-bottom: 0.9rem;
+            }
+            #deportes h3 {
+                position: relative;
+                display: inline-block;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 0.35rem 1.15rem;
+                border: 1px solid rgba(122,15,15,0.12);
+                border-radius: 999px;
+                background: rgba(255,255,255,0.55);
+                backdrop-filter: blur(2px);
+                box-shadow: 0 8px 18px rgba(122,15,15,0.06);
+            }
+            #deportes h3,
+            #deportes h4,
+            #deportes h5 {
+                position: relative;
+                z-index: 1;
+            }
+
         </style>
         <meta name="description" content="Instituto Gubernamental Técnico Francisco Miranda - Zambrano">
     </head>
@@ -888,6 +1007,7 @@
                         <li class="nav-item"><a class="nav-link" href="#instalaciones">Instalaciones</a></li>
                         <li class="nav-item"><a class="nav-link" href="#noticias">carreras</a></li>
                         <li class="nav-item"><a class="nav-link" href="#talleres">Talleres</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#deportes">Deportes</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
@@ -1689,7 +1809,7 @@
                     <div class="col-md-4">
                         <div class="card shadow-sm h-100">
                             <div class="bg-light p-3 text-center" style="min-height:320px; display:flex; align-items:center; justify-content:center;">
-                                <img src="img/roy.jpeg" class="img-fluid rounded" alt="Roy" style="max-height:280px; width:100%; object-fit:contain; object-position:center center; background-color:transparent; padding:4px; border-radius:12px;">
+                                <img src="img/Roy Rodriguez.jpeg" class="img-fluid rounded" alt="Roy" style="max-height:280px; width:100%; object-fit:contain; object-position:center center; background-color:transparent; padding:4px; border-radius:12px;">
                             </div>
                             <div class="card-body text-center">
                                 <h5 class="card-title">ROY ALEJANDRO RODRIGUEZ PAVON
@@ -2108,6 +2228,121 @@
                             <button class="btn-expand" onclick="toggleHistory(4, this)">Ver más</button>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <!-- Deportes -->
+            <section id="deportes" class="container py-5 reveal">
+                <h3 class="mb-0 text-center w-100">DEPORTES</h3>
+                <div class="heading-decor"><svg width="160" height="20" viewBox="0 0 160 20" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="gDep" x1="0" x2="1"><stop offset="0" stop-color="#7A0F0F"/><stop offset="1" stop-color="#E1C435"/></linearGradient></defs><rect x="10" y="9" width="140" height="2" rx="1" fill="url(#gDep)"/><circle cx="80" cy="10" r="5" fill="#7A0F0F"/></svg></div>
+
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden mt-4" style="background: linear-gradient(180deg, #f9f4ec, #f4efe7);">
+                    <div class="row g-0 align-items-stretch">
+                        <div class="col-lg-5">
+                            <div class="h-100 p-4 d-flex flex-column justify-content-center" style="background: linear-gradient(135deg, rgba(122,15,15,0.06), rgba(225,196,53,0.12));">
+                                <span class="badge rounded-pill px-3 py-2 mb-3" style="background: linear-gradient(90deg,#7A0F0F,#E1C435); color: white; letter-spacing: .08em; font-size: 0.72rem; width: fit-content;">Fútbol Femenino</span>
+                                <h4 class="mb-3" style="color: #7A0F0F; font-weight: 800;">Una historia de esfuerzo, inclusión y superación</h4>
+                                <p class="mb-0" style="line-height:1.7; color:#2e2e2e;">El fútbol femenino ha ganado un espacio importante dentro del instituto al demostrar que el talento, la disciplina y la dedicación no dependen del género.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="p-4">
+                                <p class="mb-1"><strong>INSTITUTO TÉCNICO GENERAL FRANCISCO MIRANDA</strong></p>
+                                <p class="mb-2">Aldea Zambrano, Honduras</p>
+                                <p class="mb-2"><strong>Área de Deportes</strong></p>
+                                <h5 class="mb-3" style="color:#7A0F0F; font-weight:800;">Fútbol Femenino</h5>
+                                <p class="mb-0" style="line-height:1.7; color:#2e2e2e;">El proyecto nació en 2024 con el interés de un grupo de estudiantes por practicar fútbol y representar al instituto en competencias oficiales. Con el paso del tiempo, el equipo se consolidó como una iniciativa importante dentro de la comunidad educativa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4 mt-1">
+                    <div class="col-lg-6">
+                        <div class="p-4 rounded-4 h-100" style="background: linear-gradient(180deg, rgba(122,15,15,0.04), rgba(225,196,53,0.06)); border:1px solid rgba(122,15,15,0.08);">
+                            <p class="mb-3"><strong>1. Introducción y contexto</strong></p>
+                            <p>El fútbol femenino se ha consolidado como una de las iniciativas más importantes del área deportiva del instituto. Su historia demuestra que el talento, la disciplina y la dedicación no dependen del género, y que las estudiantes pueden representar a la institución con el mismo nivel de compromiso que cualquier otro equipo.</p>
+                            <p>El proyecto nació en 2024, a partir del interés de un grupo de estudiantes que quería practicar fútbol y representar al instituto en competencias oficiales. Desde entonces se ha mantenido en constante formación, y hoy reúne a alumnas de distintos grados y especialidades.</p>
+                            <p class="mb-0">Para conocer más a fondo el proceso, se conversó con la encargada del equipo, quien ha acompañado el proyecto desde sus inicios, hace aproximadamente dos años y medio.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-4 rounded-4 h-100" style="background: linear-gradient(180deg, rgba(225,196,53,0.06), rgba(122,15,15,0.04)); border:1px solid rgba(122,15,15,0.08);">
+                            <p class="mb-3"><strong>2. Desarrollo del equipo de fútbol femenino</strong></p>
+                            <p><strong>2.1 Origen y trayectoria:</strong> El equipo femenino existe desde 2024 y actualmente cuenta con cerca de dos años y medio de trayectoria. Todo comenzó con un grupo de estudiantes interesadas en participar en actividades y competencias de fútbol femenino.</p>
+                            <p><strong>2.2 Integrantes y categorías:</strong> Está formado por estudiantes de distintos grados académicos y especialidades, incluyendo alumnas de educación básica y media. Actualmente, la participación se concentra en las categorías U15 y U17.</p>
+                            <p class="mb-0"><strong>2.3 Logros y participación en torneos:</strong> Uno de los principales logros ha sido mantener vivo el equipo dentro de la institución, a pesar de contar con recursos y espacios limitados. En una competencia de CODICADER, llegaron a cuartos de final.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 p-4 rounded-4" style="background: #f7f2ea; border:1px solid rgba(122,15,15,0.08);">
+                    <p class="mb-3"><strong>2.4 Instalaciones y recursos</strong></p>
+                    <p>El instituto cuenta con una cancha que no tiene las dimensiones reglamentarias para la práctica de fútbol sala, ya que originalmente fue construida para apoyar las clases de Educación Física y otras actividades deportivas. Este espacio se comparte entre los distintos equipos, tanto femeninos como masculinos.</p>
+                    <p>Aun con estas limitaciones, la adaptación y el uso compartido de los espacios han permitido que las estudiantes sigan desarrollando sus actividades deportivas con normalidad.</p>
+
+                    <p class="mt-4 mb-2"><strong>2.5 Próximas actividades</strong></p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered align-middle mb-0" style="border-color: rgba(122,15,15,0.15);">
+                            <thead style="background: linear-gradient(90deg,#7A0F0F,#E1C435); color: white;">
+                                <tr>
+                                    <th>Actividad</th>
+                                    <th>Rival / detalle</th>
+                                    <th>Categoría</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Competencia CODICADER</td>
+                                    <td>Secretaría de Educación — el equipo llegó a cuartos de final</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td>Encuentro programado</td>
+                                    <td>Faita Academy</td>
+                                    <td>U15</td>
+                                </tr>
+                                <tr>
+                                    <td>Encuentro programado</td>
+                                    <td>IER</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td>Copa Amistad de Fútbol Femenino (3ª edición)</td>
+                                    <td>Torneo organizado por la institución, a mediados de octubre</td>
+                                    <td>U16</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="mt-4 mb-2"><strong>2.6 Mensaje e inclusión</strong></p>
+                    <blockquote class="mb-0 p-3 rounded-3" style="background: rgba(225,196,53,0.12); border-left: 4px solid #E1C435; color:#2e2e2e;">
+                        “Ser mujer no debe representar una limitación para participar en el deporte.”
+                        <br><small class="text-muted">— Encargada del equipo de Fútbol Femenino</small>
+                    </blockquote>
+                </div>
+
+                <div class="mt-4 p-4 rounded-4" style="background: linear-gradient(180deg, #f8f1e6 0%, #f0e7db 100%); border:1px solid rgba(122,15,15,0.12); box-shadow: inset 0 2px 0 rgba(255,255,255,0.9), inset 0 -2px 0 rgba(122,15,15,0.04), 0 10px 22px rgba(122,15,15,0.06);">
+                    <p class="mb-3"><strong>3. Aspectos clave</strong></p>
+                    <ul class="mb-0 ps-3">
+                        <li>Inicio del proyecto: 2024, con cerca de dos años y medio de trayectoria.</li>
+                        <li>Disciplina: fútbol femenino.</li>
+                        <li>Categorías de participación: U15 y U17, con actividades adicionales en U16.</li>
+                        <li>Participación destacada: cuartos de final en CODICADER.</li>
+                        <li>Evento propio: Copa Amistad de Fútbol Femenino, tercera edición.</li>
+                        <li>Próximos encuentros: Faita Academy (U15) e IER.</li>
+                        <li>Instalaciones: cancha compartida y sin dimensiones reglamentarias para fútbol sala.</li>
+                        <li>Inclusión deportiva: el género no debe limitar la participación.</li>
+                        <li>Formación integral: disciplina, compromiso, trabajo en equipo y confianza.</li>
+                    </ul>
+                </div>
+
+                <div class="mt-4 p-4 rounded-4" style="background: #f7f2ea; border:1px solid rgba(122,15,15,0.08);">
+                    <p class="mb-3"><strong>4. Cierre y conclusiones</strong></p>
+                    <p>El fútbol femenino representa mucho más que una actividad deportiva dentro de la institución. Su sola existencia refleja el compromiso de las estudiantes y de la encargada del equipo por construir espacios de participación, inclusión y desarrollo dentro del instituto.</p>
+                    <p>En apenas dos años y medio, el equipo ha sabido superar limitaciones de tiempo, espacio y recursos, y aun así ha logrado resultados que hablan por sí solos, como el avance hasta cuartos de final en CODICADER o la consolidación de un torneo propio como la Copa Amistad de Fútbol Femenino.</p>
+                    <p class="mb-0">La visión del área es seguir fortaleciendo el proyecto, incentivar la participación de nuevas estudiantes y brindarles la oportunidad de desarrollar sus capacidades deportivas y personales.</p>
                 </div>
             </section>
 
