@@ -315,7 +315,8 @@
                 border-radius: 12px;
                 padding: 1.1rem 1rem 1.2rem;
                 background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.96));
-                min-height: 220px;
+                min-height: 560px;
+                height: 100%;
                 display: flex;
                 flex-direction: column;
                 gap: .75rem;
@@ -329,10 +330,27 @@
                 text-align: center;
                 margin-bottom: 0;
             }
+            .career-item .workshop-carousel {
+                width: 100%;
+                margin-top: 0.2rem;
+                margin-bottom: 0.2rem;
+            }
+            .career-item .carousel-images {
+                width: 100%;
+                height: 200px;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            .career-item .carousel-controls {
+                margin-top: 0.35rem;
+            }
             .career-item .btn {
                 align-self: center;
                 min-width: 120px;
                 margin-top: auto;
+            }
+            .career-item .collapse-scroll {
+                margin-top: 0.25rem;
             }
             /* Number the career blocks inside the noticias section (circular badge) */
             #noticias .row { counter-reset: careers; }
@@ -1793,6 +1811,21 @@
                     <div class="col-4">
                         <div class="career-item p-3">
                             <h4 class="career-title-inline"><i class="bi bi-cpu career-icon"></i>Informática</h4>
+                            <div class="workshop-carousel agro-carousel">
+                                <div class="carousel-images" id="carousel6">
+                                    <img src="img/Informática (2).jpeg" alt="Informática 2" class="carousel-image">
+                                    <img src="img/Informática (3).jpeg" alt="Informática 3" class="carousel-image">
+                                    <img src="img/Informática (4).jpeg" alt="Informática 4" class="carousel-image">
+                                    <img src="img/Informática (5).jpeg" alt="Informática 5" class="carousel-image">
+                                    <img src="img/Informática (6).jpeg" alt="Informática 6" class="carousel-image">
+                                    <img src="img/Informática (7).jpeg" alt="Informática 7" class="carousel-image">
+                                    <img src="img/Informática (8).jpeg" alt="Informática 8" class="carousel-image">
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn" onclick="carouselPrev(6)">❮</button>
+                                    <button class="carousel-btn" onclick="carouselNext(6)">❯</button>
+                                </div>
+                            </div>
                             <p><strong>HISTORIA DE LA CARRERA DE INFORMÁTICA</strong></p>
                             <button class="btn btn-sm btn-outline-primary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#career1More" aria-expanded="false" aria-controls="career1More">Ver más</button>
                             <div class="collapse mt-3 collapse-scroll" id="career1More">
@@ -1809,7 +1842,17 @@
                     </div>
                     <div class="col-4">
                         <div class="career-item p-3">
-                            <h4 class="career-title-inline"><i class="bi bi-bank career-icon"></i>Contaduría y Finanzas</h4>
+                            <h4 class="career-title-inline" style="justify-content:flex-start; padding-left: 42px; padding-right: 0;"><i class="bi bi-bank career-icon"></i>Contaduría y Finanzas</h4>
+                            <div class="workshop-carousel agro-carousel">
+                                <div class="carousel-images" id="carousel7">
+                                    <img src="img/Suyapa Janeth Pineda Lopez.jpeg" alt="Suyapa Janeth Pineda López" class="carousel-image">
+                                    <img src="img/Maria de la paz Álvarez.jpeg" alt="María de la Paz Álvarez" class="carousel-image">
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn" onclick="carouselPrev(7)">❮</button>
+                                    <button class="carousel-btn" onclick="carouselNext(7)">❯</button>
+                                </div>
+                            </div>
                             <p><strong>HISTORIA DEL BTP EN CONTADURÍA Y FINANZAS</strong></p>
                             <button class="btn btn-sm btn-outline-primary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#career2More" aria-expanded="false" aria-controls="career2More">Ver más</button>
                             <div class="collapse mt-3 collapse-scroll" id="career2More">
@@ -1827,6 +1870,7 @@
                     </div>
                     <div class="col-4">
                         <div class="career-item p-3">
+                            <h4 class="career-title-inline"><i class="bi bi-flower1 career-icon"></i>Agroindustria</h4>
                             <div class="workshop-carousel agro-carousel">
                                 <div class="carousel-images" id="carousel5">
                                     <img src="img/AGRO1.jpg" alt="Agro 1" class="carousel-image">
@@ -1853,7 +1897,6 @@
                                     <button class="carousel-btn" onclick="carouselNext(5)">❯</button>
                                 </div>
                             </div>
-                            <h4 class="career-title-inline"><i class="bi bi-flower1 career-icon"></i>Agroindustria</h4>
                             <p><strong>HISTORIA DE LA CARRERA DE AGROINDUSTRIA</strong></p>
                             <button class="btn btn-sm btn-outline-primary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#career3More" aria-expanded="false" aria-controls="career3More">Ver más</button>
                             <div class="collapse mt-3 collapse-scroll" id="career3More">
@@ -2311,7 +2354,9 @@
                     2: { current: 0, total: 16 },
                     3: { current: 0, total: 11 },
                     4: { current: 0, total: 2 },
-                    5: { current: 0, total: 18 }
+                    5: { current: 0, total: 18 },
+                    6: { current: 0, total: 7 },
+                    7: { current: 0, total: 2 }
                 };
 
                 // Navigate carousel to next image
@@ -2357,7 +2402,7 @@
                 };
 
                 // Initialize carousel totals based on available images
-                for (let i = 1; i <= 5; i++) {
+                for (let i = 1; i <= 7; i++) {
                     const carousel = document.getElementById(`carousel${i}`);
                     if (carousel) {
                         const images = carousel.querySelectorAll('.carousel-image');
