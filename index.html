@@ -578,15 +578,19 @@
                 display: flex;
                 overflow: hidden;
                 border-radius: 8px;
-                height: 220px;
+                height: 320px;
                 width: 100%;
+                background: linear-gradient(180deg, rgba(122,15,15,0.04), rgba(225,196,53,0.06));
             }
             .carousel-image {
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
+                object-fit: contain;
+                object-position: center;
                 flex-shrink: 0;
                 transition: opacity 0.3s ease;
+                background-color: #f6f3ee;
+                padding: 0.4rem;
             }
             .carousel-image.hidden {
                 display: none;
@@ -2257,6 +2261,29 @@
                     </div>
                 </div>
 
+                <div class="mt-4 mb-4">
+                    <div class="workshop-carousel" style="max-width: 980px; margin: 0 auto;">
+                        <div class="carousel-images" id="carouselDeportes" style="height: 420px;">
+                            <img src="img/Deportes (1).jpeg" alt="Deportes 1" class="carousel-image">
+                            <img src="img/Deportes (2).jpeg" alt="Deportes 2" class="carousel-image">
+                            <img src="img/Deportes (3).jpeg" alt="Deportes 3" class="carousel-image">
+                            <img src="img/Deportes (4).jpeg" alt="Deportes 4" class="carousel-image">
+                            <img src="img/Deportes (5).jpeg" alt="Deportes 5" class="carousel-image">
+                            <img src="img/Deportes (6).jpeg" alt="Deportes 6" class="carousel-image">
+                            <img src="img/Deportes (7).jpeg" alt="Deportes 7" class="carousel-image">
+                            <img src="img/Deportes (8).jpeg" alt="Deportes 8" class="carousel-image">
+                            <img src="img/Deportes (9).jpeg" alt="Deportes 9" class="carousel-image">
+                            <img src="img/Deportes (10).jpeg" alt="Deportes 10" class="carousel-image">
+                            <img src="img/Deportes (11).jpeg" alt="Deportes 11" class="carousel-image">
+                            <img src="img/Deportes (12).jpeg" alt="Deportes 12" class="carousel-image">
+                        </div>
+                        <div class="carousel-controls">
+                            <button class="carousel-btn" onclick="carouselPrev('Deportes')">❮</button>
+                            <button class="carousel-btn" onclick="carouselNext('Deportes')">❯</button>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row g-4 mt-1">
                     <div class="col-lg-6">
                         <div class="p-4 rounded-4 h-100" style="background: linear-gradient(180deg, rgba(122,15,15,0.04), rgba(225,196,53,0.06)); border:1px solid rgba(122,15,15,0.08);">
@@ -2346,78 +2373,25 @@
                 </div>
             </section>
 
-            <!-- Contacto y mapa -->
-            <section id="contacto" class="container py-5 reveal">
-                <h3 class="mb-3">Contacto</h3>
-                <div class="row">
-                    <div class="col-md-6">
-                        <form id="contactForm" novalidate>
-                            <div class="mb-3"><label class="form-label">Nombre</label><input id="c_nombre" class="form-control" required></div>
-                            <div class="mb-3"><label class="form-label">Correo</label><input id="c_correo" type="email" class="form-control" required></div>
-                            <div class="mb-3"><label class="form-label">Teléfono</label><input id="c_telefono" class="form-control" required></div>
-                            <div class="mb-3"><label class="form-label">Mensaje</label><textarea id="c_mensaje" class="form-control" rows="4" required></textarea></div>
-                            <button class="btn btn-primary" type="submit">Enviar</button>
-                        </form>
-                    </div>
-                    <div class="col-md-6">
-                        <h5>Ubicación</h5>
-                        <div class="ratio ratio-4x3 mb-3">
-                            <iframe src="https://www.google.com/maps?q=Zambrano%2C%20Francisco%20Moraz%C3%A1n%2C%20Honduras&output=embed"></iframe>
-                        </div>
-                        <h5>Redes sociales</h5>
-                        <div class="d-flex gap-2 mb-3">
-                            <a class="btn btn-outline-primary" href="#"><i class="bi bi-facebook"></i> Facebook</a>
-                            <a class="btn btn-outline-danger" href="#"><i class="bi bi-instagram"></i> Instagram</a>
-                            <a class="btn btn-outline-success" href="#"><i class="bi bi-whatsapp"></i> WhatsApp</a>
-                            <a class="btn btn-outline-danger" href="#"><i class="bi bi-youtube"></i> YouTube</a>
-                        </div>
-                        <div>
-                            <p><strong>Tel:</strong> +504 0000-0000<br><strong>Correo:</strong> info@colegiofm.edu.hn</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Calendario escolar -->
-            <section id="calendario" class="container py-5 reveal">
-                <h3 class="mb-3">Calendario Escolar</h3>
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                        <thead><tr><th>Evento</th><th>Fecha</th></tr></thead>
-                        <tbody>
-                            <tr><td>Inicio de clases</td><td>01/07/2026</td></tr>
-                            <tr><td>Exámenes parciales</td><td>15/09/2026</td></tr>
-                            <tr><td>Vacaciones de invierno</td><td>20/12/2026 - 05/01/2027</td></tr>
-                            <tr><td>Clausura</td><td>15/06/2027</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <!-- Estadísticas con contadores animados -->
-            <section id="estadisticas" class="container py-5 reveal">
-                <h3 class="mb-4">Estadísticas</h3>
-                <div class="row text-center">
-                    <div class="col-6 col-md-3 mb-3">
-                        <h4 class="counter" data-target="43">39</h4>
-                        <p>Maestros</p>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3">
-                        <h4 class="counter" data-target="800">0</h4>
-                        <p>Estudiantes</p>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3">
-                        <h4 class="counter" data-target="25">0</h4>
-                        <p>Aulas</p>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3">
-                        <h4 class="counter" data-target="20">38</h4>
-                        <p>Años</p>
-                    </div>
-                </div>
-            </section>
-
         </main>
+
+        <!-- Ubicación -->
+        <section id="contacto" class="container py-5 reveal">
+            <div class="text-center mb-4">
+                <h2 style="color: #7A0F0F; font-weight: 900; font-size: 2.3rem; margin-bottom: 0.75rem;">Ubicación</h2>
+                <div style="width: 90px; height: 4px; background: linear-gradient(90deg, #7A0F0F 0%, #E1C435 50%, #7A0F0F 100%); margin: 0 auto 1.5rem; border-radius: 999px;"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="ratio ratio-16x9 shadow-sm rounded-4 overflow-hidden border" style="border-color: rgba(122,15,15,0.15);">
+                        <iframe src="https://www.google.com/maps?q=Zambrano%2C%20Francisco%20Moraz%C3%A1n%2C%20Honduras&output=embed" style="border:0; width:100%; height:100%;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <p class="text-center mt-3 mb-0" style="color: #5a5a5a; font-size: 1.05rem;">
+                        <strong style="color: #7A0F0F;">Dirección:</strong> Zambrano, Francisco Morazán, Honduras
+                    </p>
+                </div>
+            </div>
+        </section>
 
         <!-- Botones y utilidades flotantes -->
         <button id="backToTop" class="btn btn-primary btn-lg back-to-top"><i class="bi bi-arrow-up"></i></button>
@@ -2621,7 +2595,8 @@
                     4: { current: 0, total: 2 },
                     5: { current: 0, total: 18 },
                     6: { current: 0, total: 7 },
-                    7: { current: 0, total: 2 }
+                    7: { current: 0, total: 2 },
+                    Deportes: { current: 0, total: 12 }
                 };
 
                 // Navigate carousel to next image
@@ -2674,6 +2649,13 @@
                         carouselState[i].total = Math.max(images.length, 1);
                         updateCarousel(i);
                     }
+                }
+
+                const deportesCarousel = document.getElementById('carouselDeportes');
+                if (deportesCarousel) {
+                    const deportesImages = deportesCarousel.querySelectorAll('.carousel-image');
+                    carouselState.Deportes.total = Math.max(deportesImages.length, 1);
+                    updateCarousel('Deportes');
                 }
             });
         </script>
