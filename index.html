@@ -198,6 +198,168 @@
                 .career-item h5, .career-item .career-excerpt, .career-item .career-more { margin-left: 48px; }
                 #noticias .career-item::after { display:none; }
             }
+            
+            /* Workshop/Talleres styles */
+            .workshop-item {
+                border: none;
+                border-radius: 8px;
+                padding: 0.9rem 0.9rem;
+                background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.96));
+                display: flex;
+                flex-direction: column;
+                gap: .6rem;
+                position: relative;
+                overflow: hidden;
+                height: 100%;
+            }
+            .workshop-item, .workshop-item * { box-shadow: none !important; }
+            #talleres .row { counter-reset: workshops; }
+            #talleres .workshop-item::before {
+                counter-increment: workshops;
+                content: counter(workshops);
+                font-weight: 800;
+                font-size: 0.95rem;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width:40px; height:40px; border-radius:50%;
+                background: linear-gradient(90deg,#7A0F0F,#E1C435);
+                position: absolute; left: 16px; top: 16px; z-index: 3; box-shadow: 0 10px 20px rgba(122,15,15,0.12);
+            }
+            #talleres .workshop-item::after {
+                content: '';
+                position: absolute; right: -36px; top: 12px; width: 80px; height: 28px; transform: rotate(20deg);
+                background: linear-gradient(90deg, rgba(122,15,15,0.95), rgba(225,196,53,0.95)); z-index:2; opacity:0.9; border-radius:4px; box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+                filter: saturate(1.02);
+            }
+            .workshop-item h5 { margin: 0 0 0 56px; }
+            .workshop-item .workshop-excerpt { color: #333; margin-left: 56px; }
+            .workshop-item .workshop-more { margin-top: auto; margin-left: 56px; }
+            .workshop-gallery {
+                width: 100%;
+                display: flex;
+                gap: 0.5rem;
+                margin-bottom: 0.6rem;
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+                position: relative;
+            }
+            .workshop-carousel {
+                width: 100%;
+                position: relative;
+                margin-bottom: 0.6rem;
+            }
+            .carousel-images {
+                display: flex;
+                overflow: hidden;
+                border-radius: 8px;
+                height: 220px;
+            }
+            .carousel-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                flex-shrink: 0;
+                transition: opacity 0.3s ease;
+            }
+            .carousel-image.hidden {
+                display: none;
+            }
+            .carousel-nav {
+                position: absolute;
+                bottom: 8px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                gap: 0.3rem;
+                z-index: 10;
+            }
+            .carousel-dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: rgba(255,255,255,0.6);
+                cursor: pointer;
+                transition: background 0.2s ease;
+                border: 1px solid rgba(0,0,0,0.2);
+            }
+            .carousel-dot.active {
+                background: #7A0F0F;
+            }
+            .carousel-controls {
+                display: flex;
+                justify-content: space-between;
+                padding: 0 0.5rem;
+            }
+            .carousel-btn {
+                background: linear-gradient(90deg,#7A0F0F,#E1C435);
+                color: white;
+                border: none;
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                cursor: pointer;
+                font-size: 0.8rem;
+                transition: transform 0.2s ease;
+            }
+            .carousel-btn:hover {
+                transform: scale(1.1);
+            }
+            .workshop-history {
+                position: relative;
+                overflow: hidden;
+                display: none;
+            }
+            .workshop-history.expanded {
+                display: block;
+            }
+            .workshop-collapsed {
+                display: none;
+            }
+            .workshop-history.expanded .workshop-collapsed {
+                display: block;
+            }
+            .btn-expand {
+                background: linear-gradient(90deg,#7A0F0F,#E1C435);
+                color: white;
+                border: none;
+                padding: 0.4rem 1rem;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 0.85rem;
+                font-weight: 500;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+                width: 100%;
+                margin-top: 0.5rem;
+            }
+            .btn-expand:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(122,15,15,0.2);
+            }
+            .btn-expand:active {
+                transform: translateY(0);
+            }
+            .workshop-preview {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 8px;
+                margin-bottom: 0.6rem;
+            }
+            #talleres h3 { margin-bottom: 0.1rem; text-transform:uppercase; letter-spacing:0.06em; }
+            #talleres h3::after { content: ''; display:block; width:120px; height:6px; margin:8px auto 0; background: linear-gradient(90deg,#7A0F0F,#E1C435); border-radius:4px; box-shadow: 0 8px 20px rgba(122,15,15,0.06); }
+            .workshop-icon { background:transparent; color:#7A0F0F; width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; font-size:1.05rem; margin-right:8px; border:2px solid rgba(122,15,15,0.08); }
+            .workshop-title-inline { display:flex; align-items:center; gap:.5rem; }
+            @media (min-width: 992px) {
+                #talleres .col:not(:last-child) { border-right: 1px dashed rgba(0,0,0,0.04); padding-right: 18px; }
+                #talleres .col:not(:first-child) { padding-left: 18px; }
+            }
+            @media (max-width: 767px) {
+                #talleres .workshop-item::before { width:32px; height:32px; left:12px; top:12px; font-size:0.8rem; }
+                .workshop-item h5, .workshop-item .workshop-excerpt, .workshop-item .workshop-more { margin-left: 48px; }
+                #talleres .workshop-item::after { display:none; }
+            }
             /* Carousel enhancements */
             #instalacionesCarousel.carousel {
                 max-width: 100%;
@@ -332,6 +494,7 @@
                         <li class="nav-item"><a class="nav-link" href="#maestros">Maestros</a></li>
                         <li class="nav-item"><a class="nav-link" href="#instalaciones">Instalaciones</a></li>
                         <li class="nav-item"><a class="nav-link" href="#noticias">carreras</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#talleres">Talleres</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
@@ -1278,6 +1441,169 @@
                 </div>
             </section>
 
+            <!-- Talleres -->
+            <section id="talleres" class="container py-5 reveal">
+                <h3 class="mb-0 text-center w-100">TALLERES</h3>
+                <div class="heading-decor"><svg width="160" height="20" viewBox="0 0 160 20" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#7A0F0F"/><stop offset="1" stop-color="#E1C435"/></linearGradient></defs><rect x="10" y="9" width="140" height="2" rx="1" fill="url(#g)"/><circle cx="80" cy="10" r="5" fill="#7A0F0F"/></svg></div>
+                <div class="row g-3">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="workshop-item p-3">
+                            <div class="workshop-carousel">
+                                <div class="carousel-images" id="carousel1">
+                                    <img src="img/Mario leonel avila maradiaga.png" alt="Electricidad 1" class="carousel-image">
+                                    <img src="img/Electricidad (1).jpeg" alt="Electricidad 2" class="carousel-image">
+                                    <img src="img/Electricidad (2).jpeg" alt="Electricidad 3" class="carousel-image">
+                                    <img src="img/Electricidad (3).jpeg" alt="Electricidad 4" class="carousel-image">
+                                    <img src="img/Electricidad (4).jpeg" alt="Electricidad 5" class="carousel-image">
+                                    <img src="img/Electricidad (5).jpeg" alt="Electricidad 6" class="carousel-image">
+                                    <img src="img/Electricidad (6).jpeg" alt="Electricidad 7" class="carousel-image">
+                                    <img src="img/Electricidad (7).jpeg" alt="Electricidad 8" class="carousel-image">
+                                    <img src="img/Electricidad (8).jpeg" alt="Electricidad 9" class="carousel-image">
+                                    <img src="img/Electricidad (9).jpeg" alt="Electricidad 10" class="carousel-image">
+                                    <img src="img/Electricidad (10).jpeg" alt="Electricidad 11" class="carousel-image">
+                                    <img src="img/Electricidad (11).jpeg" alt="Electricidad 12" class="carousel-image">
+                                    <img src="img/Electricidad (12).jpeg" alt="Electricidad 13" class="carousel-image">
+                                    <img src="img/Electricidad (13).jpeg" alt="Electricidad 14" class="carousel-image">
+                                    <img src="img/Electricidad (14).jpeg" alt="Electricidad 15" class="carousel-image">
+                                    <img src="img/Electricidad (15).jpeg" alt="Electricidad 16" class="carousel-image">
+                                    <img src="img/Electricidad (16).jpeg" alt="Electricidad 17" class="carousel-image">
+                                    <img src="img/Electricidad (17).jpeg" alt="Electricidad 18" class="carousel-image">
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn" onclick="carouselPrev(1)">❮</button>
+                                    <button class="carousel-btn" onclick="carouselNext(1)">❯</button>
+                                </div>
+                            </div>
+                            <h5 class="workshop-title-inline"><i class="bi bi-lightning-fill workshop-icon"></i>Taller de Electricidad</h5>
+                            <div class="workshop-history" id="history1">
+                                <p><strong>HISTORIA Y EVOLUCIÓN DEL TALLER DE ELECTRICIDAD</strong></p>
+                                <p><strong>Origen del Taller:</strong> El Taller de Electricidad nació a partir de la necesidad del instituto de contar con un espacio especializado para atender el mantenimiento de las instalaciones eléctricas y, al mismo tiempo, brindar a los estudiantes una formación práctica en el área. En sus inicios, el taller comenzó con una disponibilidad aproximada de 12 horas bajo la responsabilidad del profesor Mario Ávila, quien fue uno de sus primeros impulsores.</p>
+                                <p><strong>Primeras Herramientas:</strong> Al comenzar, los recursos eran muy limitados. Las primeras herramientas utilizadas fueron principalmente las que el propio profesor llevaba consigo: tenaza, destornillador y una navaja. Esta etapa demuestra que el desarrollo de un taller no depende únicamente de contar con muchos equipos, sino de la disposición para trabajar, enseñar y aprender.</p>
+                                <p><strong>Primeros Aprendizajes:</strong> El taller funcionó en el espacio que anteriormente correspondía al aula de Dibujo Técnico. La enseñanza comenzó con los fundamentos de la electricidad: reconocimiento y uso correcto de herramientas, identificación de materiales eléctricos, medidas de seguridad, tipos de empalmes y circuitos básicos (serie y paralelo).</p>
+                                <p class="workshop-collapsed"><strong>Evolución Tecnológica:</strong> Uno de los cambios más importantes ha sido la incorporación de tecnología. Actualmente, el taller busca integrar la electricidad con herramientas tecnológicas de programación, como placas programables Micro:bit, que permiten desarrollar proyectos sencillos, controlar circuitos y estimular la creatividad de los alumnos.</p>
+                                <p class="workshop-collapsed"><strong>Ampliación del Espacio:</strong> La construcción del edificio propio fue posible gracias a la gestión de la dirección y al valioso apoyo de la directiva de padres de familia. El espacio fue diseñado estratégicamente con posibilidades de ampliación, permitiendo contar con instalaciones modernas.</p>
+                                <p class="workshop-collapsed"><strong>Proyectos Destacados:</strong> Los estudiantes participan activamente en instalación de tableros, elaboración de lámparas decorativas utilizando tubería PVC pulida, construcción de calentadores de agua eléctricos, y el mantenimiento de la red e instalaciones eléctricas de la institución.</p>
+                            </div>
+                            <button class="btn-expand" onclick="toggleHistory(1)">Ver más</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="workshop-item p-3">
+                            <div class="workshop-carousel">
+                                <div class="carousel-images" id="carousel2">
+                                    <img src="img/Profe Francis.jpeg" alt="Belleza 1" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 5.59.46 PM.jpeg" alt="Belleza 2" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 5.59.52 PM.jpeg" alt="Belleza 3" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 5.59.59 PM.jpeg" alt="Belleza 4" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.00 PM (1).jpeg" alt="Belleza 5" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.00 PM (2).jpeg" alt="Belleza 6" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.00 PM (3).jpeg" alt="Belleza 7" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.00 PM.jpeg" alt="Belleza 8" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.01 PM (1).jpeg" alt="Belleza 9" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.01 PM.jpeg" alt="Belleza 10" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.02 PM (1).jpeg" alt="Belleza 11" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.02 PM (2).jpeg" alt="Belleza 12" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.02 PM (3).jpeg" alt="Belleza 13" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.02 PM.jpeg" alt="Belleza 14" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.03 PM (1).jpeg" alt="Belleza 15" class="carousel-image">
+                                    <img src="img/WhatsApp Image 2026-09-01 at 6.00.03 PM.jpeg" alt="Belleza 16" class="carousel-image">
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn" onclick="carouselPrev(2)">❮</button>
+                                    <button class="carousel-btn" onclick="carouselNext(2)">❯</button>
+                                </div>
+                            </div>
+                            <h5 class="workshop-title-inline"><i class="bi bi-scissors workshop-icon"></i>Taller de Belleza y Metodología</h5>
+                            <div class="workshop-history" id="history2">
+                                <p><strong>HISTORIA DEL TALLER DE BELLEZA Y COSMETOLOGÍA</strong></p>
+                                <p><strong>Origen del Taller:</strong> La historia del Taller surge a partir de una circunstancia laboral que llevó a la docente responsable a asumir el desafío de impartir clases de belleza y cosmetología. Después de trabajar un año y medio bajo modalidad de crecimiento vegetativo, se le asignaron horas para impartir clases de belleza.</p>
+                                <p><strong>Primeros Pasos:</strong> La docente reconoce que no tenía conocimientos especializados en el área. Sin embargo, asumió la responsabilidad y se capacitó mediante cursos impartidos por INFOP relacionados con belleza y cosmetología. En sus primeros momentos, el taller prácticamente no contaba con herramientas ni equipo especializado.</p>
+                                <p><strong>Recursos Limitados:</strong> La docente tuvo que buscar alternativas para obtener recursos necesarios. Realizó venta de confites, empanadas, donas y panqueques. Con los fondos obtenidos comenzó poco a poco a adquirir los primeros equipos. Uno de los primeros instrumentos adquiridos fue una plancha para el cabello de color rosado que aún conserva y continúa funcionando.</p>
+                                <p class="workshop-collapsed"><strong>Crecimiento del Taller:</strong> Con el paso del tiempo, el taller fue adquiriendo herramientas como planchas, secadoras, herramientas para rizos, muñecas para prácticas de peinado, espejos, mesas y sillas para masajes. Se incorporaron diferentes áreas: planchado y secado del cabello, manicure, pedicure, tratamientos faciales, maquillaje, uñas acrílicas y laminado de cejas.</p>
+                                <p class="workshop-collapsed"><strong>Cualidades del Estudiante:</strong> Una de las principales cualidades que debe tener un estudiante es la disposición para atender correctamente a las personas. El trabajo de belleza consiste no solo en aplicar técnicas, sino también en brindar buena atención con entusiasmo, dedicación y disposición para ofrecer un buen servicio.</p>
+                            </div>
+                            <button class="btn-expand" onclick="toggleHistory(2)">Ver más</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="workshop-item p-3">
+                            <div class="workshop-carousel">
+                                <div class="carousel-images" id="carousel3">
+                                    <img src="img/Rodyn Javier Figueroa Osorto.jpeg" alt="Carpintería 1" class="carousel-image">
+                                    <img src="img/Carpinteria (1).jpeg" alt="Carpintería 2" class="carousel-image">
+                                    <img src="img/Carpinteria (2).jpeg" alt="Carpintería 3" class="carousel-image">
+                                    <img src="img/Carpinteria (3).jpeg" alt="Carpintería 4" class="carousel-image">
+                                    <img src="img/Carpinteria (4).jpeg" alt="Carpintería 5" class="carousel-image">
+                                    <img src="img/Carpinteria (5).jpeg" alt="Carpintería 6" class="carousel-image">
+                                    <img src="img/Carpinteria (6).jpeg" alt="Carpintería 7" class="carousel-image">
+                                    <img src="img/Carpinteria (7).jpeg" alt="Carpintería 8" class="carousel-image">
+                                    <img src="img/Carpinteria (8).jpeg" alt="Carpintería 9" class="carousel-image">
+                                    <img src="img/Carpinteria (9).jpeg" alt="Carpintería 10" class="carousel-image">
+                                    <img src="img/Carpinteria (10).jpeg" alt="Carpintería 11" class="carousel-image">
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn" onclick="carouselPrev(3)">❮</button>
+                                    <button class="carousel-btn" onclick="carouselNext(3)">❯</button>
+                                </div>
+                            </div>
+                            <h5 class="workshop-title-inline"><i class="bi bi-hammer workshop-icon"></i>Taller de Carpintería y Ebanistería</h5>
+                            <div class="workshop-history" id="history3">
+                                <p><strong>HISTORIA Y EVOLUCIÓN DEL TALLER DE HOGAR</strong></p>
+                                <p><strong>Origen:</strong> El Taller de Hogar surgió con el proceso de transformación educativa cuando el establecimiento evolucionó hacia un modelo de colegio técnico y posteriormente politécnico, incorporando actividades prácticas y áreas de formación especializada. La iniciativa estuvo relacionada con profesores que impulsaron este espacio destinado al desarrollo de habilidades útiles.</p>
+                                <p><strong>Docentes Pioneros:</strong> Entre las maestras pioneras se encuentran las profesoras Griseldy Gómez y Silvia Lis López, quienes estuvieron al frente del taller durante sus primeras etapas. Su trabajo fue fundamental para establecer las bases de las actividades prácticas y transmitir conocimientos relacionados con diferentes áreas.</p>
+                                <p><strong>Propósito Principal:</strong> El objetivo del Taller es proporcionar a los estudiantes conocimientos prácticos y habilidades técnicas que puedan utilizar en situaciones reales. Los estudiantes participan directamente en diferentes actividades, utilizan herramientas y materiales, elaboran productos y desarrollan proyectos que les permiten aprender mediante la experiencia.</p>
+                                <p class="workshop-collapsed"><strong>Orientación Vocacional:</strong> Las diferentes actividades permiten que los estudiantes conozcan varias áreas prácticas y descubran cuáles despiertan mayor interés. Esto ayuda a los jóvenes a tomar decisiones relacionadas con su futuro académico y profesional, permitiendo que los conocimientos prácticos se conviertan en una fuente de ingresos.</p>
+                                <p class="workshop-collapsed"><strong>Evolución de Áreas:</strong> El taller ha evolucionado desde actividades iniciales principalmente en corte y confección, incorporando posteriormente actividades en nutrición, cocina, y áreas modernas como belleza y cosmetología, permitiendo formación más variada y acorde con oportunidades laborales.</p>
+                                <p class="workshop-collapsed"><strong>Proyectos Prácticos:</strong> Los proyectos son fundamentales en el aprendizaje. La elaboración de proyectos completos desde inicio hasta final permite que el estudiante desarrolle autonomía y se prepare para enfrentar actividades similares fuera del entorno escolar. Ejemplo: elaboración de pantalones de uniforme y otras prendas.</p>
+                            </div>
+                            <button class="btn-expand" onclick="toggleHistory(3)">Ver más</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="workshop-item p-3">
+                            <div class="workshop-carousel">
+                                <div class="carousel-images" id="carousel4">
+                                    <img src="img/Vanessa Lizeth galindo Velasquez.jpeg" alt="Estructuras 1" class="carousel-image">
+                                    <img src="img/Estructruras (1).jpeg" alt="Estructuras 2" class="carousel-image">
+                                    <img src="img/Estructruras (2).jpeg" alt="Estructuras 3" class="carousel-image">
+                                    <img src="img/Estructruras (3).jpeg" alt="Estructuras 4" class="carousel-image">
+                                    <img src="img/Estructruras (4).jpeg" alt="Estructuras 5" class="carousel-image">
+                                    <img src="img/Estructuras(5).jpeg" alt="Estructuras 6" class="carousel-image">
+                                    <img src="img/Estructuras(6).jpeg" alt="Estructuras 7" class="carousel-image">
+                                    <img src="img/Estructuras(7).jpeg" alt="Estructuras 8" class="carousel-image">
+                                    <img src="img/Estructuras(8).jpeg" alt="Estructuras 9" class="carousel-image">
+                                    <img src="img/Estructuras(9).jpeg" alt="Estructuras 10" class="carousel-image">
+                                    <img src="img/Estructuras(10).jpeg" alt="Estructuras 11" class="carousel-image">
+                                    <img src="img/Estructuras(11).jpeg" alt="Estructuras 12" class="carousel-image">
+                                    <img src="img/Estructuras(12).jpeg" alt="Estructuras 13" class="carousel-image">
+                                    <img src="img/Estructuras(13).jpeg" alt="Estructuras 14" class="carousel-image">
+                                    <img src="img/Estructuras(14).jpeg" alt="Estructuras 15" class="carousel-image">
+                                    <img src="img/Estructuras(15).jpeg" alt="Estructuras 16" class="carousel-image">
+                                    <img src="img/Estructuras(16).jpeg" alt="Estructuras 17" class="carousel-image">
+                                    <img src="img/Estructuras(17).jpeg" alt="Estructuras 18" class="carousel-image">
+                                    <img src="img/Estructuras(18).jpeg" alt="Estructuras 19" class="carousel-image">
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn" onclick="carouselPrev(4)">❮</button>
+                                    <button class="carousel-btn" onclick="carouselNext(4)">❯</button>
+                                </div>
+                            </div>
+                            <h5 class="workshop-title-inline"><i class="bi bi-gear workshop-icon"></i>Taller de Estructuras Metálicas</h5>
+                            <div class="workshop-history" id="history4">
+                                <p><strong>HISTORIA DEL TALLER DE ESTRUCTURAS METÁLICAS</strong></p>
+                                <p><strong>Fundación:</strong> El Taller de Estructuras Metálicas también se fundó cuando el colegio pasó de ser colegio normal a un colegio técnico. En aquel tiempo, el taller funcionaba con tres maestros. Quien fundó en el colegio el taller de estructuras metálicas fue el profesor Dino Merino, y con el transcurso del tiempo se ha ido mejorando.</p>
+                                <p><strong>Proyecto Significativo:</strong> Uno de los proyectos al que se ha dedicado más tiempo, esfuerzo y dedicación fue mejorar las instalaciones. Cuando se inició, el taller no tenía piso. Se logró tirar el piso con ayuda de una fundación que es una ONG de Zambrano. Posteriormente se vio la necesidad de mejorar el techado de los talleres.</p>
+                                <p><strong>Evolución de Instalaciones:</strong> Ha mejorado mucho porque actualmente el taller de estructuras solo cuenta con personal docente egresado de la universidad. No se tienen personas que estén estudiando actualmente; todos los maestros ya son egresados de la universidad. Esto se considera un logro muy grande para el instituto y para el taller, porque ahí también hay calidad.</p>
+                                <p class="workshop-collapsed"><strong>Participación en Ferias y Proyectos:</strong> El taller siempre ha participado en lo que era una expo venta. Aunque actualmente debido a la crisis económica no se expulsa, se han visitado escuelas, se ha ayudado y colaborado con gente de la comunidad en hacerle balcones a las casas y muchos docentes han hecho trabajos permanentemente en el área de estructura.</p>
+                                <p class="workshop-collapsed"><strong>Retos Actuales:</strong> El reto principal es conseguir soldadoras TIG MIG (soldadoras TIG que no utilizan electrodo). Aunque el alto costo de tecnología impera, se trata de dar lo mejor con los recursos disponibles. Otro reto es dejar una carrera técnica en el área de estructuras metálicas en el colegio y gestionar la adquisición de soldadoras TIG.</p>
+                                <p class="workshop-collapsed"><strong>Significado del Taller:</strong> Formar parte del taller de estructuras metálicas representa una experiencia muy bonita. El objetivo es ser un compañero más que busca el beneficio del taller de estructuras metálicas, trabajando para el bienestar de todos los estudiantes.</p>
+                            </div>
+                            <button class="btn-expand" onclick="toggleHistory(4)">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Calendario escolar -->
             <section id="calendario" class="container py-5 reveal">
                 <h3 class="mb-3">Calendario Escolar</h3>
@@ -1520,6 +1846,64 @@
                     }
                 } catch (err) {
                     console.warn('Ribbon init failed', err);
+                }
+
+                // Carousel state management for workshops
+                const carouselState = {
+                    1: { current: 0, total: 2 },
+                    2: { current: 0, total: 16 },
+                    3: { current: 0, total: 11 },
+                    4: { current: 0, total: 2 }
+                };
+
+                // Navigate carousel to next image
+                window.carouselNext = function(workshopNumber) {
+                    const state = carouselState[workshopNumber];
+                    if (state) {
+                        state.current = (state.current + 1) % state.total;
+                        updateCarousel(workshopNumber);
+                    }
+                };
+
+                // Navigate carousel to previous image
+                window.carouselPrev = function(workshopNumber) {
+                    const state = carouselState[workshopNumber];
+                    if (state) {
+                        state.current = (state.current - 1 + state.total) % state.total;
+                        updateCarousel(workshopNumber);
+                    }
+                };
+
+                // Update carousel display
+                function updateCarousel(workshopNumber) {
+                    const carousel = document.getElementById(`carousel${workshopNumber}`);
+                    if (carousel) {
+                        const images = carousel.querySelectorAll('.carousel-image');
+                        const state = carouselState[workshopNumber];
+                        images.forEach((img, idx) => {
+                            img.classList.toggle('hidden', idx !== state.current);
+                        });
+                    }
+                }
+
+                // Toggle workshop history visibility
+                window.toggleHistory = function(workshopNumber) {
+                    const historyDiv = document.getElementById(`history${workshopNumber}`);
+                    const btn = event.target;
+                    if (historyDiv) {
+                        historyDiv.classList.toggle('expanded');
+                        btn.textContent = historyDiv.classList.contains('expanded') ? 'Ver menos' : 'Ver más';
+                    }
+                };
+
+                // Initialize carousel totals based on available images
+                for (let i = 1; i <= 4; i++) {
+                    const carousel = document.getElementById(`carousel${i}`);
+                    if (carousel) {
+                        const images = carousel.querySelectorAll('.carousel-image');
+                        carouselState[i].total = Math.max(images.length, 1);
+                        updateCarousel(i);
+                    }
                 }
             });
         </script>
