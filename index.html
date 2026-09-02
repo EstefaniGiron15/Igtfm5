@@ -26,7 +26,7 @@
                 scroll-padding-top: 90px;
             }
             body {
-                background-color: #E1C435;
+                background-color: #dfc43c;
                 padding-top: 70px;
             }
             header.hero {
@@ -132,6 +132,151 @@
                 height: 450px !important;
                 object-fit: cover;
                 object-position: center;
+            }
+
+            /* Noticias y calendario institucional */
+            .noticias-calendario-wrap {
+                background: transparent;
+                padding: 72px 0;
+            }
+
+            .noticias-calendario-wrap .section-heading {
+                margin-bottom: 26px;
+                font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+                font-weight: 800;
+                font-size: clamp(2rem, 2.7vw, 3rem);
+                letter-spacing: -0.03em;
+                color: #7A0F0F;
+                line-height: 1.15;
+            }
+
+            .noticias-calendario-wrap .news-grid {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 20px;
+            }
+
+            .noticias-calendario-wrap .news-card {
+                background: #ffffff;
+                border: 1px solid rgba(122, 15, 15, 0.08);
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+                transition: transform 0.25s ease, box-shadow 0.25s ease;
+            }
+
+            .noticias-calendario-wrap .news-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 14px 30px rgba(15, 23, 42, 0.1);
+            }
+
+            .noticias-calendario-wrap .news-card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                display: block;
+            }
+
+            .noticias-calendario-wrap .news-card-body {
+                padding: 18px 18px 20px;
+            }
+
+            .noticias-calendario-wrap .news-date {
+                display: inline-block;
+                margin-bottom: 10px;
+                font-size: 0.75rem;
+                font-weight: 700;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                color: #7A0F0F;
+            }
+
+            .noticias-calendario-wrap .news-card h5,
+            .noticias-calendario-wrap .news-card p {
+                color: #212529;
+            }
+
+            .noticias-calendario-wrap .news-card h5 {
+                font-size: 1.18rem;
+                font-weight: 700;
+                margin-bottom: 10px;
+                line-height: 1.4;
+            }
+
+            .noticias-calendario-wrap .news-card p {
+                margin: 0 0 16px;
+                font-size: 0.96rem;
+                line-height: 1.65;
+                color: #212529;
+            }
+
+            .noticias-calendario-wrap .news-btn {
+                display: inline-block;
+                padding: 8px 16px;
+                background: #7A0F0F;
+                color: #ffffff !important;
+                border: none;
+                border-radius: 6px;
+                text-decoration: none;
+                font-size: 0.8rem;
+                font-weight: 700;
+                letter-spacing: 0.02em;
+                transition: background 0.2s ease, transform 0.2s ease;
+            }
+
+            .noticias-calendario-wrap .news-btn:hover {
+                background: #5e0b0b;
+                transform: translateY(-1px);
+                color: #ffffff !important;
+            }
+
+            .noticias-calendario-wrap .calendar-panel {
+                background: #ffffff;
+                border: 1px solid rgba(122, 15, 15, 0.08);
+                border-radius: 10px;
+                box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+                padding: 22px 20px;
+                height: 100%;
+            }
+
+            .noticias-calendario-wrap .calendar-panel .table {
+                margin: 0;
+                border-collapse: separate;
+                border-spacing: 0;
+            }
+
+            .noticias-calendario-wrap .calendar-panel thead th {
+                background: transparent;
+                color: #7A0F0F;
+                font-weight: 800;
+                font-size: 0.92rem;
+                letter-spacing: 0.04em;
+                text-transform: uppercase;
+                padding: 0 0 14px;
+                border-bottom: 1px solid rgba(122, 15, 15, 0.14);
+            }
+
+            .noticias-calendario-wrap .calendar-panel tbody td {
+                padding: 16px 0;
+                color: #212529;
+                border-bottom: 1px solid rgba(33, 37, 41, 0.08);
+                font-size: 0.98rem;
+            }
+
+            .noticias-calendario-wrap .calendar-panel tbody tr:last-child td {
+                border-bottom: none;
+            }
+
+            .noticias-calendario-wrap .calendar-panel tbody td:last-child {
+                text-align: right;
+                font-weight: 600;
+                color: #4a4a4a;
+            }
+
+            @media (max-width: 991.98px) {
+                .noticias-calendario-wrap .news-grid {
+                    grid-template-columns: 1fr;
+                }
             }
         </style>
         <meta name="description" content="Instituto Gubernamental Técnico Francisco Miranda - Zambrano">
@@ -969,59 +1114,97 @@
                 </div>
             </section>
 
-            <!-- Noticias -->
-            <section id="noticias" class="container py-5 reveal">
-                <h3 class="mb-4">Noticias</h3>
-                <div class="row g-3">
-                    <div class="col-md-4">
-                        <div class="card shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="Noticia 1">
-                            <div class="card-body">
-                                <small class="text-muted">01 Jul 2026</small>
-                                <h5 class="card-title">Inicia el ciclo escolar</h5>
-                                <p class="card-text">Comenzamos el nuevo año lectivo con entusiasmo y renovadas energías.</p>
-                                <a href="#" class="btn btn-sm btn-primary">Leer más</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1519543541607-9fbdc7a6d9b6?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="Noticia 2">
-                            <div class="card-body">
-                                <small class="text-muted">15 Jun 2026</small>
-                                <h5 class="card-title">Semana cultural</h5>
-                                <p class="card-text">Actividades culturales y deportivas para toda la comunidad educativa.</p>
-                                <a href="#" class="btn btn-sm btn-primary">Leer más</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="Noticia 3">
-                            <div class="card-body">
-                                <small class="text-muted">05 May 2026</small>
-                                <h5 class="card-title">Nuevas aulas equipadas</h5>
-                                <p class="card-text">Se han incorporado laboratorios y aulas con tecnología para aprendizaje activo.</p>
-                                <a href="#" class="btn btn-sm btn-primary">Leer más</a>
-                            </div>
-                        </div>
-                    </div>
+            <section class="py-5 reveal" style="background-color: #f3f4f6;">
+                <div class="container text-center">
+                    <h3 class="mb-3" style="font-weight: 700; color: #1f2937;">Banda Latina Francisco Miranda</h3>
+                    <p class="mx-auto mb-4" style="max-width: 700px; color: #293048; line-height: 1.7;">
+                        La música es una de las mayores expresiones de pasión y comunidad en nuestro colegio, donde cada nota fortalece la identidad, el trabajo en equipo y el entusiasmo por seguir creciendo.
+                    </p>
+                    <a href="banda-info.html" class="btn btn-primary btn-lg px-4 py-3 rounded-pill shadow-sm border-0" style="background: linear-gradient(135deg, #7A0F0F, #a85b20); font-weight: 600; letter-spacing: 0.02em; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                        Ver más
+                    </a>
                 </div>
             </section>
 
-            <!-- Calendario escolar -->
-            <section id="calendario" class="container py-5 reveal">
-                <h3 class="mb-3">Calendario Escolar</h3>
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                        <thead><tr><th>Evento</th><th>Fecha</th></tr></thead>
-                        <tbody>
-                            <tr><td>Inicio de clases</td><td>01/07/2026</td></tr>
-                            <tr><td>Exámenes parciales</td><td>15/09/2026</td></tr>
-                            <tr><td>Vacaciones de invierno</td><td>20/12/2026 - 05/01/2027</td></tr>
-                            <tr><td>Clausura</td><td>15/06/2027</td></tr>
-                        </tbody>
-                    </table>
+            <section class="noticias-calendario-wrap reveal">
+                <div class="container">
+                    <div class="row g-4 align-items-start">
+                        <div class="col-lg-8">
+                            <h3 class="section-heading mb-4">Noticias</h3>
+                            <div class="news-grid">
+                                <article class="news-card">
+                                    <img src="img/1r dia.jpg" alt="Noticia 1">
+                                    <div class="news-card-body">
+                                        <span class="news-date">01 febrero 2026</span>
+                                        <h5>Inicia el ciclo escolar</h5>
+                                        <p>Comenzamos el nuevo año lectivo con entusiasmo, organización y energía para fortalecer la comunidad educativa.</p>
+                                        <a href="#" class="news-btn">Leer más</a>
+                                    </div>
+                                </article>
+
+                                <article class="news-card">
+                                    <img src="img/2d dia.jpg" alt="Noticia 2">
+                                    <div class="news-card-body">
+                                        <span class="news-date"> 14 Marzo 2026</span>
+                                        <h5>Semana cultural</h5>
+                                        <p>Actividades culturales y deportivas reunieron a estudiantes, docentes y familias en una jornada inspiradora.</p>
+                                        <a href="#" class="news-btn">Leer más</a>
+                                    </div>
+                                </article>
+
+                                 <article class="news-card">
+                                    <img src="img/4t dia.jpg" alt="Noticia 3">
+                                    <div class="news-card-body">
+                                        <span class="news-date">5 Agost 2026</span>
+                                        <h5>Competencia de Canto</h5>
+                                        <p>Representando nuestra institucion la Lic. Arely Beltrand y la alumna Debora Vargas, Ganando el primer lugar del distrito educativo #12</p>
+                                        <a href="#" class="news-btn">Leer más</a>
+                                    </div>
+                                </article>
+
+                                <article class="news-card">
+                                    <img src="img/3r dia.jpg" alt="Noticia 4">
+                                    <div class="news-card-body">
+                                        <span class="news-date">1 Sept 2026</span>
+                                        <h5>Iniciando Fiestas Patrias</h5>
+                                        <p>se inician las celebraciones patrias con actividades culturales y educativas.</p>
+                                        <a href="#" class="news-btn">Leer más</a>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <h3 class="section-heading mb-4">Calendario Escolar</h3>
+                            <div class="calendar-panel">
+                                <div class="table-responsive">
+                                    <table class="table align-middle">
+                                        <thead>
+                                            <tr>
+                                                <th>Evento</th>
+                                                <th>Fecha</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Inicio de clases</td>
+                                                <td>01/02/2026</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Exámenes parciales</td>
+                                                <td>15/09/2026</td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td>Clausura</td>
+                                                <td>30/11/2026</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 

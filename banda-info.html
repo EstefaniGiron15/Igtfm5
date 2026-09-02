@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Banda Musical</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --card: #060929;
+            --primary: #141e48;
+            --primary-dark: #162d68;
+            --accent: #dbeafe;
+            --text: #1f2937;
+            --muted: #202532;
+            --line: #e5e7eb;
+            --shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(1100px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--line);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 72px;
+        }
+
+        .brand {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: var(--primary-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--primary), #3b82f6);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.22);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 32px rgba(37, 99, 235, 0.25);
+        }
+
+        .hero {
+            padding: 90px 0 60px;
+            background:
+                radial-gradient(circle at top left, rgba(158, 182, 214, 0.7), transparent 35%),
+                linear-gradient(180deg, #ffffff 0%, #f3f6fb 100%);
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            background: var(--accent);
+            padding: 8px 14px;
+            border-radius: 999px;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            margin: 0 0 18px;
+            font-size: clamp(2.3rem, 5vw, 4rem);
+            line-height: 1.08;
+            color: var(--primary-dark);
+        }
+
+        .lead {
+            max-width: 620px;
+            font-size: 1.08rem;
+            color: var(--muted);
+            margin-bottom: 28px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .secondary-btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: #fff;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .hero-visual {
+            background: linear-gradient(135deg, #dfeafc, #f8fafc);
+            border: 1px solid rgba(148, 163, 184, 0.28);
+            border-radius: 28px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .section-header h2 {
+            margin: 0 0 10px;
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            color: var(--primary-dark);
+        }
+
+        .section-header p {
+            margin: 0 auto;
+            max-width: 760px;
+            color: var(--muted);
+            font-size: 1.02rem;
+        }
+
+        .intro-card {
+            background: rgba(3, 8, 23, 0.75);
+            border: 1px solid rgba(8, 38, 82, 0.22);
+            border-radius: 24px;
+            padding: 34px;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+            color:#ffffff !important;
+
+        }
+
+        .intro-card p, .intro-card h3, .intro-card span{
+            color:#ffffff !important;
+        }
+
+        .mini-stat p, .mini-stat span{
+            color:#1a1a1a !important;
+        }
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .intro-grid p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .mini-stat {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(120px, 1fr));
+            gap: 18px;
+            margin-top: 24px;
+        }
+
+        .stat {
+            padding: 18px 16px;
+            background: #f8fafc;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            text-align: center;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .stat span {
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 18px;
+            background: var(--card);
+            border: 1px solid var(--line);
+            box-shadow: 0 12px 24px rgba(15, 23, 42, 0.06);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            transition: transform 0.35s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        footer {
+            padding: 28px 0 42px;
+            background: #0f172a;
+            color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+        }
+
+        @media (max-width: 900px) {
+            .hero-inner,
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav {
+                flex-direction: column;
+                justify-content: center;
+                padding: 14px 0;
+                gap: 10px;
+            }
+
+            .nav-links {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding-top: 70px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-card {
+                padding: 22px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a href="index.html" class="brand">Instituto Tecnico Francisco Miranda</a>
+            <nav class="nav-links" aria-label="Menú principal">
+                <a href="index.html">Volver al inicio</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-inner">
+                <div>
+                    <span class="eyebrow">Cultura escolar</span>
+                    <h1>Nuestra Banda Musical</h1>
+                    <p class="lead">
+                        Una expresión de talento, disciplina y pasión que une a nuestra comunidad a través del ritmo,
+                        la armonía y el esfuerzo colectivo.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#introduccion" class="btn">Conócenos</a>
+                        <a href="index.html" class="secondary-btn">Volver al colegio</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <img class="hero-image" src="img/Banda img1.jpg" alt="Banda musical con instrumentos">
+                </div>
+            </div>
+        </section>
+
+        <section id="introduccion" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Pasión por la música</h2>
+                    <p>
+                        Nuestra banda musical refleja el compromiso, la creatividad y la dedicación de cada estudiante que la integra.
+                    </p>
+                </div>
+
+                <div class="intro-card">
+                    <div class="intro-grid">
+                        <div>
+                            <p>
+                               Fundada en 2015, la Banda Latina Francisco Miranda del Instituto Técnico Francisco Miranda combina la excelencia musical con la formación en valores.
+Bajo la dirección de su equipo responsable, la agrupación destaca como bicampeona de la Guerra de Bandas VTV 2025 y múltiples primeros lugares nacionales.
+Más allá de los escenarios, fomenta la disciplina, el compañerismo y la identidad institucional en cada uno de sus integrantes.
+Actualmente, continúa preparándose con entrega para sus próximas metas, celebraciones patrias y futuras proyecciones internacionales.
+
+                            <div class="mini-stat">
+                                <div class="stat">
+                                    <strong>20+</strong>
+                                    <span>Integrantes</span>
+                                </div>
+                                <div class="stat">
+                                    <strong>15+</strong>
+                                    <span>Instrumentos</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <img src="img/logo.jpg" alt="Instrumentos musicales en una banda" style="border-radius: 20px; width: 100%; height: 350px; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Galería</h2>
+                    <p>
+                        Momentos de práctica, ensayo y presentación que muestran la energía y la dedicación de nuestra banda.
+                    </p>
+                </div>
+
+                <div class="gallery-grid">
+                    <figure class="gallery-item">
+                        <img src="img/banda img p..jpg" alt="Integrantes de la banda musical 1">
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="img/bandasD.jpg" alt="Integrantes de la banda musical 2">
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="img/banda ensayo.jpg" alt="Integrantes de la banda musical 3">
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="img/banda com.jpg" alt="Integrantes de la banda musical 4">
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="img/banda ensayos.jpg" alt="Integrantes de la banda musical 5">
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="img/bndaacomp2.jpg" alt="Integrantes de la banda musical 6">
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="img/bandacomp3.jpg" alt="Integrantes de la banda musical 7">
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="img/banda.jpg" alt="Integrantes de la banda musical 8">
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            © 2026 Instituto Tecnico Francisco Miranda · Banda Musical
+        </div>
+    </footer>
+</body>
+</html>
