@@ -484,16 +484,30 @@
                 background: linear-gradient(90deg,#7A0F0F,#E1C435);
                 color: white;
                 border: none;
-                padding: 0.5rem 1rem;
-                border-radius: 6px;
+                padding: 0.6rem 1rem;
+                border-radius: 999px;
                 cursor: pointer;
-                font-size: 0.85rem;
-                font-weight: 600;
-                transition: transform 0.2s ease, box-shadow 0.2s ease;
-                width: calc(100% - 56px);
-                margin-left: 56px;
+                font-size: 0.82rem;
+                font-weight: 700;
+                letter-spacing: 0.03em;
+                transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+                width: calc(100% - 82px);
+                margin-left: 4px;
                 margin-top: auto;
-                align-self: center;
+                align-self: flex-start;
+                box-shadow: 0 8px 18px rgba(122,15,15,0.18);
+            }
+            #talleres .col:first-child .btn-expand {
+                margin-top: 1rem;
+                margin-left: 2px;
+            }
+            .btn-expand:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 22px rgba(122,15,15,0.22);
+                filter: brightness(1.02);
+            }
+            .btn-expand:active {
+                transform: translateY(0);
             }
             .btn-expand:hover {
                 transform: translateY(-2px);
