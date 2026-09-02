@@ -1030,15 +1030,16 @@
                 <h3 class="mb-4">Estadísticas</h3>
                 <div class="row text-center">
                     <div class="col-6 col-md-3 mb-3">
-                        <h4 class="counter" data-target="43">39</h4>
+                        <h4 class="counter" data-target="43">42
+                        </h4>
                         <p>Maestros</p>
                     </div>
                     <div class="col-6 col-md-3 mb-3">
-                        <h4 class="counter" data-target="800">0</h4>
+                        <h4 class="counter" data-target="800">580</h4>
                         <p>Estudiantes</p>
                     </div>
                     <div class="col-6 col-md-3 mb-3">
-                        <h4 class="counter" data-target="25">0</h4>
+                        <h4 class="counter" data-target="25">17</h4>
                         <p>Aulas</p>
                     </div>
                     <div class="col-6 col-md-3 mb-3">
@@ -1048,15 +1049,27 @@
                 </div>
             </section>
 
+            <script>
+  const miFormulario = document.querySelector('form');
+
+  miFormulario.addEventListener('submit', function(evento) {
+    evento.preventDefault(); 
+
+    alert('¡Mensaje enviado con éxito!');
+
+    miFormulario.reset();
+  });
+</script>
+
             <!-- Contacto y mapa -->
             <section id="contacto" class="container py-5 reveal">
                 <h3 class="mb-3">Contacto</h3>
                 <div class="row">
                     <div class="col-md-6">
                         <form id="contactForm" novalidate>
-                            <div class="mb-3"><label class="form-label">Nombre</label><input id="c_nombre" class="form-control" required></div>
+                            <div class="mb-3"><label class="form-label">Nombre</label><input id="c_nombre" class="form-control" value="Instituto Tecnico Francisco Miranda" required></div>
                             <div class="mb-3"><label class="form-label">Correo</label><input id="c_correo" type="email" class="form-control" required></div>
-                            <div class="mb-3"><label class="form-label">Teléfono</label><input id="c_telefono" class="form-control" required></div>
+                            <div class="mb-3"><label class="form-label">Teléfono</label><input id="c_telefono" class="form-control" value="9876-8944" required></div>
                             <div class="mb-3"><label class="form-label">Mensaje</label><textarea id="c_mensaje" class="form-control" rows="4" required></textarea></div>
                             <button class="btn btn-primary" type="submit">Enviar</button>
                         </form>
@@ -1068,13 +1081,11 @@
                         </div>
                         <h5>Redes sociales</h5>
                         <div class="d-flex gap-2 mb-3">
-                            <a class="btn btn-outline-primary" href="#"><i class="bi bi-facebook"></i> Facebook</a>
-                            <a class="btn btn-outline-danger" href="#"><i class="bi bi-instagram"></i> Instagram</a>
+                            <a class="btn btn-outline-primary" href="https://www.facebook.com/InstitutoTecnicoFranciscoMiranda/about?locale=es_LA"><i class="bi bi-facebook"></i> Facebook</a>
                             <a class="btn btn-outline-success" href="#"><i class="bi bi-whatsapp"></i> WhatsApp</a>
-                            <a class="btn btn-outline-danger" href="#"><i class="bi bi-youtube"></i> YouTube</a>
                         </div>
                         <div>
-                            <p><strong>Tel:</strong> +504 0000-0000<br><strong>Correo:</strong> info@colegiofm.edu.hn</p>
+                            <p><strong>Tel:</strong> +504 9876-8944<br><strong>Correo:</strong> info@colegiofm.edu.hn</p>
                         </div>
                     </div>
                 </div>
@@ -1095,7 +1106,7 @@
                         <text x="50" y="58" font-size="36" text-anchor="middle" fill="#fff" font-family="Arial">FM</text>
                     </svg>
                     <div class="text-white">Dirección: Zambrano, Francisco Morazán</div>
-                    <div>Tel: +504 0000-0000 | info@colegiofm.edu.hn</div>
+                    <div>Tel: +504 9876-8944 | info@colegiofm.edu.hn</div>
                     <!-- Contador de visitas simulado -->
                     <div id="visitas" class="small mt-1 text-warning"></div>
                 </div>
