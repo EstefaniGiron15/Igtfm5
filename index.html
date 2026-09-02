@@ -312,18 +312,28 @@
             /* Career items (replace cards) */
             .career-item {
                 border: none;
-                border-radius: 8px;
-                padding: 0.9rem 0.9rem;
+                border-radius: 12px;
+                padding: 1.1rem 1rem 1.2rem;
                 background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.96));
-                min-height: 140px;
+                min-height: 220px;
                 display: flex;
                 flex-direction: column;
-                gap: .6rem;
+                gap: .75rem;
                 position: relative;
                 overflow: hidden;
+                text-align: center;
             }
             /* Remove card-like shadows globally for career items */
             .career-item, .career-item * { box-shadow: none !important; }
+            .career-item p {
+                text-align: center;
+                margin-bottom: 0;
+            }
+            .career-item .btn {
+                align-self: center;
+                min-width: 120px;
+                margin-top: auto;
+            }
             /* Number the career blocks inside the noticias section (circular badge) */
             #noticias .row { counter-reset: careers; }
             #noticias .career-item::before {
@@ -349,6 +359,16 @@
             .career-item h5 { margin: 0 0 0 56px; }
             .career-item .career-excerpt { color: #333; margin-left: 56px; }
             .career-item .career-more { margin-top: auto; margin-left: 56px; }
+            /* Limitar altura de los colapsables y mostrar barra de desplazamiento */
+            .collapse-scroll {
+                max-height: 200px;
+                overflow-y: auto;
+                padding-right: 0.4rem;
+            }
+            /* Estilo de scrollbar para navegadores WebKit */
+            .collapse-scroll::-webkit-scrollbar { width: 8px; }
+            .collapse-scroll::-webkit-scrollbar-thumb { background: rgba(122,15,15,0.6); border-radius: 8px; }
+            .collapse-scroll::-webkit-scrollbar-track { background: rgba(0,0,0,0.03); border-radius: 8px; }
             /* Heading decoration */
             .heading-decor { display:block; text-align:center; margin-top:0.15rem; margin-bottom:0.25rem; }
             .heading-decor svg { display:block; margin:0 auto; }
@@ -356,7 +376,17 @@
             /* subtle underline/gold bar under section title */
             #noticias h3::after { content: ''; display:block; width:120px; height:6px; margin:8px auto 0; background: linear-gradient(90deg,#7A0F0F,#E1C435); border-radius:4px; box-shadow: 0 8px 20px rgba(122,15,15,0.06); }
             .career-icon { background:transparent; color:#7A0F0F; width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; font-size:1.05rem; margin-right:8px; border:2px solid rgba(122,15,15,0.08); }
-            .career-title-inline { display:flex; align-items:center; gap:.5rem; }
+            .career-title-inline {
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                gap:.5rem;
+                text-align:center;
+                padding-left: 52px;
+                padding-right: 8px;
+                position: relative;
+                z-index: 1;
+            }
             /* Add subtle vertical separators between columns on large screens */
             @media (min-width: 992px) {
                 #noticias .col:not(:last-child) { border-right: 1px dashed rgba(0,0,0,0.04); padding-right: 18px; }
@@ -372,16 +402,23 @@
             /* Workshop/Talleres styles */
             .workshop-item {
                 border: none;
-                border-radius: 8px;
-                padding: 0.9rem 0.9rem;
+                border-radius: 12px;
+                padding: 1.1rem 1rem 1.2rem;
                 background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.96));
                 display: flex;
                 flex-direction: column;
-                gap: .6rem;
+                gap: .75rem;
                 position: relative;
                 overflow: hidden;
                 height: 100%;
+                min-height: 520px;
+                box-shadow: none !important;
+                text-align: center;
+                justify-content: flex-start;
             }
+            /* Limit workshop card height and allow inner content to scroll */
+            .card-scroll { max-height: 560px; }
+            .card-scroll .workshop-history { max-height: 220px; overflow-y: auto; }
             .workshop-item, .workshop-item * { box-shadow: none !important; }
             #talleres .row { counter-reset: workshops; }
             #talleres .workshop-item::before {
@@ -403,9 +440,68 @@
                 background: linear-gradient(90deg, rgba(122,15,15,0.95), rgba(225,196,53,0.95)); z-index:2; opacity:0.9; border-radius:4px; box-shadow: 0 8px 18px rgba(0,0,0,0.08);
                 filter: saturate(1.02);
             }
-            .workshop-item h5 { margin: 0 0 0 56px; }
+            .workshop-item h5 {
+                margin: 0;
+                padding-left: 18px;
+                padding-right: 8px;
+                color: #111;
+                font-weight: 700;
+                line-height: 1.3;
+                text-align: left;
+                width: calc(100% - 18px);
+                margin-left: 18px;
+                display: block;
+                letter-spacing: 0.01em;
+            }
             .workshop-item .workshop-excerpt { color: #333; margin-left: 56px; }
             .workshop-item .workshop-more { margin-top: auto; margin-left: 56px; }
+            .workshop-history {
+                position: relative;
+                overflow: hidden;
+                display: none;
+                color: #2e2e2e;
+                line-height: 1.5;
+                font-size: 0.92rem;
+                margin-left: 56px;
+                padding-right: 0.4rem;
+                text-align: left;
+            }
+            .workshop-history p {
+                margin-bottom: 0.7rem;
+            }
+            .workshop-history strong {
+                color: #7A0F0F;
+            }
+            .workshop-history.expanded {
+                display: block;
+                max-height: 220px;
+                overflow-y: auto;
+            }
+            .workshop-history.expanded::-webkit-scrollbar { width: 8px; }
+            .workshop-history.expanded::-webkit-scrollbar-thumb { background: rgba(122,15,15,0.6); border-radius: 8px; }
+            .workshop-history.expanded::-webkit-scrollbar-track { background: rgba(0,0,0,0.03); border-radius: 8px; }
+            .btn-expand {
+                background: linear-gradient(90deg,#7A0F0F,#E1C435);
+                color: white;
+                border: none;
+                padding: 0.5rem 1rem;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 0.85rem;
+                font-weight: 600;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+                width: calc(100% - 56px);
+                margin-left: 56px;
+                margin-top: auto;
+                align-self: center;
+            }
+            .btn-expand:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(122,15,15,0.2);
+            }
+            .btn-expand:active {
+                transform: translateY(0);
+            }
             .workshop-gallery {
                 width: 100%;
                 display: flex;
@@ -419,12 +515,16 @@
                 width: 100%;
                 position: relative;
                 margin-bottom: 0.6rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
             .carousel-images {
                 display: flex;
                 overflow: hidden;
                 border-radius: 8px;
                 height: 220px;
+                width: 100%;
             }
             .carousel-image {
                 width: 100%;
@@ -461,6 +561,7 @@
                 display: flex;
                 justify-content: space-between;
                 padding: 0 0.5rem;
+                width: 100%;
             }
             .carousel-btn {
                 background: linear-gradient(90deg,#7A0F0F,#E1C435);
@@ -607,6 +708,66 @@
             #docentes .card .btn { border-radius: 24px; padding: 6px 14px; font-size: 0.85rem; }
             #docentes .card .btn-primary { background: linear-gradient(90deg,#7A0F0F,#E1C435); border: none; box-shadow: 0 8px 20px rgba(122,15,15,0.12); }
             #docentes .card .collapse { max-height: 220px; overflow: auto; }
+
+            /* Barra principal: mejor lectura del texto del menú */
+            #mainNav {
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+            }
+            #mainNav .container {
+                align-items: center;
+            }
+            #mainNav .navbar-brand {
+                max-width: 100%;
+                margin-right: 1rem;
+            }
+            #mainNav .navbar-brand strong,
+            #mainNav .navbar-brand .small {
+                white-space: nowrap;
+                line-height: 1.2;
+            }
+            #mainNav .navbar-brand {
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+            #mainNav .navbar-nav {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                gap: 0.1rem 0.35rem;
+                white-space: nowrap;
+            }
+            #mainNav .nav-item {
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+            #mainNav .nav-link {
+                font-size: 0.68rem;
+                padding: 0.2rem 0.35rem;
+                white-space: nowrap;
+                line-height: 1.2;
+            }
+            @media (max-width: 991.98px) {
+                #mainNav {
+                    padding-top: 0.45rem;
+                    padding-bottom: 0.45rem;
+                }
+                #mainNav .navbar-brand {
+                    max-width: 75%;
+                    white-space: nowrap;
+                }
+                #mainNav .navbar-nav {
+                    margin-top: 0.5rem;
+                    justify-content: flex-start;
+                    flex-wrap: nowrap;
+                    gap: 0.1rem 0.25rem;
+                }
+                #mainNav .nav-link {
+                    font-size: 0.62rem;
+                    padding: 0.15rem 0.25rem;
+                }
+            }
 
             /* Director: embellecimiento para Juan Carlos (solo estilos) */
             #director { background: rgba(255,255,255,0.03); border-radius: 12px; padding: 14px; }
@@ -1617,8 +1778,10 @@
                 <div class="row g-3">
                     <div class="col-4">
                         <div class="career-item p-3">
-                            <h4 class="career-title-inline"><i class="bi bi-laptop career-icon"></i>Informática</h4>
+                            <h4 class="career-title-inline"><i class="bi bi-cpu career-icon"></i>Informática</h4>
                             <p><strong>HISTORIA DE LA CARRERA DE INFORMÁTICA</strong></p>
+                            <button class="btn btn-sm btn-outline-primary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#career1More" aria-expanded="false" aria-controls="career1More">Ver más</button>
+                            <div class="collapse mt-3 collapse-scroll" id="career1More">
                             <ol>
                                 <li><strong>2009 (Fundación):</strong> Se crea la carrera bajo el nombre de Bachillerato Técnico en Computación. Los egresados obtenían doble titulación. Docentes fundadores: Fátima Rodríguez, Marlon Izaguirre, Jenny Sosa y Fredy Domínguez.</li>
                                 <li><strong>2010–2012:</strong> Se integra el profesor Wilmer Aguilar; modalidad de crecimiento vegetativo.</li>
@@ -1627,12 +1790,15 @@
                                 <li><strong>2024:</strong> Proyecto de robótica, ferias y convenio con Universidad de Defensa Hondureña (Impresión 3D).</li>
                                 <li><strong>2026 (Actualidad):</strong> Convenio con Cisco NetAcad (CCNA 1 y 2 gratuitos); logros en ferias y liderazgo del profesor Wilmer Aguilar.</li>
                             </ol>
+                            </div>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="career-item p-3">
-                            <h4 class="career-title-inline"><i class="bi bi-calculator career-icon"></i>Contaduría y Finanzas</h4>
+                            <h4 class="career-title-inline"><i class="bi bi-bank career-icon"></i>Contaduría y Finanzas</h4>
                             <p><strong>HISTORIA DEL BTP EN CONTADURÍA Y FINANZAS</strong></p>
+                            <button class="btn btn-sm btn-outline-primary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#career2More" aria-expanded="false" aria-controls="career2More">Ver más</button>
+                            <div class="collapse mt-3 collapse-scroll" id="career2More">
                             <p><em>Una carrera que evolucionó con el tiempo</em></p>
                             <p>En la Comunidad de Zambrano, Francisco Morazán, el Instituto Gubernamental Técnico Francisco Miranda ha construido una historia marcada por la transformación y el compromiso con la formación de sus estudiantes.</p>
                             <ol>
@@ -1642,12 +1808,41 @@
                                 <li>2014: La carrera nuevamente en desgaste.</li>
                                 <li>2016: Primera promoción del <strong>Bachillerato Técnico Profesional en Contaduría y Finanzas</strong> (12 alumnos).</li>
                             </ol>
+                            </div>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="career-item p-3">
-                            <h4 class="career-title-inline"><i class="bi bi-seedling career-icon"></i>Agroindustria</h4>
+                            <div class="workshop-carousel agro-carousel">
+                                <div class="carousel-images" id="carousel5">
+                                    <img src="img/AGRO1.jpg" alt="Agro 1" class="carousel-image">
+                                    <img src="img/AGRO2.jpg" alt="Agro 2" class="carousel-image">
+                                    <img src="img/AGRO3.jpg" alt="Agro 3" class="carousel-image">
+                                    <img src="img/AGRO4.jpg" alt="Agro 4" class="carousel-image">
+                                    <img src="img/AGRO5.jpg" alt="Agro 5" class="carousel-image">
+                                    <img src="img/AGRO6.jpg" alt="Agro 6" class="carousel-image">
+                                    <img src="img/AGRO7.jpg" alt="Agro 7" class="carousel-image">
+                                    <img src="img/AGRO8.jpg" alt="Agro 8" class="carousel-image">
+                                    <img src="img/AGRO9.jpg" alt="Agro 9" class="carousel-image">
+                                    <img src="img/AGRO10.jpg" alt="Agro 10" class="carousel-image">
+                                    <img src="img/AGRO11.jpg" alt="Agro 11" class="carousel-image">
+                                    <img src="img/AGRO12.jpg" alt="Agro 12" class="carousel-image">
+                                    <img src="img/AGRO13.jpg" alt="Agro 13" class="carousel-image">
+                                    <img src="img/AGRO14.jpg" alt="Agro 14" class="carousel-image">
+                                    <img src="img/AGRO15.jpg" alt="Agro 15" class="carousel-image">
+                                    <img src="img/AGRO16.jpg" alt="Agro 16" class="carousel-image">
+                                    <img src="img/AGRO17.jpg" alt="Agro 17" class="carousel-image">
+                                    <img src="img/AGRO18.jpg" alt="Agro 18" class="carousel-image">
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn" onclick="carouselPrev(5)">❮</button>
+                                    <button class="carousel-btn" onclick="carouselNext(5)">❯</button>
+                                </div>
+                            </div>
+                            <h4 class="career-title-inline"><i class="bi bi-flower1 career-icon"></i>Agroindustria</h4>
                             <p><strong>HISTORIA DE LA CARRERA DE AGROINDUSTRIA</strong></p>
+                            <button class="btn btn-sm btn-outline-primary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#career3More" aria-expanded="false" aria-controls="career3More">Ver más</button>
+                            <div class="collapse mt-3 collapse-scroll" id="career3More">
                             <p><strong>Origen:</strong> Creada entre 2014 y 2015 en el Instituto Francisco Miranda por la alta vocación agrícola de la zona de Zambrano.
 
 <strong>Objetivo:</strong> Profesionalizar el conocimiento empírico del campo para que los jóvenes aprendan a procesar, comercializar o emprender su propia empresa agroindustrial (lácteos, cárnicos, cultivos).
@@ -1660,6 +1855,7 @@
 
 <strong>Solución a limitantes:</strong>Se realizan giras y alianzas con la UNAG para suplir la falta de equipo y materia prima en el colegio.
 </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1671,7 +1867,7 @@
                 <div class="heading-decor"><svg width="160" height="20" viewBox="0 0 160 20" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#7A0F0F"/><stop offset="1" stop-color="#E1C435"/></linearGradient></defs><rect x="10" y="9" width="140" height="2" rx="1" fill="url(#g)"/><circle cx="80" cy="10" r="5" fill="#7A0F0F"/></svg></div>
                 <div class="row g-3">
                     <div class="col-12 col-md-6 col-lg-3">
-                        <div class="workshop-item p-3">
+                        <div class="workshop-item p-3 card-scroll">
                             <div class="workshop-carousel">
                                 <div class="carousel-images" id="carousel1">
                                     <img src="img/Mario leonel avila maradiaga.png" alt="Electricidad 1" class="carousel-image">
@@ -1708,11 +1904,11 @@
                                 <p class="workshop-collapsed"><strong>Ampliación del Espacio:</strong> La construcción del edificio propio fue posible gracias a la gestión de la dirección y al valioso apoyo de la directiva de padres de familia. El espacio fue diseñado estratégicamente con posibilidades de ampliación, permitiendo contar con instalaciones modernas.</p>
                                 <p class="workshop-collapsed"><strong>Proyectos Destacados:</strong> Los estudiantes participan activamente en instalación de tableros, elaboración de lámparas decorativas utilizando tubería PVC pulida, construcción de calentadores de agua eléctricos, y el mantenimiento de la red e instalaciones eléctricas de la institución.</p>
                             </div>
-                            <button class="btn-expand" onclick="toggleHistory(1)">Ver más</button>
+                            <button class="btn-expand" onclick="toggleHistory(1, this)">Ver más</button>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3">
-                        <div class="workshop-item p-3">
+                        <div class="workshop-item p-3 card-scroll">
                             <div class="workshop-carousel">
                                 <div class="carousel-images" id="carousel2">
                                     <img src="img/Profe Francis.jpeg" alt="Belleza 1" class="carousel-image">
@@ -1746,11 +1942,11 @@
                                 <p class="workshop-collapsed"><strong>Crecimiento del Taller:</strong> Con el paso del tiempo, el taller fue adquiriendo herramientas como planchas, secadoras, herramientas para rizos, muñecas para prácticas de peinado, espejos, mesas y sillas para masajes. Se incorporaron diferentes áreas: planchado y secado del cabello, manicure, pedicure, tratamientos faciales, maquillaje, uñas acrílicas y laminado de cejas.</p>
                                 <p class="workshop-collapsed"><strong>Cualidades del Estudiante:</strong> Una de las principales cualidades que debe tener un estudiante es la disposición para atender correctamente a las personas. El trabajo de belleza consiste no solo en aplicar técnicas, sino también en brindar buena atención con entusiasmo, dedicación y disposición para ofrecer un buen servicio.</p>
                             </div>
-                            <button class="btn-expand" onclick="toggleHistory(2)">Ver más</button>
+                            <button class="btn-expand" onclick="toggleHistory(2, this)">Ver más</button>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3">
-                        <div class="workshop-item p-3">
+                        <div class="workshop-item p-3 card-scroll">
                             <div class="workshop-carousel">
                                 <div class="carousel-images" id="carousel3">
                                     <img src="img/Rodyn Javier Figueroa Osorto.jpeg" alt="Carpintería 1" class="carousel-image">
@@ -1780,11 +1976,11 @@
                                 <p class="workshop-collapsed"><strong>Evolución de Áreas:</strong> El taller ha evolucionado desde actividades iniciales principalmente en corte y confección, incorporando posteriormente actividades en nutrición, cocina, y áreas modernas como belleza y cosmetología, permitiendo formación más variada y acorde con oportunidades laborales.</p>
                                 <p class="workshop-collapsed"><strong>Proyectos Prácticos:</strong> Los proyectos son fundamentales en el aprendizaje. La elaboración de proyectos completos desde inicio hasta final permite que el estudiante desarrolle autonomía y se prepare para enfrentar actividades similares fuera del entorno escolar. Ejemplo: elaboración de pantalones de uniforme y otras prendas.</p>
                             </div>
-                            <button class="btn-expand" onclick="toggleHistory(3)">Ver más</button>
+                            <button class="btn-expand" onclick="toggleHistory(3, this)">Ver más</button>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3">
-                        <div class="workshop-item p-3">
+                        <div class="workshop-item p-3 card-scroll">
                             <div class="workshop-carousel">
                                 <div class="carousel-images" id="carousel4">
                                     <img src="img/Vanessa Lizeth galindo Velasquez.jpeg" alt="Estructuras 1" class="carousel-image">
@@ -1822,7 +2018,39 @@
                                 <p class="workshop-collapsed"><strong>Retos Actuales:</strong> El reto principal es conseguir soldadoras TIG MIG (soldadoras TIG que no utilizan electrodo). Aunque el alto costo de tecnología impera, se trata de dar lo mejor con los recursos disponibles. Otro reto es dejar una carrera técnica en el área de estructuras metálicas en el colegio y gestionar la adquisición de soldadoras TIG.</p>
                                 <p class="workshop-collapsed"><strong>Significado del Taller:</strong> Formar parte del taller de estructuras metálicas representa una experiencia muy bonita. El objetivo es ser un compañero más que busca el beneficio del taller de estructuras metálicas, trabajando para el bienestar de todos los estudiantes.</p>
                             </div>
-                            <button class="btn-expand" onclick="toggleHistory(4)">Ver más</button>
+                            <button class="btn-expand" onclick="toggleHistory(4, this)">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contacto y mapa -->
+            <section id="contacto" class="container py-5 reveal">
+                <h3 class="mb-3">Contacto</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <form id="contactForm" novalidate>
+                            <div class="mb-3"><label class="form-label">Nombre</label><input id="c_nombre" class="form-control" required></div>
+                            <div class="mb-3"><label class="form-label">Correo</label><input id="c_correo" type="email" class="form-control" required></div>
+                            <div class="mb-3"><label class="form-label">Teléfono</label><input id="c_telefono" class="form-control" required></div>
+                            <div class="mb-3"><label class="form-label">Mensaje</label><textarea id="c_mensaje" class="form-control" rows="4" required></textarea></div>
+                            <button class="btn btn-primary" type="submit">Enviar</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Ubicación</h5>
+                        <div class="ratio ratio-4x3 mb-3">
+                            <iframe src="https://www.google.com/maps?q=Zambrano%2C%20Francisco%20Moraz%C3%A1n%2C%20Honduras&output=embed"></iframe>
+                        </div>
+                        <h5>Redes sociales</h5>
+                        <div class="d-flex gap-2 mb-3">
+                            <a class="btn btn-outline-primary" href="#"><i class="bi bi-facebook"></i> Facebook</a>
+                            <a class="btn btn-outline-danger" href="#"><i class="bi bi-instagram"></i> Instagram</a>
+                            <a class="btn btn-outline-success" href="#"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+                            <a class="btn btn-outline-danger" href="#"><i class="bi bi-youtube"></i> YouTube</a>
+                        </div>
+                        <div>
+                            <p><strong>Tel:</strong> +504 0000-0000<br><strong>Correo:</strong> info@colegiofm.edu.hn</p>
                         </div>
                     </div>
                 </div>
@@ -1867,37 +2095,6 @@
                 </div>
             </section>
 
-            <!-- Contacto y mapa -->
-            <section id="contacto" class="container py-5 reveal">
-                <h3 class="mb-3">Contacto</h3>
-                <div class="row">
-                    <div class="col-md-6">
-                        <form id="contactForm" novalidate>
-                            <div class="mb-3"><label class="form-label">Nombre</label><input id="c_nombre" class="form-control" required></div>
-                            <div class="mb-3"><label class="form-label">Correo</label><input id="c_correo" type="email" class="form-control" required></div>
-                            <div class="mb-3"><label class="form-label">Teléfono</label><input id="c_telefono" class="form-control" required></div>
-                            <div class="mb-3"><label class="form-label">Mensaje</label><textarea id="c_mensaje" class="form-control" rows="4" required></textarea></div>
-                            <button class="btn btn-primary" type="submit">Enviar</button>
-                        </form>
-                    </div>
-                    <div class="col-md-6">
-                        <h5>Ubicación</h5>
-                        <div class="ratio ratio-4x3 mb-3">
-                            <iframe src="https://www.google.com/maps?q=Zambrano%2C%20Francisco%20Moraz%C3%A1n%2C%20Honduras&output=embed"></iframe>
-                        </div>
-                        <h5>Redes sociales</h5>
-                        <div class="d-flex gap-2 mb-3">
-                            <a class="btn btn-outline-primary" href="#"><i class="bi bi-facebook"></i> Facebook</a>
-                            <a class="btn btn-outline-danger" href="#"><i class="bi bi-instagram"></i> Instagram</a>
-                            <a class="btn btn-outline-success" href="#"><i class="bi bi-whatsapp"></i> WhatsApp</a>
-                            <a class="btn btn-outline-danger" href="#"><i class="bi bi-youtube"></i> YouTube</a>
-                        </div>
-                        <div>
-                            <p><strong>Tel:</strong> +504 0000-0000<br><strong>Correo:</strong> info@colegiofm.edu.hn</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </main>
 
         <!-- Botones y utilidades flotantes -->
@@ -2099,7 +2296,8 @@
                     1: { current: 0, total: 2 },
                     2: { current: 0, total: 16 },
                     3: { current: 0, total: 11 },
-                    4: { current: 0, total: 2 }
+                    4: { current: 0, total: 2 },
+                    5: { current: 0, total: 18 }
                 };
 
                 // Navigate carousel to next image
@@ -2133,17 +2331,19 @@
                 }
 
                 // Toggle workshop history visibility
-                window.toggleHistory = function(workshopNumber) {
+                window.toggleHistory = function(workshopNumber, btn) {
                     const historyDiv = document.getElementById(`history${workshopNumber}`);
-                    const btn = event.target;
+                    const trigger = btn || document.querySelector(`button[onclick*="toggleHistory(${workshopNumber}"]`);
                     if (historyDiv) {
                         historyDiv.classList.toggle('expanded');
-                        btn.textContent = historyDiv.classList.contains('expanded') ? 'Ver menos' : 'Ver más';
+                        if (trigger) {
+                            trigger.textContent = historyDiv.classList.contains('expanded') ? 'Ver menos' : 'Ver más';
+                        }
                     }
                 };
 
                 // Initialize carousel totals based on available images
-                for (let i = 1; i <= 4; i++) {
+                for (let i = 1; i <= 5; i++) {
                     const carousel = document.getElementById(`carousel${i}`);
                     if (carousel) {
                         const images = carousel.querySelectorAll('.carousel-image');
