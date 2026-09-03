@@ -26,7 +26,7 @@
                 scroll-padding-top: 90px;
             }
             body {
-                background-color: #E1C435;
+                background-color: #f0d96b;
                 padding-top: 70px;
             }
             header.hero {
@@ -112,7 +112,7 @@
                 left: 0;
                 right: 0;
                 height: 6px;
-                background: linear-gradient(90deg, #7A0F0F 0%, #E1C435 50%, #7A0F0F 100%);
+                background: linear-gradient(90deg, #7A0F0F 0%, #f0d96b 50%, #7A0F0F 100%);
             }
             .mission-vision-card::after {
                 content: '';
@@ -121,11 +121,11 @@
                 left: 0;
                 right: 0;
                 height: 4px;
-                background: #E1C435;
+                background: #f0d96b;
             }
             .mission-vision-card:hover {
                 transform: translateY(-8px);
-                box-shadow: 0 15px 40px rgba(122, 15, 15, 0.25), 0 0 0 2px #E1C435;
+                box-shadow: 0 15px 40px rgba(122, 15, 15, 0.25), 0 0 0 2px #f0d96b;
             }
             .mission-vision-card .card-body {
                 background: linear-gradient(135deg, #7A0F0F 0%, #5c0a0a 100%);
@@ -150,7 +150,7 @@
                 pointer-events: none;
             }
             .mission-vision-card .bi {
-                color: #E1C435 !important;
+                color: #f0d96b !important;
                 font-size: 3rem;
                 flex-shrink: 0;
                 margin-right: 1.5rem;
@@ -213,7 +213,7 @@
             .history-story {
                 background: linear-gradient(135deg, #7A0F0F 0%, #5c0a0a 50%, #7A0F0F 100%);
                 border-radius: 20px;
-                border: 4px solid #E1C435;
+                border: 4px solid #f0d96b;
                 box-shadow: 0 10px 30px rgba(122, 15, 15, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.08);
                 position: relative;
             }
@@ -224,7 +224,7 @@
                 left: 0;
                 right: 0;
                 height: 6px;
-                background: linear-gradient(90deg, #E1C435 0%, #ffffff 50%, #E1C435 100%);
+                background: linear-gradient(90deg, #f0d96b 0%, #ffffff 50%, #f0d96b 100%);
                 border-radius: 20px 20px 0 0;
             }
             .history-story .card {
@@ -428,6 +428,79 @@
                 position: relative;
                 z-index: 1;
             }
+            .career-launcher {
+                width: 100%;
+                min-height: 220px;
+                border: 1px solid rgba(122,15,15,0.12);
+                border-radius: 20px;
+                background: linear-gradient(180deg, #fff 0%, #f9f2e8 100%);
+                box-shadow: 0 18px 36px rgba(122,15,15,0.08);
+                color: #7A0F0F;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 0.8rem;
+                padding: 1.4rem 1rem;
+                text-align: center;
+                transition: transform 0.25s ease, box-shadow 0.25s ease;
+            }
+            .career-launcher:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 24px 42px rgba(122,15,15,0.12);
+            }
+            .career-launcher-icon {
+                width: 68px;
+                height: 68px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #7A0F0F 0%, #E1C435 100%);
+                color: #fff;
+                font-size: 1.6rem;
+                box-shadow: 0 10px 24px rgba(122,15,15,0.18);
+            }
+            .career-launcher-title {
+                font-size: 1.5rem;
+                font-weight: 800;
+                letter-spacing: 0.03em;
+                margin: 0;
+            }
+            .career-launcher-text {
+                font-size: 0.92rem;
+                color: #5a5a5a;
+                margin: 0;
+                max-width: 220px;
+            }
+            .career-modal-body {
+                background: linear-gradient(180deg, #fff 0%, #fefaf2 100%);
+            }
+            .career-modal-gallery {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.75rem;
+            }
+            .career-modal-gallery img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 12px;
+                border: 1px solid rgba(122,15,15,0.12);
+            }
+            .career-modal-content ol {
+                padding-left: 1.2rem;
+                margin-bottom: 0;
+            }
+            .career-modal-content li {
+                margin-bottom: 0.5rem;
+                color: #333;
+            }
+            @media (max-width: 767px) {
+                .career-modal-gallery {
+                    grid-template-columns: 1fr;
+                }
+            }
             /* Add subtle vertical separators between columns on large screens */
             @media (min-width: 992px) {
                 #noticias .col:not(:last-child) { border-right: 1px dashed rgba(0,0,0,0.04); padding-right: 18px; }
@@ -442,20 +515,25 @@
             
             /* Workshop/Talleres styles */
             .workshop-item {
-                border: none;
-                border-radius: 12px;
-                padding: 1.1rem 1rem 1.2rem;
-                background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.96));
+                border: 1px solid rgba(122,15,15,0.08);
+                border-radius: 18px;
+                padding: 1.2rem 1rem 1.2rem;
+                background: linear-gradient(180deg, rgba(255,255,255,0.99), rgba(250,246,240,0.98));
                 display: flex;
                 flex-direction: column;
-                gap: .75rem;
+                gap: .9rem;
                 position: relative;
                 overflow: hidden;
                 height: 100%;
-                min-height: 520px;
-                box-shadow: none !important;
+                min-height: 620px;
+                box-shadow: 0 18px 38px rgba(122,15,15,0.08) !important;
                 text-align: center;
                 justify-content: flex-start;
+                transition: transform 0.25s ease, box-shadow 0.25s ease;
+            }
+            .workshop-item:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 24px 46px rgba(122,15,15,0.12) !important;
             }
             /* Limit workshop card height and allow inner content to scroll */
             .card-scroll { max-height: 560px; }
@@ -483,16 +561,17 @@
             }
             .workshop-item h5 {
                 margin: 0;
-                padding-left: 18px;
-                padding-right: 8px;
+                padding: 0;
                 color: #111;
-                font-weight: 700;
-                line-height: 1.3;
+                font-weight: 900;
+                line-height: 1.25;
                 text-align: left;
-                width: calc(100% - 18px);
-                margin-left: 18px;
-                display: block;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                gap: 0.65rem;
                 letter-spacing: 0.01em;
+                font-size: 1.08rem;
             }
             .workshop-item .workshop-excerpt { color: #333; margin-left: 56px; }
             .workshop-item .workshop-more { margin-top: auto; margin-left: 56px; }
@@ -501,21 +580,27 @@
                 overflow: hidden;
                 display: none;
                 color: #2e2e2e;
-                line-height: 1.5;
-                font-size: 0.92rem;
-                margin-left: 56px;
-                padding-right: 0.4rem;
+                line-height: 1.7;
+                font-size: 0.93rem;
+                margin: 0;
+                padding: 1rem 1.05rem;
                 text-align: left;
+                background: linear-gradient(180deg, rgba(122,15,15,0.03), rgba(225,196,53,0.05));
+                border: 1px solid rgba(122,15,15,0.12);
+                border-radius: 14px;
+                box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
             }
             .workshop-history p {
-                margin-bottom: 0.7rem;
+                margin-bottom: 0.8rem;
+                text-align: justify;
+                color: #2d2d2d;
             }
             .workshop-history strong {
                 color: #7A0F0F;
             }
             .workshop-history.expanded {
                 display: block;
-                max-height: 220px;
+                max-height: 260px;
                 overflow-y: auto;
             }
             .workshop-history.expanded::-webkit-scrollbar { width: 8px; }
@@ -525,18 +610,17 @@
                 background: linear-gradient(90deg,#7A0F0F,#E1C435);
                 color: white;
                 border: none;
-                padding: 0.6rem 1rem;
+                padding: 0.8rem 1rem;
                 border-radius: 999px;
                 cursor: pointer;
-                font-size: 0.82rem;
-                font-weight: 700;
+                font-size: 0.84rem;
+                font-weight: 800;
                 letter-spacing: 0.03em;
                 transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-                width: calc(100% - 82px);
-                margin-left: 4px;
+                width: 100%;
                 margin-top: auto;
-                align-self: flex-start;
-                box-shadow: 0 8px 18px rgba(122,15,15,0.18);
+                align-self: stretch;
+                box-shadow: 0 10px 20px rgba(122,15,15,0.2);
             }
             #talleres .col:first-child .btn-expand {
                 margin-top: 1rem;
@@ -577,20 +661,22 @@
             .carousel-images {
                 display: flex;
                 overflow: hidden;
-                border-radius: 8px;
-                height: 320px;
+                border-radius: 14px;
+                height: 350px;
                 width: 100%;
                 background: linear-gradient(180deg, rgba(122,15,15,0.04), rgba(225,196,53,0.06));
+                border: 1px solid rgba(122,15,15,0.08);
+                box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6);
             }
             .carousel-image {
                 width: 100%;
                 height: 100%;
-                object-fit: contain;
+                object-fit: cover;
                 object-position: center;
                 flex-shrink: 0;
-                transition: opacity 0.3s ease;
+                transition: opacity 0.3s ease, transform 0.3s ease;
                 background-color: #f6f3ee;
-                padding: 0.4rem;
+                padding: 0.45rem;
             }
             .carousel-image.hidden {
                 display: none;
@@ -686,10 +772,10 @@
                 #talleres .col:not(:last-child) { border-right: 1px dashed rgba(0,0,0,0.04); padding-right: 18px; }
                 #talleres .col:not(:first-child) { padding-left: 18px; }
             }
-            @media (min-width: 1200px) {
+            @media (min-width: 992px) {
                 #talleres .col-lg-3 {
-                    flex: 0 0 25%;
-                    max-width: 25%;
+                    flex: 0 0 50%;
+                    max-width: 50%;
                 }
             }
             @media (max-width: 767px) {
@@ -901,7 +987,7 @@
                 inset: 0 auto auto 0;
                 width: 100%;
                 height: 5px;
-                background: linear-gradient(90deg, #7A0F0F 0%, #E1C435 55%, rgba(225,196,53,0.15) 100%);
+                background: linear-gradient(90deg, #7A0F0F 0%, #f0d96b 55%, rgba(240,217,107,0.18) 100%);
                 border-radius: 1.5rem 1.5rem 0 0;
             }
             #deportes .rounded-4 {
@@ -1012,7 +1098,7 @@
                         <li class="nav-item"><a class="nav-link" href="#noticias">carreras</a></li>
                         <li class="nav-item"><a class="nav-link" href="#talleres">Talleres</a></li>
                         <li class="nav-item"><a class="nav-link" href="#deportes">Deportes</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">Ubicación</a></li>
                     </ul>
                 </div>
             </div>
@@ -1059,19 +1145,19 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
                         <div class="card shadow-sm border-0 p-4 p-md-5" style="border-left: 6px solid #E1C435; background: linear-gradient(135deg, #7A0F0F 0%, #5c0a0a 100%); border-radius: 18px; border-top: 4px solid #E1C435; border-right: 4px solid #E1C435; border-bottom: 4px solid #E1C435; box-shadow: 0 10px 30px rgba(122, 15, 15, 0.5);">
-                            <h3 class="mb-4 text-center" style="color: #E1C435; font-weight: 900; border-bottom: 3px solid #E1C435; padding-bottom: 1.5rem; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);">📖 Historia Completa</h3>
+                            <h3 class="mb-4 text-center" style="color: #f0d96b; font-weight: 900; border-bottom: 3px solid #f0d96b; padding-bottom: 1.5rem; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);">📖 Historia Completa</h3>
 
-                            <h5 class="fw-bold mt-4" style="color: #E1C435; border-left: 4px solid #E1C435; padding-left: 1rem; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);">✨ Un paso que cambió la historia</h5>
-                            <p style="background-color: rgba(0, 0, 0, 0.3); padding: 1rem; border-left: 4px solid #E1C435; border-radius: 8px; margin-left: 0; color: #ffffff; border-right: 2px solid #ffffff;"><strong style="color: #E1C435;">El 15 de febrero de 1989</strong>, el Instituto pasó de ser privado a semioficial. Este cambio permitió obtener una subvención anual y reducir significativamente la mensualidad de los estudiantes.</p>
-                            <p style="background-color: rgba(0, 0, 0, 0.3); padding: 1rem; border-left: 4px solid #E1C435; border-radius: 8px; color: #ffffff; border-right: 2px solid #ffffff;">A partir de entonces, comenzaron <strong style="color: #E1C435;">nuevas mejoras</strong> en la infraestructura, la biblioteca, el mobiliario, la seguridad y la organización académica.</p>
+                            <h5 class="fw-bold mt-4" style="color: #f0d96b; border-left: 4px solid #f0d96b; padding-left: 1rem; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);">✨ Un paso que cambió la historia</h5>
+                            <p style="background-color: rgba(0, 0, 0, 0.3); padding: 1rem; border-left: 4px solid #f0d96b; border-radius: 8px; margin-left: 0; color: #ffffff; border-right: 2px solid #ffffff;"><strong style="color: #f0d96b;">El 15 de febrero de 1989</strong>, el Instituto pasó de ser privado a semioficial. Este cambio permitió obtener una subvención anual y reducir significativamente la mensualidad de los estudiantes.</p>
+                            <p style="background-color: rgba(0, 0, 0, 0.3); padding: 1rem; border-left: 4px solid #f0d96b; border-radius: 8px; color: #ffffff; border-right: 2px solid #ffffff;">A partir de entonces, comenzaron <strong style="color: #f0d96b;">nuevas mejoras</strong> en la infraestructura, la biblioteca, el mobiliario, la seguridad y la organización académica.</p>
 
-                            <h5 class="fw-bold mt-4" style="color: #E1C435; border-left: 4px solid #E1C435; padding-left: 1rem; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);">🏫 Más que un edificio, una comunidad</h5>
-                            <p style="background-color: rgba(0, 0, 0, 0.3); padding: 1rem; border-left: 4px solid #E1C435; border-radius: 8px; margin-left: 0; color: #ffffff; border-right: 2px solid #ffffff;">Durante los años siguientes, continuaron las gestiones para fortalecer la institución, mejorar la calidad de la enseñanza y avanzar hacia su <strong style="color: #E1C435;">oficialización</strong>.</p>
-                            <p style="background-color: rgba(0, 0, 0, 0.3); padding: 1rem; border-left: 4px solid #E1C435; border-radius: 8px; color: #ffffff; border-right: 2px solid #ffffff;">Cada logro fue posible gracias al <strong style="color: #E1C435;">trabajo conjunto</strong> de estudiantes, docentes, padres de familia y miembros de la comunidad.</p>
+                            <h5 class="fw-bold mt-4" style="color: #f0d96b; border-left: 4px solid #f0d96b; padding-left: 1rem; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);">🏫 Más que un edificio, una comunidad</h5>
+                            <p style="background-color: rgba(0, 0, 0, 0.3); padding: 1rem; border-left: 4px solid #f0d96b; border-radius: 8px; margin-left: 0; color: #ffffff; border-right: 2px solid #ffffff;">Durante los años siguientes, continuaron las gestiones para fortalecer la institución, mejorar la calidad de la enseñanza y avanzar hacia su <strong style="color: #f0d96b;">oficialización</strong>.</p>
+                            <p style="background-color: rgba(0, 0, 0, 0.3); padding: 1rem; border-left: 4px solid #f0d96b; border-radius: 8px; color: #ffffff; border-right: 2px solid #ffffff;">Cada logro fue posible gracias al <strong style="color: #f0d96b;">trabajo conjunto</strong> de estudiantes, docentes, padres de familia y miembros de la comunidad.</p>
 
-                            <h5 class="fw-bold mt-4" style="color: #E1C435; border-left: 4px solid #E1C435; padding-left: 1rem; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);">❓ ¿Cómo era realmente el Instituto durante sus primeros años?</h5>
-                            <p style="background-color: rgba(0, 0, 0, 0.3); padding: 1rem; border-left: 4px solid #E1C435; border-radius: 8px; margin-left: 0; color: #ffffff; border-right: 2px solid #ffffff;">Pero ¿cómo era realmente el Instituto durante sus primeros años? ¿Qué dificultades enfrentaron sus primeros estudiantes y docentes? ¿Cuáles fueron los logros que marcaron su transformación?</p>
-                            <p style="background-color: rgba(0, 0, 0, 0.3); padding: 1rem; border-left: 4px solid #E1C435; border-radius: 8px; font-weight: 500; color: #ffffff; border-right: 2px solid #ffffff;">Esta es solo una parte de una historia construida con <strong style="color: #E1C435;">esfuerzo, compromiso y perseverancia</strong>. Cada acontecimiento contribuyó a formar la institución que conocemos hoy.</p>
+                            <h5 class="fw-bold mt-4" style="color: #f0d96b; border-left: 4px solid #f0d96b; padding-left: 1rem; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);">❓ ¿Cómo era realmente el Instituto durante sus primeros años?</h5>
+                            <p style="background-color: rgba(0, 0, 0, 0.3); padding: 1rem; border-left: 4px solid #f0d96b; border-radius: 8px; margin-left: 0; color: #ffffff; border-right: 2px solid #ffffff;">Pero ¿cómo era realmente el Instituto durante sus primeros años? ¿Qué dificultades enfrentaron sus primeros estudiantes y docentes? ¿Cuáles fueron los logros que marcaron su transformación?</p>
+                            <p style="background-color: rgba(0, 0, 0, 0.3); padding: 1rem; border-left: 4px solid #f0d96b; border-radius: 8px; font-weight: 500; color: #ffffff; border-right: 2px solid #ffffff;">Esta es solo una parte de una historia construida con <strong style="color: #f0d96b;">esfuerzo, compromiso y perseverancia</strong>. Cada acontecimiento contribuyó a formar la institución que conocemos hoy.</p>
                         </div>
             
 
@@ -1961,116 +2047,115 @@
             <section id="noticias" class="container py-5 reveal">
                 <h3 class="mb-0 text-center w-100">CARRERAS</h3>
                 <div class="heading-decor"><svg width="160" height="20" viewBox="0 0 160 20" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#7A0F0F"/><stop offset="1" stop-color="#E1C435"/></linearGradient></defs><rect x="10" y="9" width="140" height="2" rx="1" fill="url(#g)"/><circle cx="80" cy="10" r="5" fill="#7A0F0F"/></svg></div>
-                <div class="row g-3">
-                    <div class="col-4">
-                        <div class="career-item p-3">
-                            <h4 class="career-title-inline"><i class="bi bi-cpu career-icon"></i>Informática</h4>
-                            <div class="workshop-carousel agro-carousel">
-                                <div class="carousel-images" id="carousel6">
-                                    <img src="img/Informática (2).jpeg" alt="Informática 2" class="carousel-image">
-                                    <img src="img/Informática (3).jpeg" alt="Informática 3" class="carousel-image">
-                                    <img src="img/Informática (4).jpeg" alt="Informática 4" class="carousel-image">
-                                    <img src="img/Informática (5).jpeg" alt="Informática 5" class="carousel-image">
-                                    <img src="img/Informática (6).jpeg" alt="Informática 6" class="carousel-image">
-                                    <img src="img/Informática (7).jpeg" alt="Informática 7" class="carousel-image">
-                                    <img src="img/Informática (8).jpeg" alt="Informática 8" class="carousel-image">
-                                </div>
-                                <div class="carousel-controls">
-                                    <button class="carousel-btn" onclick="carouselPrev(6)">❮</button>
-                                    <button class="carousel-btn" onclick="carouselNext(6)">❯</button>
-                                </div>
-                            </div>
-                            <p><strong>HISTORIA DE LA CARRERA DE INFORMÁTICA</strong></p>
-                            <button class="btn btn-sm btn-outline-primary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#career1More" aria-expanded="false" aria-controls="career1More">Ver más</button>
-                            <div class="collapse mt-3 collapse-scroll" id="career1More">
-                            <ol>
-                                <li><strong>2009 (Fundación):</strong> Se crea la carrera bajo el nombre de Bachillerato Técnico en Computación. Los egresados obtenían doble titulación. Docentes fundadores: Fátima Rodríguez, Marlon Izaguirre, Jenny Sosa y Fredy Domínguez.</li>
-                                <li><strong>2010–2012:</strong> Se integra el profesor Wilmer Aguilar; modalidad de crecimiento vegetativo.</li>
-                                <li><strong>2011:</strong> Egresa la primera promoción (~27 alumnos).</li>
-                                <li><strong>2016 (Aprox.):</strong> Evolución a BTP Semestral y luego BTP en Informática; asignaturas como Desarrollo Web.</li>
-                                <li><strong>2024:</strong> Proyecto de robótica, ferias y convenio con Universidad de Defensa Hondureña (Impresión 3D).</li>
-                                <li><strong>2026 (Actualidad):</strong> Convenio con Cisco NetAcad (CCNA 1 y 2 gratuitos); logros en ferias y liderazgo del profesor Wilmer Aguilar.</li>
-                            </ol>
-                            </div>
-                        </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-4">
+                        <button class="career-launcher" type="button" data-bs-toggle="modal" data-bs-target="#modalInformatica">
+                            <span class="career-launcher-icon"><i class="bi bi-cpu"></i></span>
+                            <span class="career-launcher-title">Informática</span>
+                            <span class="career-launcher-text">Tecnología, programación y robótica aplicada.</span>
+                        </button>
                     </div>
-                    <div class="col-4">
-                        <div class="career-item p-3">
-                            <h4 class="career-title-inline" style="justify-content:flex-start; padding-left: 42px; padding-right: 0;"><i class="bi bi-bank career-icon"></i>Contaduría y Finanzas</h4>
-                            <div class="workshop-carousel agro-carousel">
-                                <div class="carousel-images" id="carousel7">
-                                    <img src="img/Suyapa Janeth Pineda Lopez.jpeg" alt="Suyapa Janeth Pineda López" class="carousel-image">
-                                    <img src="img/Maria de la paz Álvarez.jpeg" alt="María de la Paz Álvarez" class="carousel-image">
-                                </div>
-                                <div class="carousel-controls">
-                                    <button class="carousel-btn" onclick="carouselPrev(7)">❮</button>
-                                    <button class="carousel-btn" onclick="carouselNext(7)">❯</button>
-                                </div>
-                            </div>
-                            <p><strong>HISTORIA DEL BTP EN CONTADURÍA Y FINANZAS</strong></p>
-                            <button class="btn btn-sm btn-outline-primary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#career2More" aria-expanded="false" aria-controls="career2More">Ver más</button>
-                            <div class="collapse mt-3 collapse-scroll" id="career2More">
-                            <p><em>Una carrera que evolucionó con el tiempo</em></p>
-                            <p>En la Comunidad de Zambrano, Francisco Morazán, el Instituto Gubernamental Técnico Francisco Miranda ha construido una historia marcada por la transformación y el compromiso con la formación de sus estudiantes.</p>
-                            <ol>
-                                <li>1995: Apertura de la carrera de <strong>Mercadotecnia</strong>, egresando dos promociones.</li>
-                                <li>1997-1998: La carrera entró en desgaste y la segunda promoción culminó en 1998.</li>
-                                <li>1999: Nace la carrera de <strong>Educación Comercial</strong> (Peritos Mercantiles y Contadores Públicos).</li>
-                                <li>2014: La carrera nuevamente en desgaste.</li>
-                                <li>2016: Primera promoción del <strong>Bachillerato Técnico Profesional en Contaduría y Finanzas</strong> (12 alumnos).</li>
-                            </ol>
-                            </div>
-                        </div>
+                    <div class="col-md-4">
+                        <button class="career-launcher" type="button" data-bs-toggle="modal" data-bs-target="#modalFinanzas">
+                            <span class="career-launcher-icon"><i class="bi bi-bank"></i></span>
+                            <span class="career-launcher-title">Contaduría y Finanzas</span>
+                            <span class="career-launcher-text">Gestión empresarial, contabilidad y administración.</span>
+                        </button>
                     </div>
-                    <div class="col-4">
-                        <div class="career-item p-3">
-                            <h4 class="career-title-inline"><i class="bi bi-flower1 career-icon"></i>Agroindustria</h4>
-                            <div class="workshop-carousel agro-carousel">
-                                <div class="carousel-images" id="carousel5">
-                                    <img src="img/AGRO1.jpg" alt="Agro 1" class="carousel-image">
-                                    <img src="img/AGRO2.jpg" alt="Agro 2" class="carousel-image">
-                                    <img src="img/AGRO3.jpg" alt="Agro 3" class="carousel-image">
-                                    <img src="img/AGRO4.jpg" alt="Agro 4" class="carousel-image">
-                                    <img src="img/AGRO5.jpg" alt="Agro 5" class="carousel-image">
-                                    <img src="img/AGRO6.jpg" alt="Agro 6" class="carousel-image">
-                                    <img src="img/AGRO7.jpg" alt="Agro 7" class="carousel-image">
-                                    <img src="img/AGRO8.jpg" alt="Agro 8" class="carousel-image">
-                                    <img src="img/AGRO9.jpg" alt="Agro 9" class="carousel-image">
-                                    <img src="img/AGRO10.jpg" alt="Agro 10" class="carousel-image">
-                                    <img src="img/AGRO11.jpg" alt="Agro 11" class="carousel-image">
-                                    <img src="img/AGRO12.jpg" alt="Agro 12" class="carousel-image">
-                                    <img src="img/AGRO13.jpg" alt="Agro 13" class="carousel-image">
-                                    <img src="img/AGRO14.jpg" alt="Agro 14" class="carousel-image">
-                                    <img src="img/AGRO15.jpg" alt="Agro 15" class="carousel-image">
-                                    <img src="img/AGRO16.jpg" alt="Agro 16" class="carousel-image">
-                                    <img src="img/AGRO17.jpg" alt="Agro 17" class="carousel-image">
-                                    <img src="img/AGRO18.jpg" alt="Agro 18" class="carousel-image">
-                                </div>
-                                <div class="carousel-controls">
-                                    <button class="carousel-btn" onclick="carouselPrev(5)">❮</button>
-                                    <button class="carousel-btn" onclick="carouselNext(5)">❯</button>
-                                </div>
+                    <div class="col-md-4">
+                        <button class="career-launcher" type="button" data-bs-toggle="modal" data-bs-target="#modalAgroindustria">
+                            <span class="career-launcher-icon"><i class="bi bi-flower1"></i></span>
+                            <span class="career-launcher-title">Agroindustria</span>
+                            <span class="career-launcher-text">Agricultura, procesamiento y emprendimiento sostenible.</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="modal fade" id="modalInformatica" tabindex="-1" aria-labelledby="modalInformaticaLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header bg-dark text-white">
+                            <h5 class="modal-title" id="modalInformaticaLabel">Informática</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                        </div>
+                        <div class="modal-body career-modal-body">
+                            <div class="career-modal-gallery mb-4">
+                                <img src="img/Informática (2).jpeg" alt="Informática 2">
+                                <img src="img/Informática (4).jpeg" alt="Informática 4">
+                                <img src="img/Informática (7).jpeg" alt="Informática 7">
                             </div>
-                            <p><strong>HISTORIA DE LA CARRERA DE AGROINDUSTRIA</strong></p>
-                            <button class="btn btn-sm btn-outline-primary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#career3More" aria-expanded="false" aria-controls="career3More">Ver más</button>
-                            <div class="collapse mt-3 collapse-scroll" id="career3More">
-                            <p><strong>Origen:</strong> Creada entre 2014 y 2015 en el Instituto Francisco Miranda por la alta vocación agrícola de la zona de Zambrano.
-
-<strong>Objetivo:</strong> Profesionalizar el conocimiento empírico del campo para que los jóvenes aprendan a procesar, comercializar o emprender su propia empresa agroindustrial (lácteos, cárnicos, cultivos).
-
-<strong>Estudio previo:</strong> Se validó el campo laboral mediante visitas a empresas como Honduras Chips , Finca El Carmen y Lácteos Primavera .
-
-<strong>Perfil requerido:</strong> Estudiantes con alta vocación , compromiso ambiental y espíritu emprendedor.
-
-<strong>Mayor Respuesta</strong> La falta de financiamiento y equipo técnico , siendo prioritaria la adquisición de una planta procesadora de lácteos para dinamizar la economía local.
-
-<strong>Solución a limitantes:</strong>Se realizan giras y alianzas con la UNAG para suplir la falta de equipo y materia prima en el colegio.
-</p>
+                            <div class="career-modal-content">
+                                <p><strong>HISTORIA DE LA CARRERA DE INFORMÁTICA</strong></p>
+                                <ol>
+                                    <li><strong>2009 (Fundación):</strong> Se crea la carrera bajo el nombre de Bachillerato Técnico en Computación. Los egresados obtenían doble titulación. Docentes fundadores: Fátima Rodríguez, Marlon Izaguirre, Jenny Sosa y Fredy Domínguez.</li>
+                                    <li><strong>2010–2012:</strong> Se integra el profesor Wilmer Aguilar; modalidad de crecimiento vegetativo.</li>
+                                    <li><strong>2011:</strong> Egresa la primera promoción (~27 alumnos).</li>
+                                    <li><strong>2016 (Aprox.):</strong> Evolución a BTP Semestral y luego BTP en Informática; asignaturas como Desarrollo Web.</li>
+                                    <li><strong>2024:</strong> Proyecto de robótica, ferias y convenio con Universidad de Defensa Hondureña (Impresión 3D).</li>
+                                    <li><strong>2026 (Actualidad):</strong> Convenio con Cisco NetAcad (CCNA 1 y 2 gratuitos); logros en ferias y liderazgo del profesor Wilmer Aguilar.</li>
+                                </ol>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+
+            <div class="modal fade" id="modalFinanzas" tabindex="-1" aria-labelledby="modalFinanzasLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header bg-dark text-white">
+                            <h5 class="modal-title" id="modalFinanzasLabel">Contaduría y Finanzas</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                        </div>
+                        <div class="modal-body career-modal-body">
+                            <div class="career-modal-gallery mb-4">
+                                <img src="img/Suyapa Janeth Pineda Lopez.jpeg" alt="Suyapa Janeth Pineda López">
+                                <img src="img/Maria de la paz Álvarez.jpeg" alt="María de la Paz Álvarez">
+                            </div>
+                            <div class="career-modal-content">
+                                <p><strong>HISTORIA DEL BTP EN CONTADURÍA Y FINANZAS</strong></p>
+                                <p><em>Una carrera que evolucionó con el tiempo</em></p>
+                                <p>En la Comunidad de Zambrano, Francisco Morazán, el Instituto Gubernamental Técnico Francisco Miranda ha construido una historia marcada por la transformación y el compromiso con la formación de sus estudiantes.</p>
+                                <ol>
+                                    <li>1995: Apertura de la carrera de <strong>Mercadotecnia</strong>, egresando dos promociones.</li>
+                                    <li>1997-1998: La carrera entró en desgaste y la segunda promoción culminó en 1998.</li>
+                                    <li>1999: Nace la carrera de <strong>Educación Comercial</strong> (Peritos Mercantiles y Contadores Públicos).</li>
+                                    <li>2014: La carrera nuevamente en desgaste.</li>
+                                    <li>2016: Primera promoción del <strong>Bachillerato Técnico Profesional en Contaduría y Finanzas</strong> (12 alumnos).</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modalAgroindustria" tabindex="-1" aria-labelledby="modalAgroindustriaLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header bg-dark text-white">
+                            <h5 class="modal-title" id="modalAgroindustriaLabel">Agroindustria</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                        </div>
+                        <div class="modal-body career-modal-body">
+                            <div class="career-modal-gallery mb-4">
+                                <img src="img/AGRO1.jpg" alt="Agro 1">
+                                <img src="img/AGRO9.jpg" alt="Agro 9">
+                                <img src="img/AGRO18.jpg" alt="Agro 18">
+                            </div>
+                            <div class="career-modal-content">
+                                <p><strong>HISTORIA DE LA CARRERA DE AGROINDUSTRIA</strong></p>
+                                <p><strong>Origen:</strong> Creada entre 2014 y 2015 en el Instituto Francisco Miranda por la alta vocación agrícola de la zona de Zambrano.</p>
+                                <p><strong>Objetivo:</strong> Profesionalizar el conocimiento empírico del campo para que los jóvenes aprendan a procesar, comercializar o emprender su propia empresa agroindustrial (lácteos, cárnicos, cultivos).</p>
+                                <p><strong>Estudio previo:</strong> Se validó el campo laboral mediante visitas a empresas como Honduras Chips, Finca El Carmen y Lácteos Primavera.</p>
+                                <p><strong>Perfil requerido:</strong> Estudiantes con alta vocación, compromiso ambiental y espíritu emprendedor.</p>
+                                <p><strong>Mayor respuesta:</strong> La falta de financiamiento y equipo técnico, siendo prioritaria la adquisición de una planta procesadora de lácteos para dinamizar la economía local.</p>
+                                <p><strong>Solución a limitantes:</strong> Se realizan giras y alianzas con la UNAG para suplir la falta de equipo y materia prima en el colegio.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Talleres -->
             <section id="talleres" class="container py-5 reveal">
@@ -2286,7 +2371,7 @@
 
                 <div class="row g-4 mt-1">
                     <div class="col-lg-6">
-                        <div class="p-4 rounded-4 h-100" style="background: linear-gradient(180deg, rgba(122,15,15,0.04), rgba(225,196,53,0.06)); border:1px solid rgba(122,15,15,0.08);">
+                        <div class="p-4 rounded-4 h-100" style="background: #ffffff; border:1px solid rgba(122,15,15,0.08); box-shadow: 0 8px 22px rgba(122,15,15,0.04);">
                             <p class="mb-3"><strong>1. Introducción y contexto</strong></p>
                             <p>El fútbol femenino se ha consolidado como una de las iniciativas más importantes del área deportiva del instituto. Su historia demuestra que el talento, la disciplina y la dedicación no dependen del género, y que las estudiantes pueden representar a la institución con el mismo nivel de compromiso que cualquier otro equipo.</p>
                             <p>El proyecto nació en 2024, a partir del interés de un grupo de estudiantes que quería practicar fútbol y representar al instituto en competencias oficiales. Desde entonces se ha mantenido en constante formación, y hoy reúne a alumnas de distintos grados y especialidades.</p>
@@ -2294,7 +2379,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="p-4 rounded-4 h-100" style="background: linear-gradient(180deg, rgba(225,196,53,0.06), rgba(122,15,15,0.04)); border:1px solid rgba(122,15,15,0.08);">
+                        <div class="p-4 rounded-4 h-100" style="background: #ffffff; border:1px solid rgba(122,15,15,0.08); box-shadow: 0 8px 22px rgba(122,15,15,0.04);">
                             <p class="mb-3"><strong>2. Desarrollo del equipo de fútbol femenino</strong></p>
                             <p><strong>2.1 Origen y trayectoria:</strong> El equipo femenino existe desde 2024 y actualmente cuenta con cerca de dos años y medio de trayectoria. Todo comenzó con un grupo de estudiantes interesadas en participar en actividades y competencias de fútbol femenino.</p>
                             <p><strong>2.2 Integrantes y categorías:</strong> Está formado por estudiantes de distintos grados académicos y especialidades, incluyendo alumnas de educación básica y media. Actualmente, la participación se concentra en las categorías U15 y U17.</p>
@@ -2384,10 +2469,10 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="ratio ratio-16x9 shadow-sm rounded-4 overflow-hidden border" style="border-color: rgba(122,15,15,0.15);">
-                        <iframe src="https://www.google.com/maps?q=Zambrano%2C%20Francisco%20Moraz%C3%A1n%2C%20Honduras&output=embed" style="border:0; width:100%; height:100%;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps?q=Instituto%20T%C3%A9cnico%20Francisco%20Miranda%2C%20Zambrano%2C%20Francisco%20Moraz%C3%A1n%2C%20Honduras&output=embed" style="border:0; width:100%; height:100%;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <p class="text-center mt-3 mb-0" style="color: #5a5a5a; font-size: 1.05rem;">
-                        <strong style="color: #7A0F0F;">Dirección:</strong> Zambrano, Francisco Morazán, Honduras
+                        <strong style="color: #7A0F0F;">Instituto:</strong> Instituto Técnico Francisco Miranda, Zambrano, Francisco Morazán, Honduras
                     </p>
                 </div>
             </div>
