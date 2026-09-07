@@ -3744,37 +3744,7 @@
         });
     </script>
 
-   <script>
-    const botones = document.querySelectorAll('a');
-    let btnConocerMas = null;
-    
-    botones.forEach(btn => {
-        if(btn.textContent.includes('Conocer más')) {
-            btnConocerMas = btn;
-        }
-    });
-
-    if(btnConocerMas) {
-        btnConocerMas.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // 1. Escondemos la portada de los árboles por completo
-            const portada = document.getElementById('inicio');
-            if(portada) portada.style.display = 'none';
-            
-            // 2. Mostramos todo tu contenido principal (Historia, Cómics, etc.)
-            const contenidoPrincipal = document.querySelector('main.mt-5');
-            if(contenidoPrincipal) contenidoPrincipal.style.display = 'block';
-            
-            // 3. Despertamos el mapa de la ubicación de forma segura
-            const mapaUbicacion = document.getElementById('seccion-mapa');
-            if(mapaUbicacion) mapaUbicacion.style.display = 'block';
-            
-            // 4. Posicionamos la pantalla arriba limpiamente
-            window.scrollTo({ top: 0 });
-        });
-    }
-</script>
+   
 
     
 </body>
